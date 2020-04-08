@@ -1,6 +1,6 @@
 # Reading and Discussion List for Stanford CS348K
 
-## Lecture 1: Course Introduction + Throughput Computing Review ##
+## Lecture 1: Throughput Computing Review ##
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/intro)
 
