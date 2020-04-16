@@ -79,7 +79,7 @@ __Other Recommended Readings:__
 * [Local Laplacian Filters: Edge-aware Image Processing with a Laplacian Pyramid](https://people.csail.mit.edu/sparis/publi/2011/siggraph/). Paris et al. SIGGRAPH 2013
 * [The Laplacian Pyramid as a Compact Image Code](http://ieeexplore.ieee.org/document/1095851/). Burt and Adelson, IEEE Transactions on Communications 1983.
 
-## Lecture 4: ##
+## Lecture 4: Efficiently Scheduling Image Processing Algorithms ##
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/halide)
 
