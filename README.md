@@ -163,6 +163,7 @@ __Post-Lecture Required Reading:__
 
 __Other Recommended Readings:__
 * [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677). Goyal et al. 2017
+   * A nice description of why learning rate should scale with mini-batch size, and empirical studies of how to implement this intuition effectively.
 * [ImageNet Training in Minutes](https://arxiv.org/abs/1709.05011), You et al. 2018
 * [Scaling Distributed Machine Learning with the Parameter Server](https://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf), Li et al. OSDI 2014
 * [Deep Gradient Compression](https://arxiv.org/abs/1712.01887), Lin et al. ICLR 2018
