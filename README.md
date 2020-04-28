@@ -6,7 +6,7 @@
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/intro)
 
-__Post Lecture Required Readings: (2)__
+__Post-Lecture Required Readings: (2)__
 
 * [The Compute Architecture of Intel Processor Graphics Gen9](https://software.intel.com/sites/default/files/managed/c5/9a/The-Compute-Architecture-of-Intel-Processor-Graphics-Gen9-v1d0.pdf). Intel Corporation
   * This is not an academic paper, but a whitepaper from Intel describing the architectural geometry of a recent GPU.  I'd like you to read the whitepaper, focusing on the description of the processor in Sections 5.3-5.5. Then, given your knowledge of the concepts discussed in lecture (such as superscalar execution, multi-core, multi-threading, etc.), I'd like you to describe the organization of the processor (using terms from the lecture, not Intel terms). For example, what is the basic processor building block? How many hardware threads does it support? What width of SIMD instructions are executed by those threads? Does it have superscalar execution capabilities? How many times is this block replicated for additional parallelism?
@@ -30,7 +30,7 @@ __Other Recommended Readings:__
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/camerabasics)
 
-__Post Lecture Required Readings:__
+__Post-Lecture Required Readings:__
 
 * [Burst Photography for High Dynamic Range and Low-light Imaging on Mobile Cameras](https://research.google/pubs/pub45586/). Hasinoff et al. SIGGRAPH Asia 2016
    * This is a *very technical* paper.  But don't worry, your job is not to understand all the technical details of the algorithms, it is to approach the paper with a systems mindset, and think about the end-to-end considerations that went into the particular choice of algorithms. In general, I want you to pay the most attention to Section 1, Section 4.0 (you can ignore the detailed subpixel alignment in 4.1), Section 5 (I will talk about why merging is done in the Fourier domain in class), and Section 6. Specifically, as you read this paper, I'd like you think about the following issues:
@@ -56,7 +56,7 @@ __Other Recommended Readings:__
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/camerapipeline2)
 
-__Post Lecture Required Readings:__
+__Post-Lecture Required Readings:__
 
 * [The Frankencamera: An Experimental Platform for Computational Photography](http://graphics.stanford.edu/papers/fcam/). A. Adams et al. SIGGRAPH 2010
    * Frankencamera was a paper written right about the time mobile phone cameras were becoming “acceptable” in quality, phones were beginning to contain a non-trivial amount of compute power, and computational photography papers we’re an increasingly hot topic in the SIGGRAPH community.  At this time many compelling image processing and editing techniques were being published, and many of them revolved around generating high quality photographs from a sequence of multiple shots or exposures.  However, current cameras at the time provided a very poor API to the camera hardware and its components.  In short, many of the pieces were there for a programmable camera platform to be built, but someone had to attempt to architect a coherent system to make them accessible.  Frankencamera was an attempt to do that: It involved two things:
@@ -83,7 +83,7 @@ __Other Recommended Readings:__
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/halide)
 
-__Post Lecture Required Readings: (2)__
+__Post-Lecture Required Readings: (2)__
 * [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
    * Note: Alternatively you may read the selected chapters in the Ragan-Kelley thesis linked below in recommended readings.  The thesis chapters involve a little more reading than the paper, but it is a more accessible explanation of the topic, so I recommend it for students.
    * In reading this paper, I want you to specifically focus on describing the philosophy of Halide.  Specifically, if we ignore the "autotuner" described in Section 5 of the paper, what is the role of the programmer, and what is the role of the Halide system/compiler?
@@ -114,7 +114,7 @@ __Other Recommended Readings:__
 
 * [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/dnneval)
 
-__Post Lecture Required Reading:__
+__Post-Lecture Required Reading:__
 
 * [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/abs/1704.04760). Jouppi et al. ISCA 2017
    * Like many computer architecture papers, the TPU paper includes a lot of *facts* about details of the system.  I encourage you to understand these details, but try to look past all the complexity and try and look for the main lessons learned.  (motivation, key constraints, key principles in the design). Here are the questions I'd like to see you address.
@@ -137,6 +137,48 @@ __Other Recommended Readings:__
 * [What is the State of Neural Network Pruning?](https://arxiv.org/abs/2003.03033) Blalock et al. MLSys 2020
     * This paper is a good read even if you are not interested in DNN pruning, because the paper addresses issues and common mistakes in how to compare performance-oriented academic work.
 * [Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559). Liu et al. ECCV 2018
+
+## Lecture 6: DNN Hardware Accelerators ##
+
+* [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/dnnhardware)
+
+__Post-Lecture Required Reading:__
+
+* There was no post-lecture required reading.  (We read the TPU paper the last time, so take a break!)
+
+__Other Recommended Readings:__
+
+* [SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks](https://arxiv.org/abs/1708.04485). Parashar et al. ISCA 2017
+* [EIE: Efficient Inference Engine on Compressed Deep Neural Network](https://arxiv.org/abs/1602.01528), Han et al. ISCA 2016
+* [vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design](https://arxiv.org/abs/1602.08124), Rhu et al. MICRO 2016
+* [Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Network](http://eyeriss.mit.edu/), Chen et al. ISCA 2016
+
+## Lecture 7: Parallel DNN Training ##
+
+* [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/dnntrain)
+
+__Post-Lecture Required Reading:__
+
+* Please see the readings for Lecture 8 (we are going to pre-read this week).
+
+__Other Recommended Readings:__
+* [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677). Goyal et al. 2017
+* [ImageNet Training in Minutes](https://arxiv.org/abs/1709.05011), You et al. 2018
+* [Scaling Distributed Machine Learning with the Parameter Server](https://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf), Li et al. OSDI 2014
+* [Deep Gradient Compression](https://arxiv.org/abs/1712.01887), Lin et al. ICLR 2018
+
+## Lecture 8: Raising the Level of Abstraction for Model Creation ##
+
+__Pre-Lecture Required Reading:__
+
+* [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
+* [Ludwig: a type-based declarative deep learning toolbox](https://arxiv.org/abs/1909.07930), Molino et al. 2019
+
+
+
+
+
+
 
 
 
