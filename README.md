@@ -159,7 +159,7 @@ __Other Recommended Readings:__
 
 __Post-Lecture Required Reading:__
 
-* Please see the readings for Lecture 8 (we are going to pre-read this week).
+* There are two required readings post Lecture 7, but they are *pre-reading* for Lecture 8, so please see the readings listed under Lecture 8.
 
 __Other Recommended Readings:__
 * [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677). Goyal et al. 2017
