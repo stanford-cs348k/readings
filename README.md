@@ -175,6 +175,23 @@ __Pre-Lecture Required Reading:__
 * [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
 * [Ludwig: a type-based declarative deep learning toolbox](https://arxiv.org/abs/1909.07930), Molino et al. 2019
 
+Often when you hear about machine learning abstractions, we think about ML frameworks like [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), or [MX.Net](https://mxnet.apache.org/).  Instead of having to write key model ML layers yourself (i.e., like I force you to do Assignment 2), these frameworks present the abstraction of a ML operator, and allow model creation by composing operators into DAGs.  However, the abstraction of designing models by wiring up data flow graphs of operators is still quite low.  One might characterize these abstractions as being targeted for an ML engineer---someone who has taken a lot of ML classes, and has experience implementing model architectures in TensorFlow, experience selecting the right model for the job, or with the know-how to adjust hyperparameters to make training successful.  
+
+The two papers for tomorrow’s discussion begin to raise the level of abstraction even higher.  These are systems that emerged out of two major companies (Overton out of Apple, and Ludwig out of Uber), and they share the underlying philosophy that some of the operational details of getting modern ML to work can be abstracted away from users that simply want to use technologies to quickly train, validate, and continue to maintain accurate models.  In short these two systems can be thought of as different takes on Karpathy’s software 2.0 argument, which you can read in this [Medium blog post]((https://medium.com/@karpathy/software-2-0-a64152b37c35)
+).   (I’m curious about your thoughts on this post as well!)
+
+When reading these papers, please consider the following:
+
+* A good system provides valuable services to the user.  So in these papers, who is the “user” (what is their goal, what is their skillset?) and what are the painful, hard, or tedious things that the systems are designed to do for the user?
+
+* Another way we can think about these papers is that they are taking a position that existing systems are helping users with the wrong problem?  What types of problems are these systems really trying to help with (hint: do you think they are more geared toward design of new architectures, or getting the right training data into the system?)
+
+* The following two (very similar) statements appear in the papers. What is the value of this separation? (what services does it enable?)
+   * Overton: “ Informally, the schema defines what the model computes but not how the model computes it.”
+   * Ludwig: “The higher level of abstraction provided by the type-based ECD architecture allows for a separation between what a model is expected to learn to do and how it actually does it.”
+
+* Let’s specifically constrast the abstractions of Ludwig with that of a lower-level ML system like TensorFlow.  TensorFlow/MX.Net/PyTorch largely abstract ML model definition as a DAG of N-Tensor operations.  How is Ludwig different?  What are the operators and what are the data-types exchanged by operators?  What is the value of having richer types than just forcing all input/output data to be an N-D tensor?
+
 
 
 
