@@ -192,8 +192,9 @@ When reading these papers, please consider the following:
 
 * Let’s specifically constrast the abstractions of Ludwig with that of a lower-level ML system like TensorFlow.  TensorFlow/MX.Net/PyTorch largely abstract ML model definition as a DAG of N-Tensor operations.  How is Ludwig different?  What are the operators and what are the data-types exchanged by operators?  What is the value of having richer types than just forcing all input/output data to be an N-D tensor?
 
-
-
+__Other Recommended Readings:__
+* [TensorFlow: A System for Large-Scale Machine Learning](https://www.usenix.org/system/files/conference/osdi16/osdi16-abadi.pdf). Abadi et al. OSDI 2016
+   * It is interesting to compare these design decisions against those in emerging systems like Overton and Ludwig.
 
 
 
