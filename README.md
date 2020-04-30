@@ -186,15 +186,17 @@ When reading these papers, please consider the following:
 
 * Another way we can think about these papers is that they are taking a position that existing systems are helping users with the wrong problem?  What types of problems are these systems really trying to help with (hint: do you think they are more geared toward design of new architectures, or getting the right training data into the system?)
 
-* The following two (very similar) statements appear in the papers. What is the value of this separation? (what services does it enable?)
-   * Overton: “ Informally, the schema defines what the model computes but not how the model computes it.”
-   * Ludwig: “The higher level of abstraction provided by the type-based ECD architecture allows for a separation between what a model is expected to learn to do and how it actually does it.”
+* The following two (very similar) statements appear in the papers. First, what is the value of this separation? (what system services does it enable? Or at least what is the *future promise* of this separation.)  
+   * Overton: "Informally, the schema defines what the model computes but not how the model computes it."
+   * Ludwig: "The higher level of abstraction provided by the type-based ECD architecture allows for a separation between what a model is expected to learn to do and how it actually does it."
+
+* Following up on the previous question. Do you buy the claim that Ludwig truly separates what a model is expected to learn and how it learns it?  It seems like the user specifies a good bit about the dataflow of the solution.  What are your thoughts?  (It seems like Overton's abstractions are a lot closer to really "zero code" model design.)
 
 * Let’s specifically constrast the abstractions of Ludwig with that of a lower-level ML system like TensorFlow.  TensorFlow/MX.Net/PyTorch largely abstract ML model definition as a DAG of N-Tensor operations.  How is Ludwig different?  What are the operators and what are the data-types exchanged by operators?  What is the value of having richer types than just forcing all input/output data to be an N-D tensor?
 
 __Other Recommended Readings:__
 * [TensorFlow: A System for Large-Scale Machine Learning](https://www.usenix.org/system/files/conference/osdi16/osdi16-abadi.pdf). Abadi et al. OSDI 2016
-   * It is interesting to compare these design decisions against those in emerging systems like Overton and Ludwig.
+   * It is interesting to compare these design decisions against those in emerging systems like Overton and Ludwig.  IF you havn't read the TensorFlow paper, I recommend giving it a skim.
 
 
 
