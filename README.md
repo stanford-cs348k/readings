@@ -225,9 +225,15 @@ __Other Recommended Readings:__
     * A similar idea here, but with different human-provided priors about how to turn existing knowledge in a model into additional supervision.
 * [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html), Guo et al 2020.
 
+# Lecture 10: Specialization for Efficienct Inference on Video Streams #
 
+__Pre-Lecture Required Reading:__
 
+* [Online Model Distillation for Efficient Video Inference](http://openaccess.thecvf.com/content_ICCV_2019/papers/Mullapudi_Online_Model_Distillation_for_Efficient_Video_Inference_ICCV_2019_paper.pdf), Mullapudi et al. ICCV 2019
 
+__Other Recommended Readings:__
+* [NoScope: Optimizing Neural Network Queries over Video at Scale](https://arxiv.org/abs/1703.02529). D. Kang et al. 2017
+* [Chameleon: Scalable Adaptation of Video Analytics](http://people.cs.uchicago.edu/~junchenj/docs/Chameleon_SIGCOMM_CameraReady.pdf). Jiang et al. SIGCOMM 2018
 
   
 
