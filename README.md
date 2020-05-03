@@ -203,6 +203,13 @@ __Other Recommended Readings:__
 
 __Pre-Lecture Required Reading:__
 * [Snorkel: Rapid Training Data Creation with Weak Supervision](http://www.vldb.org/pvldb/vol11/p269-ratner.pdf). Ratner et al. VLDB 2017.
+   * First let's get our terminology straight.  What is mean by "weak supervision", and how does it differ from the traditional supervised learning scenario where a training procedure is provided a training set consisting of a set of data and a corresponding set of ground truth labels?
+   * Like in all systems, I'd like everyone to pay particular attention to the design principles described in section 1.  Note that you also may wish to simultaneously read the [Snorkel DryBell](https://arxiv.org/abs/1812.00417) paper in the suggested readings below as it has an amended list of principles after deploying Snrokel at Google.  If you had to boil the entire philosophy of Snorkel down to once thing, what would you say it is... hint: look at principle 1 in the Snorkel paper. 
+   * The main *abstraction* in Snorkell is the labeling function.  Please describe what the output interface of a labeling function is. Then, and most importantly, __what is the value__ of this abstraction.  Hint: you probably want to refer to the key principle of Snorkel.
+   * What is the role of the final model training part of Snorkel? (training an off-the-shelf architecture on the supervisionn produced by Snorkel.)  Why not just use the probablistic labels as the model itself?
+   * One interesting aspect of Snorkel is the notion of learning from non-servable assets.  This is definitely not an issue that would be high on the list of academic concerns, but is quite important. (This is perhaps more clearly articulated in the Snorkel DryBell paper, so take a look there).
+   * In general, I'd like you to reflect on Snorkel and (if time) some of the recommended papers below. (see the Rekall blog post, or the Model assertions paper for different takes.) I'm curious about your comments. 
+   * From the ML perspective, the key technical insight of Snorkel (and of most follow on Snorkel papers, see [here](https://arxiv.org/abs/1810.02840), [here](https://www.cell.com/patterns/fulltext/S2666-3899(20)30019-2), and [here](https://arxiv.org/abs/1910.09505) for some examples) is the mathematical modeling of correlations between labeling functions in order to more accurately estimate probabilistic labels.  We will not talk in detail about these generative algorithms in class, but many of you will enjoy learning about them.  
 
 __Other Recommended Readings:__
 * [Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale](https://arxiv.org/abs/1812.00417). Bach et al. SIGMOD 2019
@@ -216,7 +223,7 @@ __Other Recommended Readings:__
     * This is one example from another line of work of using the knowledge captured by an existing model, and an unlimited stream of unlabeled data, to produce additional supervision for subsequent learning.
 * [Model Assertions for Monitoring and Improving ML Models](https://cs.stanford.edu/~matei/papers/2020/mlsys_model_assertions.pdf). Kang et al. MLSys 2020
     * A similar idea here, but with different human-provided priors about how to turn existing knowledge in a model into additional supervision.
-* [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html)
+* [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html), Guo et al 2020.
 
 
 
