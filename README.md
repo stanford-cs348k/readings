@@ -170,6 +170,8 @@ __Other Recommended Readings:__
 
 ## Lecture 8: Raising the Level of Abstraction for Model Creation ##
 
+* [Lecture slides](http://cs348k.stanford.edu/spring20/lecture/highlevelml)
+
 __Pre-Lecture Required Reading:__
 
 * [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
@@ -196,7 +198,24 @@ When reading these papers, please consider the following:
 __Other Recommended Readings:__
 * [TensorFlow: A System for Large-Scale Machine Learning](https://www.usenix.org/system/files/conference/osdi16/osdi16-abadi.pdf). Abadi et al. OSDI 2016
    * It is interesting to compare these design decisions against those in emerging systems like Overton and Ludwig.  IF you havn't read the TensorFlow paper, I recommend giving it a skim.
+   
+## Lecture 9: System Support for Curating Training Data ##
 
+__Pre-Lecture Required Reading:__
+* [Snorkel: Rapid Training Data Creation with Weak Supervision](http://www.vldb.org/pvldb/vol11/p269-ratner.pdf). Ratner et al. VLDB 2017.
+
+__Other Recommended Readings:__
+* [Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale](https://arxiv.org/abs/1812.00417). Bach et al. SIGMOD 2019
+   * This is a paper about the deployment of Snorkell at Google.  Pay particular attention to the enumeration of "core principles" in Section 1 and the final "Discussion" in section 7.  Skimming this paper in conjunction with the required reading is recommended.
+* [Accelerating Machine Learning with Training Data Management](https://ajratner.github.io/assets/papers/thesis.pdf). A. Ratner's Stanford Ph.D. Dissertation (2019)
+   * This is the thesis that covers Snorkel and related systems. As was the case when we studied Halide, it can often be helpful to read Ph.D. theses, since they are written up after the original publication on a topic, and often include more discussion of the bigger picture, and also the widsom of hindsight.  I highly recommend Alex's thesis.  
+* [Rekall: Specifying Video Events using Compositions of Spatiotemporal Labels](https://arxiv.org/abs/1910.02993), Fu et al. 2019
+    * In the context of Snorkel, Rekall could be viewed as a system for writing labeling functions for learning models for detecting events in video.  Alternatively, from a databbases perspective, Rekall can be viewed as a system for defining models by not learning anything at all -- and just having the query itself be the model.   
+    * Blog post: <https://dawn.cs.stanford.edu/2019/10/09/rekall/>, code: <https://github.com/scanner-research/rekall>
+* [Data Distillation: Towards Omni-Supervised Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Radosavovic_Data_Distillation_Towards_CVPR_2018_paper.pdf)
+    * This is one example from another line of work of using an existing model, and an unlimited stream of unlabeled data, to produce supervision for subsequent learning.
+* [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html)
+* [Model Assertions for Monitoring and Improving ML Models](https://cs.stanford.edu/~matei/papers/2020/mlsys_model_assertions.pdf). Kang et al. MLSys 2020
 
 
 
