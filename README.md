@@ -201,6 +201,8 @@ __Other Recommended Readings:__
    
 ## Lecture 9: System Support for Curating Training Data ##
 
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/supervision)
+
 __Pre-Lecture Required Reading:__
 * [Snorkel: Rapid Training Data Creation with Weak Supervision](http://www.vldb.org/pvldb/vol11/p269-ratner.pdf). Ratner et al. VLDB 2017.
    * First let's get our terminology straight.  What is mean by "weak supervision", and how does it differ from the traditional supervised learning scenario where a training procedure is provided a training set consisting of a set of data and a corresponding set of ground truth labels?
