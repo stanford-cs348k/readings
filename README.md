@@ -230,6 +230,10 @@ __Other Recommended Readings:__
 __Pre-Lecture Required Reading:__
 
 * [Online Model Distillation for Efficient Video Inference](http://openaccess.thecvf.com/content_ICCV_2019/papers/Mullapudi_Online_Model_Distillation_for_Efficient_Video_Inference_ICCV_2019_paper.pdf), Mullapudi et al. ICCV 2019
+   * Rather than think about this paper as a paper about DNN efficiency optimization, I'd like you to think about this paper in the context of the previous class: it's a paper about acquiring supervision.  There are two parts to this: what data (specifically, what video frames) is the right daya to train on, and how does the system obtain supervision for the those frames.  Let's break this into two parts:
+      * One way to curate a dataset for a specific video stream is to sample a large amount of data from the stream.  And I'm sure if you worked hard enough, you could curate a good dataset.  What are potential pitfalls with this approach?  What is the key idea that allows this paper get around these problems?
+      * One of the challenges of online model distillation is that the system much operate at time scales that prevent human labeling from being the source of supervision.  Using a more expensive (and more trustworthy) model is what was used here, but there was one more trick. (see the second paragraph of 3.2)  
+   * Most people read this paper and ask the same question about a potential failure mode.  What do you think that is?  Do you have a potential fix? (Hint: this would be a great class project and probably a computer vision conference paper.)
 
 __Other Recommended Readings:__
 * [NoScope: Optimizing Neural Network Queries over Video at Scale](https://arxiv.org/abs/1703.02529). D. Kang et al. 2017
