@@ -229,6 +229,8 @@ __Other Recommended Readings:__
 
 # Lecture 10: Specialization for Efficienct Inference on Video Streams #
 
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/videospecialization)
+
 __Pre-Lecture Required Reading:__
 
 * [Online Model Distillation for Efficient Video Inference](http://openaccess.thecvf.com/content_ICCV_2019/papers/Mullapudi_Online_Model_Distillation_for_Efficient_Video_Inference_ICCV_2019_paper.pdf), Mullapudi et al. ICCV 2019
