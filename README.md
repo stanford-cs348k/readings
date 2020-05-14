@@ -251,7 +251,13 @@ __Other Recommended Readings:__
 
 __Post-Lecture Required Reading:__
 * [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
-
+   * This paper was one of those papers that me go, "wow that's cool, its amazing someone hasn't thought about that before!"  Please consider the following in your reading response:
+   * This is mainly an algorithms paper, but it's set in the context of systems thinking about the possibilities of what can be done if an application can rent a large number of cores (almost) instanteously, and only use each those cores for a few seconds.  The benchmarks in Section 2 (see paragraph entitled "Cold and warm start") tease out what I mean by "almost instanteous".  It's not directly stated in the paper, but why do you think the authors observe system behavior where not all the cores they request are available immediately? 
+   * The paper gives a good review of the video encoding process that we discussed in class.  To review, which part of the process is the "slow part" that the author's aim to parallelize?  Why is it so expensive?
+   * One solution to use N workers is to just chop the video into N segments, and have each worker serially run a video compression algorithm on each chunk, then concatenate the resulting videos.  Why is this deemed insufficient by the authors? (hint compression ratio)
+   * The key aspect of the encoding algorithm is the `rebase` operation?  In short describe how rebase works?  Why is rebasing needed? And why is rebasing fast?  
+   * Do you think the same parallel computing infastructure used in this paper would be good for reducing the latency of DNN training? Why or why not? Name at least one application we've dscribed in this course that might be a good candidate for this platform.
+   
 __Other Recommended Readings:__
 * [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
 * [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
