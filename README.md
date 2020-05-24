@@ -245,7 +245,7 @@ __Other Recommended Readings:__
 * [NoScope: Optimizing Neural Network Queries over Video at Scale](https://arxiv.org/abs/1703.02529). D. Kang et al. 2017
 * [Chameleon: Scalable Adaptation of Video Analytics](http://people.cs.uchicago.edu/~junchenj/docs/Chameleon_SIGCOMM_CameraReady.pdf). Jiang et al. SIGCOMM 2018
 
-## Lecture 10: Video Compression ##
+## Lecture 11: Video Compression ##
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/videocompression)
 
@@ -266,43 +266,62 @@ __Other Recommended Readings:__
 * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
 * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
 
-# Lecture 11: The Real-Time Graphics Pipeline Workload #
+# Lecture 12: Additional Video Processing Topics #
+
+__No required readings for this lecture.__
+
+__Recommended Readings:__
+* [SVE: Distributed Video Processing at Facebook Scale](https://research.fb.com/wp-content/uploads/2017/10/sosp-226-cameraready.pdf). Huang et al. SOSP 2017
+* [Scanner: Efficient Video Analysis at Scale](http://graphics.stanford.edu/papers/scanner/). Poms et al. SIGGRAPH 2018
+
+# Lecture 13: The Real-Time Graphics Pipeline #
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/gfxpipeline)
 
 __No required readings for this lecture.__
 
-__Other Recommended Readings:__
+__Recommended Readings:__
 * [A Trip Down the LOL Graphics Pipeline](https://engineering.riotgames.com/news/trip-down-lol-graphics-pipeline). A nice introductory blog post for Riot Games that illustrates all the different rendering passes used to construct a League of Legends scene. Note how each of these passes draws geometry under different graphics pipeline state configurations.
 * [A Trip Down the Graphics Pipeline](A Trip Down the Graphics Pipeline). A much more detailed blog post by Fabian Giesen describing the Direct3D 10-class pipeline
 * [The Design of the OpenGL Graphics Interface](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/design_opengl.pdf). M. Segal and K. Akeley. [unpublished 1994]
 * [The Direct3D 10 System](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/blythe06_d3d10.pdf). D. Blythe. SIGGRAPH 2006
 
-
-# Lecture 12: Scheduling The Graphics Pipeline onto GPU Hardware #
+# Lecture 14: Scheduling The Graphics Pipeline onto GPU Hardware #
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/gfxscheduling)
 
 __No required readings for this lecture.__
 
-__Other Recommended Readings:__
+__Recommended Readings:__
 * [Pomegranate: A Fully Scalable Graphics Architecture](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/eldridge00_pomegranate.pdf). M. Eldridge et al. SIGGRAPH 2000
 * [Life of a Triangle - NVIDIA's Logical Pipeline](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline). C. Kubisch (NVIDIA GameWorks Blog, 2015)
 * [Fast Tessellated Rendering on Fermi GF100](http://attila.ac.upc.edu/wiki/images/d/db/HPG10_Hot3D_Fermi.pdf). T. Purcell (High Performance Graphics Hot3D talk)
 * [A Sorting Classification of Parallel Rendering](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/molnar94_sorting.pdf). S. Molnar et al. IEEE Computer Graphics and Applications, 1994.
 
-# Lecture 13: Domain-Specific Languages for Shading #
+# Lecture 15: Domain-Specific Languages for Shading #
 
 __Pre-Lecture Required Reading:__
 
-* [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990  
+* [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990 
+   * This paper is a domain specific language for describing shading calculations.  For those that are not familiar with basic rendering algorithms from a class like CS248, before reading this paper, you’ll likely need to read through [these notes]() that explain the role of shading and lighting computations in computer graphics.  In particular, make sure you understand the *rendering equation* which is a fundamental equation for computing how much light bounces off a surface.  A shader is a program that computes this value.
+   * A big part of a domain-specific language is that it constrains programs to have a certain structure.  I’d like you to describe the *structure* enforced by RSL domain-specific language.
+     * What are surface shaders and what do they compute?
+     * What are light shaders and what do they compute?
+     * How do surface and light shaders interact through illuminance loops?
+     * What is the correspondence between this structure and the rendering equation that is being simulated by the program?
+   * Section 3.2 describes the concept of uniform and varying variables.  How do these two types of variables differ?  And what is the motivation for differentiating between uniform and varying?
+   * Sections 4 and 5 are worth reading for those interested (they focus on state management), but we’ll focus the discussion on Sections 1-3.
 * [Cg: A System for Programming Graphics Hardware in a C-like Language](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/mark03_cg.pdf). W. R. Mark et al. SIGGRAPH 2003
+   * This paper is about the first programming language for GPUs (this was pre-CUDA). However it came much later than the Renderman Shading language from the first paper.  
+   * I’d claim that Renderman Shading Language is indeed a domain-specific language for shading computations.  But would you say the same about Cg?
+   * The paper described the thinking behind a number of big decisions made in the design of Cg. I’d like your opinion on what you think is the most interesting design decision the authors' made.
+   * In your reading, pay close attention to __design goals__ and __design constraints__.  We’ll talk about the implications of these goals and constraints in class.  In your writeup, please comment on what you think is the most interesting constraint.
 
 __Other Recommended Readings:__
 
 * [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He, K. Fatahalian, T. Foley. SIGGRAPH 2018
 * [Shader Components: Modular and High Performance Shader Development](http://graphics.cs.cmu.edu/projects/shadercomp/). Y. He et al. SIGGRAPH 2017
-* [A Real-Time Procedural Shading System for Programmable Graphics Hardware](A Real-Time Procedural Shading System for Programmable Graphics Hardware). K. Proudfoot et al. SIGGRAPH 2001
+* [A Real-Time Procedural Shading System for Programmable Graphics Hardware](http://graphics.stanford.edu/projects/shading/pubs/sig2001/). K. Proudfoot et al. SIGGRAPH 2001
 * [Shade Trees](http://graphics.pixar.com/library/ShadeTrees/paper.pdf). R. Cook. SIGGRAPH 1984
 * [An Image Synthesizer](http://dl.acm.org/citation.cfm?id=325247). K. Perlin. SIGGRAPH 1985
 
