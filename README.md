@@ -266,5 +266,48 @@ __Other Recommended Readings:__
 * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
 * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
 
+# Lecture 11: The Real-Time Graphics Pipeline Workload #
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/gfxpipeline)
+
+__No required readings for this lecture.__
+
+__Other Recommended Readings:__
+* [A Trip Down the LOL Graphics Pipeline](https://engineering.riotgames.com/news/trip-down-lol-graphics-pipeline). A nice introductory blog post for Riot Games that illustrates all the different rendering passes used to construct a League of Legends scene. Note how each of these passes draws geometry under different graphics pipeline state configurations.
+* [A Trip Down the Graphics Pipeline](A Trip Down the Graphics Pipeline). A much more detailed blog post by Fabian Giesen describing the Direct3D 10-class pipeline
+* [The Design of the OpenGL Graphics Interface](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/design_opengl.pdf). M. Segal and K. Akeley. [unpublished 1994]
+* [The Direct3D 10 System](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/blythe06_d3d10.pdf). D. Blythe. SIGGRAPH 2006
+
+
+# Lecture 12: Scheduling The Graphics Pipeline onto GPU Hardware #
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/gfxscheduling)
+
+__No required readings for this lecture.__
+
+__Other Recommended Readings:__
+* [Pomegranate: A Fully Scalable Graphics Architecture](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/eldridge00_pomegranate.pdf). M. Eldridge et al. SIGGRAPH 2000
+* [Life of a Triangle - NVIDIA's Logical Pipeline](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline). C. Kubisch (NVIDIA GameWorks Blog, 2015)
+* [Fast Tessellated Rendering on Fermi GF100](http://attila.ac.upc.edu/wiki/images/d/db/HPG10_Hot3D_Fermi.pdf). T. Purcell (High Performance Graphics Hot3D talk)
+* [A Sorting Classification of Parallel Rendering](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/molnar94_sorting.pdf). S. Molnar et al. IEEE Computer Graphics and Applications, 1994.
+
+# Lecture 13: Domain-Specific Languages for Shading #
+
+__Pre-Lecture Required Reading:__
+
+* [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990  
+* [Cg: A System for Programming Graphics Hardware in a C-like Language](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/mark03_cg.pdf). W. R. Mark et al. SIGGRAPH 2003
+
+__Other Recommended Readings:__
+
+* [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He, K. Fatahalian, T. Foley. SIGGRAPH 2018
+* [Shader Components: Modular and High Performance Shader Development](http://graphics.cs.cmu.edu/projects/shadercomp/). Y. He et al. SIGGRAPH 2017
+* [A Real-Time Procedural Shading System for Programmable Graphics Hardware](A Real-Time Procedural Shading System for Programmable Graphics Hardware). K. Proudfoot et al. SIGGRAPH 2001
+* [Shade Trees](http://graphics.pixar.com/library/ShadeTrees/paper.pdf). R. Cook. SIGGRAPH 1984
+* [An Image Synthesizer](http://dl.acm.org/citation.cfm?id=325247). K. Perlin. SIGGRAPH 1985
+
+
+
+
   
 
