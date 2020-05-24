@@ -303,7 +303,7 @@ __Recommended Readings:__
 __Pre-Lecture Required Reading:__
 
 * [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990 
-   * This paper is a domain specific language for describing shading calculations.  For those that are not familiar with basic rendering algorithms from a class like CS248, before reading this paper, you’ll likely need to read through [these notes]() that explain the role of shading and lighting computations in computer graphics.  In particular, make sure you understand the *rendering equation* which is a fundamental equation for computing how much light bounces off a surface.  A shader is a program that computes this value.
+   * This paper is a domain specific language for describing shading calculations.  For those that are not familiar with basic rendering algorithms from a class like CS248, before reading this paper, you’ll likely need to read through [these notes](http://cs348k.stanford.edu/spring20/lecture/shadinglangbackground) that explain the role of shading and lighting computations in computer graphics.  In particular, make sure you understand the *rendering equation* which is a fundamental equation for computing how much light bounces off a surface.  A shader is a program that computes this value.
    * A big part of a domain-specific language is that it constrains programs to have a certain structure.  I’d like you to describe the *structure* enforced by RSL domain-specific language.
      * What are surface shaders and what do they compute?
      * What are light shaders and what do they compute?
