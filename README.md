@@ -300,6 +300,8 @@ __Recommended Readings:__
 
 # Lecture 15: Domain-Specific Languages for Shading #
 
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/shadinglang)
+
 __Pre-Lecture Required Reading:__
 
 * [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990 
