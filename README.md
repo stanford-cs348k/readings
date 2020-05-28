@@ -327,7 +327,7 @@ __Other Recommended Readings:__
 * [Shade Trees](http://graphics.pixar.com/library/ShadeTrees/paper.pdf). R. Cook. SIGGRAPH 1984
 * [An Image Synthesizer](http://dl.acm.org/citation.cfm?id=325247). K. Perlin. SIGGRAPH 1985
 
-# Lecture 16: Archicture Support for Ray Tracing #
+# Lecture 16: Architecture Support for Ray Tracing #
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/rtrt)
 
