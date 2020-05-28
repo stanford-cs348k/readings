@@ -327,6 +327,16 @@ __Other Recommended Readings:__
 * [Shade Trees](http://graphics.pixar.com/library/ShadeTrees/paper.pdf). R. Cook. SIGGRAPH 1984
 * [An Image Synthesizer](http://dl.acm.org/citation.cfm?id=325247). K. Perlin. SIGGRAPH 1985
 
+# Lecture 16: Archicture Support for Ray Tracing #
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring20/lecture/rtrt)
+
+__Other Recommended Readings:__
+ * [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
+ * [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
+ * [An energy and bandwidth efficient ray tracing architecture](https://dl.acm.org/doi/10.1145/2492045.2492058). Kopta et al. HPG 2013 
+ * [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
+ * [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
 
 
 
