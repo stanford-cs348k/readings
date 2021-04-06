@@ -38,7 +38,7 @@ __Post-Lecture Required Readings:__
      * <https://www.photoup.net/best-practices-for-shooting-bracketed-images-for-hdr/>
      * <https://www.youtube.com/watch?v=54JXUJhvFSs>
    * Designing a good system is about meeting design goals, subject to certain constraints. (If there were no constraints, it would be easy to use unlimited resources to meet the goals.) What are the major constraints of the system? For example are there performance constraints? Usability constraints? Etc.
-   * Why is the motivation for the weighted merging process described in Section 5?  Why did the authors no use the far simpler approach of just adding up all the aligned images? (Again, can you appeal to the stated design principles?)
+   * Why is the motivation for the weighted merging process described in Section 5?  Why did the authors not use the far simpler approach of just adding up all the aligned images? (Again, can you appeal to the stated design principles?)
    * Finally, take a look at the “finishing” steps in Section 6.  Many of those steps should sound familiar to you after today’s lecture.
 
 __Other Recommended Readings:__
