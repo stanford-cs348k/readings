@@ -80,7 +80,7 @@ __Other Recommended Readings:__
 
 ## Lecture 4: Digital Camera Processing Pipeline (Part III) ####
 
-In this class we finished up the slides from last time, so there are not additional links.  Please 
+In this class we finished up the slides from last time, so there are not additional links.  Please see readings from above.
 
 ## Lecture 5: Efficiently Scheduling Image Processing Algorithms ##
 
