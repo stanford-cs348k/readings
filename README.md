@@ -115,7 +115,7 @@ __Other Recommended Readings:__
 
 ## Lecture 6: Efficient DNN Inference (Software Techniques) ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnneval)
+* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnninference)
 
 __Post-Lecture Required Reading:__
 
