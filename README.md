@@ -188,4 +188,55 @@ __Other Recommended Readings:__
     * [EIE: Efficient Inference Engine on Compressed Deep Neural Network](https://arxiv.org/abs/1602.01528), Han et al. ISCA 2016
     * [vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design](https://arxiv.org/abs/1602.08124), Rhu et al. MICRO 2016
     * [Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Network](http://eyeriss.mit.edu/), Chen et al. ISCA 2016
+* An excellent survey organizing different types of designs:
+    * [Efficient Processing of Deep Neural Networks: A Tutorial and Survey](https://www.rle.mit.edu/eems/wp-content/uploads/2017/11/2017_pieee_dnn.pdf), Zhe et al. IEEE 2017
 
+## Lecture 8: Parallel DNN Training ##
+
+* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnntrain)
+
+__Post-Lecture Required Reading:__
+
+* There are two required readings post Lecture 8, but they are *pre-reading* for Lecture 9, so please see the readings listed under Lecture 9.
+
+__Other Recommended Readings:__
+* [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677). Goyal et al. 2017
+   * A nice description of why learning rate should scale with mini-batch size, and empirical studies of how to implement this intuition effectively.
+* [PipeDream: Generalized Pipeline Parallelism for DNN Training](https://cs.stanford.edu/~deepakn/assets/papers/pipedream-sosp19.pdf), Narayanan et al. SOSP 2019 
+* [ImageNet Training in Minutes](https://arxiv.org/abs/1709.05011), You et al. 2018
+* [Scaling Distributed Machine Learning with the Parameter Server](https://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf), Li et al. OSDI 2014
+* [Deep Gradient Compression](https://arxiv.org/abs/1712.01887), Lin et al. ICLR 2018
+
+## Lecture 9: System Support for Curating Training Data ##
+
+__Pre-Lecture Required Reading:__
+
+There are two required readings for this lecture. Use the second reading to supplement the first. The prompt questions are shared across the readings.
+* [Snorkel: Rapid Training Data Creation with Weak Supervision](http://www.vldb.org/pvldb/vol11/p269-ratner.pdf). Ratner et al. VLDB 2017.  
+* [Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale](https://arxiv.org/abs/1812.00417). Bach et al. SIGMOD 2019
+   * This is a paper about the deployment of Snorkel at Google.  Pay particular attention to the enumeration of "core principles" in Section 1 and the final "Discussion" in section 7.  *Skimming this paper in conjunction with the first required reading is recommended*.
+* __Prompt questions:__
+   * First let's get our terminology straight.  What is mean by "weak supervision", and how does it differ from the traditional supervised learning scenario where a training procedure is provided a training set consisting of a set of data and a corresponding set of ground truth labels?
+   * Like in all systems, I'd like everyone to pay particular attention to the design principles described in section 1 of the Ratner paper, as well as the principles defined in the Drybell paper. If you had to boil the entire philosophy of Snorkel down to once thing, what would you say it is... hint: look at principle 1 in the Ratner paper. 
+   * The main *abstraction* in Snorkel is the labeling function.  Please describe what the output interface of a labeling function is. Then, and most importantly, __what is the value__ of this abstraction.  Hint: you probably want to refer to the key principle of Snorkel.
+   * What is the role of the final model training part of Snorkel? (training an off-the-shelf DNN architecture on the probabalistic labels produced by Snorkel.)  Why not just use the probablistic labels as the model itself?
+   * One interesting aspect of Snorkel is the notion of learning from "non-servable assets".  This is definitely not an issue that would be high on the list of academic concerns, but it is quite important. (This is perhaps more clearly articulated in the Snorkel DryBell paper, so take a look there).
+   * From the ML perspective, the key technical insight of Snorkel (and of most follow on Snorkel papers, see [here](https://arxiv.org/abs/1810.02840), [here](https://www.cell.com/patterns/fulltext/S2666-3899(20)30019-2), and [here](https://arxiv.org/abs/1910.09505) for some examples) is the mathematical modeling of correlations between labeling functions in order to more accurately estimate probabilistic labels.  We will not talk in detail about these generative algorithms in class, but many of you will enjoy learning about them.  
+   * In general, I'd like you to reflect on Snorkel and (if time) some of the recommended papers below. (see the Rekal blog post, or the Model assertions paper for different takes.) I'm curious about your comments. 
+
+__Other Recommended Readings:__
+
+* [Accelerating Machine Learning with Training Data Management](https://ajratner.github.io/assets/papers/thesis.pdf). Alex Ratner's Stanford Ph.D. Dissertation (2019)
+   * This is the thesis that covers Snorkel and related systems. As was the case when we studied Halide, it can often be helpful to read Ph.D. theses, since they are written up after the original publication on a topic, and often include more discussion of the bigger picture, and also the widsom of hindsight.  I highly recommend Alex's thesis.  
+* [Model Assertions for Monitoring and Improving ML Models](https://cs.stanford.edu/~matei/papers/2020/mlsys_model_assertions.pdf). Kang et al. MLSys 2020
+    * A similar idea here, but with different human-provided priors about how to turn existing knowledge in a model into additional supervision.
+* [Rekall: Specifying Video Events using Compositions of Spatiotemporal Labels](https://arxiv.org/abs/1910.02993), Fu et al. 2019
+    * In the context of Snorkel, Rekall could be viewed as a system for writing labeling functions for learning models for detecting events in video.  Alternatively, from a databases perspective, Rekall can be viewed as a system for defining models by not learning anything at all -- and just having the query itself be the model.   
+    * Blog post: <https://dawn.cs.stanford.edu/2019/10/09/rekall/>, code: <https://github.com/scanner-research/rekall>
+* [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html), Guo et al 2020.
+* __The unsupervised or semi-supervised learning angle.__  We'd be remiss in the 2021 version of this class not to talk about the huge body of work that attempts to reduce the amount of labeled training data required using unsupervised learning techniques.
+    * [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165). Brown et al. NeurIPS 2020. (The GPT-3 paper)
+    * [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709). Chen et al. ICLM 2020 (The SimCLR paper)
+    * [Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/abs/2006.09882). Caron et al. NeurIPS 2020. (The SwAV paper)
+    * [Data Distillation: Towards Omni-Supervised Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Radosavovic_Data_Distillation_Towards_CVPR_2018_paper.pdf), Radosavovic et al. CVPR 2018
+    
