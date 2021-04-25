@@ -141,3 +141,49 @@ __Other Recommended Readings:__
     * This paper is a good read even if you are not interested in DNN pruning, because the paper addresses issues and common mistakes in how to compare performance-oriented academic work.
 * [Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559). Liu et al. ECCV 2018
 
+## Lecture 7: DNN Hardware Accelerators ##
+
+* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnnhardware)
+
+__Post-Lecture Required Reading:__
+
+* Following our discussion today.  Your reading exercise is to learn about and write up a summary of at least one major modern AI chip.  Information is hard to come by as some of these architectures are tightly guarded secrets, but try to comb whitepapers, blogs, hacker sites, etc. This is an open-ended writeup, but you might start with a summary on facts like:
+    * Enumerating basic statistics: number of processing units, amount of on chip memory, amount of off-chip mem bandwdith.
+    * How programmable are the cores?
+    * How does DNN algorithms map to these resources?
+    * Then I'd like to see you reflect on what is interesting to you about the architecture?
+        * What concerns to you have?
+        * Do you like the design?
+  
+ See the suggested readings below for a list of possible starting points.
+
+__Other Recommended Readings:__
+
+* NVIDIA Tensor Core
+    * <https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf>
+    * <https://www.anandtech.com/show/12673/titan-v-deep-learning-deep-dive/3>
+    * <https://developer.nvidia.com/blog/optimizing-gpu-performance-tensor-cores/>
+    * <https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9926-tensor-core-performance-the-ultimate-guide.pdf>
+* Google TPU v3
+    * HotChips: <https://hotchips.org/assets/program/conference/day2/HotChips2020_ML_Training_Google_Norrie_Patil.v01.pdf>
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
+    * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
+    * <https://cloud.google.com/tpu/docs/system-architecture>
+* Cerebras WSE
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Cerebras.NataliaVassilieva.v02.pdf>
+    * Corporate Whitepaper... <https://cerebras.net/resources/achieving-industry-best-ai-performance-through-a-systems-approach/>
+* NVIDIA DLA (open source)
+    * <http://nvdla.org>
+* GraphCore IPU
+    * <https://www.graphcore.ai/products/ipu>
+* Microsoft Brainwave
+    * <https://www.microsoft.com/en-us/research/uploads/prod/2018/03/mi0218_Chung-2018Mar25.pdf>
+* SambaNova's Cardinal (very little public documentation)
+    * <https://sambanova.ai/>
+* Apple's ML accelerator in their M12 chip
+* Anything from companies on this list ;-)
+    * <https://www.crn.com/slide-shows/components-peripherals/the-10-coolest-ai-chip-startups-of-2020>>
+* [SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks](https://arxiv.org/abs/1708.04485). Parashar et al. ISCA 2017
+* [EIE: Efficient Inference Engine on Compressed Deep Neural Network](https://arxiv.org/abs/1602.01528), Han et al. ISCA 2016
+* [vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design](https://arxiv.org/abs/1602.08124), Rhu et al. MICRO 2016
+* [Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Network](http://eyeriss.mit.edu/), Chen et al. ISCA 2016
