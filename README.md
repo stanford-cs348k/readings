@@ -134,12 +134,12 @@ __Strongly, Strongly Recommended Readings (Follow on from the lecture about infe
 __Other Recommended Readings:__
 * [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
     * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
-* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d). by Paul-Louis Pröve (a nice little tutorial)
+* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d), by Paul-Louis Pröve (a nice little tutorial)
 * [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
-    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730). Vasilache et al. 2018.
-* [What is the State of Neural Network Pruning?](https://arxiv.org/abs/2003.03033) Blalock et al. MLSys 2020
+    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
+* [What is the State of Neural Network Pruning?](https://arxiv.org/abs/2003.03033), Blalock et al. MLSys 2020
     * This paper is a good read even if you are not interested in DNN pruning, because the paper addresses issues and common mistakes in how to compare performance-oriented academic work.
-* [Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559). Liu et al. ECCV 2018
+* [Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559), Liu et al. ECCV 2018
 
 ## Lecture 7: DNN Hardware Accelerators ##
 
@@ -184,7 +184,7 @@ __Other Recommended Readings:__
 * Anything from companies on this list ;-)
     * <https://www.crn.com/slide-shows/components-peripherals/the-10-coolest-ai-chip-startups-of-2020>>
 * Academic efforts, like:
-    * [SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks](https://arxiv.org/abs/1708.04485). Parashar et al. ISCA 2017
+    * [SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks](https://arxiv.org/abs/1708.04485), Parashar et al. ISCA 2017
     * [EIE: Efficient Inference Engine on Compressed Deep Neural Network](https://arxiv.org/abs/1602.01528), Han et al. ISCA 2016
     * [vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design](https://arxiv.org/abs/1602.08124), Rhu et al. MICRO 2016
     * [Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Network](http://eyeriss.mit.edu/), Chen et al. ISCA 2016
@@ -200,7 +200,7 @@ __Post-Lecture Required Reading:__
 * There are two required readings post Lecture 8, but they are *pre-reading* for Lecture 9, so please see the readings listed under Lecture 9.
 
 __Other Recommended Readings:__
-* [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677). Goyal et al. 2017
+* [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677), Goyal et al. 2017
    * A nice description of why learning rate should scale with mini-batch size, and empirical studies of how to implement this intuition effectively.
 * [PipeDream: Generalized Pipeline Parallelism for DNN Training](https://cs.stanford.edu/~deepakn/assets/papers/pipedream-sosp19.pdf), Narayanan et al. SOSP 2019 
 * [ImageNet Training in Minutes](https://arxiv.org/abs/1709.05011), You et al. 2018
@@ -235,7 +235,7 @@ __Other Recommended Readings:__
     * In the context of Snorkel, Rekall could be viewed as a system for writing labeling functions for learning models for detecting events in video.  Alternatively, from a databases perspective, Rekall can be viewed as a system for defining models by not learning anything at all -- and just having the query itself be the model.   
     * Blog post: <https://dawn.cs.stanford.edu/2019/10/09/rekall/>, code: <https://github.com/scanner-research/rekall>
 * [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html), Guo et al 2020.
-* [Selection via Proxy: Efficient Data Selection for Deep Learning](https://cs.stanford.edu/people/matei/papers/2020/iclr_svp.pdf) Coleman et al. ICLR 2020.
+* [Selection via Proxy: Efficient Data Selection for Deep Learning](https://cs.stanford.edu/people/matei/papers/2020/iclr_svp.pdf), Coleman et al. ICLR 2020.
 * __The unsupervised or semi-supervised learning angle.__  We'd be remiss in the 2021 version of this class not to talk about the huge body of work that attempts to reduce the amount of labeled training data required using unsupervised learning techniques.
     * [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165). Brown et al. NeurIPS 2020. (The GPT-3 paper)
     * [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709). Chen et al. ICLM 2020 (The SimCLR paper)
