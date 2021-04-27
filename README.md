@@ -209,6 +209,8 @@ __Other Recommended Readings:__
 
 ## Lecture 9: System Support for Curating Training Data ##
 
+* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/trainingdata)
+
 __Pre-Lecture Required Reading:__
 
 There are two required readings for this lecture. Use the second reading to supplement the first. The prompt questions are shared across the readings.
@@ -241,4 +243,32 @@ __Other Recommended Readings:__
     * [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709). Chen et al. ICLM 2020 (The SimCLR paper)
     * [Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/abs/2006.09882). Caron et al. NeurIPS 2020. (The SwAV paper)
     * [Data Distillation: Towards Omni-Supervised Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Radosavovic_Data_Distillation_Towards_CVPR_2018_paper.pdf), Radosavovic et al. CVPR 2018
+
+## Lecture 10: Raising the Level of Abstraction for Model Creation ##
+
+__Pre-Lecture Required Reading:__
+
+* [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
+* [Ludwig: a type-based declarative deep learning toolbox](https://arxiv.org/abs/1909.07930), Molino et al. 2019
+
+Often when you hear about machine learning abstractions, we think about ML frameworks like [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), or [MX.Net](https://mxnet.apache.org/).  Instead of having to write key model ML layers yourself, these frameworks present the abstraction of a ML graph "operator", and allow model creation by composing operators into DAGs.  However, the abstraction of designing models by wiring up data flow graphs of operators is still quite low.  One might characterize these abstractions as being targeted for an ML engineer---someone who has taken a lot of ML classes, and has experience implementing model architectures in TensorFlow, experience selecting the right model for the job, or with the know-how to adjust hyperparameters to make training successful.  
+
+The two papers for our discussion are efforts to begin to raise the level of abstraction even higher.  These are systems that emerged out of two major companies (Overton out of Apple, and Ludwig out of Uber), and they share the underlying philosophy that some of the operational details of getting modern ML to work can be abstracted away from users that simply want to use technologies to quickly train, validate, and continue to maintain accurate models.  In short these two systems can be thought of as different takes on Karpathy’s software 2.0 argument, which you can read in this [Medium blog post](https://medium.com/@karpathy/software-2-0-a64152b37c35).  I’m curious about your thoughts on this post as well!
+
+When reading these papers, please consider the following:
+
+* A good system provides valuable services to the user.  So in these papers, who is the "user"? (what is their goal, what is their skillset?) What are the painful, hard, or tedious things that the systems are designed to do for the user?
+
+* Another way we can think about these papers is that they are taking a position that existing systems are helping users with the wrong problem.  What types of problems are these systems really trying to help with (Hint: do you think they are more geared toward design of new ML model architectures, or getting the right training data into the system?)
+
+* The following two (very similar) statements appear in the papers. First, what is the value of this separation?  Or at least what is the *future promise* of this separation?   (what system services does it enable?)
+   * Overton: "Informally, the schema defines what the model computes but not how the model computes it."
+   * Ludwig: "The higher level of abstraction provided by the type-based ECD architecture allows for a separation between what a model is expected to learn to do and how it actually does it."
+
+* Following up on the previous question: Do you buy the claim that Ludwig truly separates what a model is expected to learn and how it learns it?  It seems like the user specifies a good bit about the dataflow of the solution.  What are your thoughts?  (It seems like Overton's abstractions are a lot closer to really "zero code" model design.)
+
+* Let's specifically contrast the abstractions of Ludwig with that of a lower-level ML system like TensorFlow.  TensorFlow/MX.Net/PyTorch largely abstract ML model definition as a DAG of N-Tensor operations.  How is Ludwig different?  What are the operators and what are the data-types exchanged by operators?  What is the value of having richer types than just forcing all input/output data to be an N-D tensor?
+
+__Other Recommended Readings:__
+* Following this lecture, it would be good to take a look at a number of commercial offerings of model creating services. Examples include [Amazon Sagemaker](https://aws.amazon.com/sagemaker/), [Google AutoML](https://cloud.google.com/automl), and [Weights and Biases](https://wandb.ai/).  Or data labeling services like [Scale](https://scale.com/), [Hive Data](https://thehive.ai/hive-data), [Clarifai](https://www.clarifai.com/), etc.
     
