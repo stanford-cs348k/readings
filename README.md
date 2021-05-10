@@ -272,7 +272,7 @@ When reading these papers, please consider the following:
 __Other Recommended Readings:__
 * Following this lecture, it would be good to take a look at a number of commercial offerings of model creating services. Examples include [Amazon Sagemaker](https://aws.amazon.com/sagemaker/), [Google AutoML](https://cloud.google.com/automl), and [Weights and Biases](https://wandb.ai/).  Or data labeling services like [Scale](https://scale.com/), [Hive Data](https://thehive.ai/hive-data), [Clarifai](https://www.clarifai.com/), etc.
 
-# Lecture 11: Specialization for Efficient Inference on Video Streams #
+## Lecture 11: Specialization for Efficient Inference on Video Streams ##
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/modelspecialization)
 
