@@ -282,7 +282,7 @@ __Recommended Readings:__
 * [NoScope: Optimizing Neural Network Queries over Video at Scale](https://arxiv.org/abs/1703.02529). D. Kang et al. 2017
 * [Chameleon: Scalable Adaptation of Video Analytics](http://people.cs.uchicago.edu/~junchenj/docs/Chameleon_SIGCOMM_CameraReady.pdf). Jiang et al. SIGCOMM 2018
 
-## Lecture 12: Video Compression ##
+## Lecture 12: Video Compression (Traditional and Learned) ##
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videocompression)
 
