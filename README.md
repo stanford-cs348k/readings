@@ -298,7 +298,6 @@ This is a very recent paper about the deployment of fixed-function hardware for 
 * We all have laptops and mobile devices with hardware accelerators for video encoding, but the requirements for accelerator hardware in a datacenter are quite different.  What were some of the most interesting differences to you?  What are opportunities that the datacenter case affords that might not be there in the case of hardware for consumer devices?
 * In Section 3.3 there is an interesting analysis of how much bandwidth is needed for the VCU hardware to avoid being BW-bound. Was is the role of custom data compression hardware on the VCU?
 * There are key sections talking about the stateless design of the encoder. (End of 3.2). Give some reasons why, in a datacenter environment, the stateless approach is beneficial.  
-
 __Other Recommended Readings:__
 * [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
 * [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
@@ -308,4 +307,16 @@ __Other Recommended Readings:__
 * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
 * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
 
-    
+## Lecture 13: Video Conferencing Systems ##
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videoconferencing)
+
+__Post-Lecture Required Reading:__
+
+* [Salsify: Low-Latency Network Video Through Tighter Integration between a Video Codec and a Transport Protocol](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-fouladi.pdf). Fouladi et al. 2018
+
+__Other Recommended Readings:__
+
+* [Overview of the Scalable Video Coding Extension of the H.264/AVC Standard](http://ip.hhi.de/imagecom_G1/assets/pdfs/Overview_SVC_IEEE07.pdf). Schwarz et al. 2007
+* [On the Design of Display Processors](https://www2.cs.arizona.edu/~cscheid/reading/myer-sutherland-design-of-display-processors.pdf). Myer and Sutherland CACM 1968. (Included this because video conferencing systems shifting from server-oriented processing to client processing and back reminded me of Sutherland's "Wheel of Reincarnation".)
+* [A Short on How Zoom Works](http://highscalability.com/blog/2020/5/14/a-short-on-how-zoom-works.html). Todd Hodd. (from HighScalability.com)
