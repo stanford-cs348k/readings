@@ -315,6 +315,8 @@ __Post-Lecture Required Reading:__
 
 * [Salsify: Low-Latency Network Video Through Tighter Integration between a Video Codec and a Transport Protocol](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-fouladi.pdf). Fouladi et al. 2018
 
+I really liked this paper because of how it obtained good results by breaking down the abstractions that typically seperate two systems, the video codec, and the network transport protocol.  We aren't a networking class, so parts of this paper may assume background we don't have as a class, but we can get stil get through the main points. (note: I recommend you also check out the easily digestible video and talk slides on the [main Salsify project page](https://snr.stanford.edu/salsify/).
+
 __Other Recommended Readings:__
 
 * [Overview of the Scalable Video Coding Extension of the H.264/AVC Standard](http://ip.hhi.de/imagecom_G1/assets/pdfs/Overview_SVC_IEEE07.pdf). Schwarz et al. 2007
