@@ -315,7 +315,12 @@ __Post-Lecture Required Reading:__
 
 * [Salsify: Low-Latency Network Video Through Tighter Integration between a Video Codec and a Transport Protocol](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-fouladi.pdf). Fouladi et al. 2018
 
-I really liked this paper because of how it obtained good results by breaking down the abstractions that typically seperate two systems, the video codec, and the network transport protocol.  We aren't a networking class, so parts of this paper may assume background we don't have as a class, but we can get stil get through the main points. (note: I recommend you also check out the easily digestible video and talk slides on the [main Salsify project page](https://snr.stanford.edu/salsify/).
+I really liked this paper because of how it obtained good results by breaking down the abstractions that typically seperate two systems, the video codec, and the network transport protocol.  We aren't a networking class, so parts of this paper may assume background we don't have as a class, but we can get stil get through the main points. (note: I recommend you also check out the easily digestible video and talk slides on the [main Salsify project page](https://snr.stanford.edu/salsify/).  Here are a few things to think about:
+
+* Please explain the two functions of the stateless encoder (explain their inputs and outputs and what the function does): `decode(state, frame)` and `encode(state, image, quality)`.  
+* The traditional approach is for the video codec and network transport to operate independently. The encoder generates encoded bits, and then the network transport protocol does it's best to send those bits across the network.  (If it can't data is lost.). Periodically, the transport layer tells the codec "here's how much capacity I think the network has, try your best to hit that bitrate on average".  How does Salsify approach the problem more holistically? In particular, in your answer the phrase "the codec gives the transport protocol a choice" in your answer.
+* Why does the paper make it a big point to point out that effectively transmission decisions get made *before* encoding, instead of as a result of encoding (post encoding)?
+* Finally, how did the stateless encoder enable this decision.  If instead a transitional video encoder was used and treated as a black box (which takes as incput a sequence of frames and produces a stream of encoded bits), why would the proposed design not be possible?
 
 __Other Recommended Readings:__
 
