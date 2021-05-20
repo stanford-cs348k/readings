@@ -327,3 +327,44 @@ __Other Recommended Readings:__
 * [Overview of the Scalable Video Coding Extension of the H.264/AVC Standard](http://ip.hhi.de/imagecom_G1/assets/pdfs/Overview_SVC_IEEE07.pdf). Schwarz et al. 2007
 * [On the Design of Display Processors](https://www2.cs.arizona.edu/~cscheid/reading/myer-sutherland-design-of-display-processors.pdf). Myer and Sutherland CACM 1968. (Included this because video conferencing systems shifting from server-oriented processing to client processing and back reminded me of Sutherland's "Wheel of Reincarnation".)
 * [A Short on How Zoom Works](http://highscalability.com/blog/2020/5/14/a-short-on-how-zoom-works.html). Todd Hodd. (from HighScalability.com)
+
+## Lecture 14: Real-Time Ray Tracing Workload ##
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/raytracing)
+
+__Recommended Readings:__
+
+* I recommend slides from [CS248](http://cs248.stanford.edu) or [CS348B](http://cs348b.stanford.edu).
+* It's not real-time focused, but you also will likely be very interested in the [TOG special issue on production raytracing](https://dl.acm.org/toc/tog/2018/37/3).
+* [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html). Pete Shirley.
+
+## Lecture 15: Real-Time Ray Tracing Optimizations ##
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/rtoptimization)
+
+__Recommended Readings:__
+
+* Fast ray tracing (traving rays through a BVH):
+   * [Understanding the Efficiency of Ray Traversal on GPUs](https://research.nvidia.com/sites/default/files/pubs/2009-08_Understanding-the-Efficiency/aila2009hpg_paper.pdf) Aila HPG 2009
+   * [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
+* BVH Construction:
+   * [Fast Parallel Construction of High-Quality Bounding Volume Hierarchies](https://research.nvidia.com/sites/default/files/pubs/2013-07_Fast-Parallel-Construction/karras2013hpg_paper.pdf). Kerras et al. 2013
+   * [Fast Construction of SAH BVHs on the Intel Many Integrated Core (MIC) Architecture](http://www.sci.utah.edu/~wald/Publications/2012/MICBVH/LRB-BVH.pdf). Ingo Wald, 2012. 
+* Real-Time Ray Tracing Programming Abstractions:
+   * [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
+   * [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
+   * [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
+   * [Embree: A Kernel Framework for Efficient CPU Ray Tracing](http://www.sci.utah.edu/~wald/Publications/2014/embree/embree.pdf). Wald et al. SIGGRAPH 2014
+* Neural Denoising and Supersampling:
+   * [Interactive Reconstruction of Monte Carlo Image Sequences using a Recurrent Denoising Autoencoder](https://research.nvidia.com/sites/default/files/publications/dnn_denoise_author.pdf). Chaitanya et al. TOG 2017
+   * [Neural Supersampling for Real-Time Rendering](https://research.fb.com/wp-content/uploads/2020/06/Neural-Supersampling-for-Real-time-Rendering.pdf). Xiao et al. SIGGRAPH 2020 
+
+## Lecture 16: Real-Time Ray Tracing Optimizations (Part II) ##
+
+* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/rtoptimization2)
+
+__Recommended Readings:__
+
+* Please see recommended readings from lecture 15.
+
+
