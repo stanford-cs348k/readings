@@ -31,7 +31,7 @@ __Other Recommended Readings:__
   
 ## Lecture 2: Digital Camera Processing Pipeline (Part I) ##
 
-* [Lecture slides from 2021](http://cs348k.stanford.edu/spring21/lecture/camerabasics/)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/camerapipeline1/)
 
 __Post-Lecture Required Readings:__
 
@@ -59,7 +59,7 @@ __Other Recommended Readings:__
   
 ## Lecture 3: Digital Camera Processing Pipeline (Part II) ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/camerapipeline2)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/camerapipeline2/)
 
 __Post-Lecture Required Readings:__
 
