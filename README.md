@@ -124,7 +124,7 @@ __Other Recommended Readings:__
 
 ## Lecture 6: Efficient DNN Inference (Software Techniques) ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnninference)
+* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnninference)
 
 __Post-Lecture Required Reading:__
 
@@ -152,7 +152,7 @@ __Other Recommended Readings:__
 
 ## Lecture 7: DNN Hardware Accelerators ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnnhardware)
+* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnnhardware)
 
 __Post-Lecture Required Reading:__
 
@@ -202,7 +202,7 @@ __Other Recommended Readings:__
 
 ## Lecture 8: System Support for Curating Training Data ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/trainingdata)
+* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/trainingdata)
 
 __Pre-Lecture Required Reading:__
 
