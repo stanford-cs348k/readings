@@ -86,13 +86,15 @@ __Other Recommended Readings:__
 
 ## Lecture 4: Digital Camera Processing Pipeline (Part III) ####
 
-In this class we finished up the slides from last time, so there are not additional links.  Please see readings from above.
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/camerapipeline3/)
+
+Please see required readings under lecture 5.
 
 ## Lecture 5: Efficiently Scheduling Image Processing Algorithms ##
 
 * [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/imagescheduling)
 
-__Pre-Lecture Required Readings: (2)__
+__Pre-Lecture Required Reading: (to read BEFORE lecture 5)__
 * [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
    * Note: Alternatively you may read the selected chapters in the Ragan-Kelley thesis linked below in recommended readings.  The thesis chapters involve a little more reading than the paper, but it is a more accessible explanation of the topic, so I recommend it for students.
    * In reading this paper, I want you to specifically focus on describing the philosophy of Halide.  Specifically, if we ignore the "autotuner" described in Section 5 of the paper, what is the role of the programmer, and what is the role of the Halide system/compiler?
@@ -101,7 +103,8 @@ __Pre-Lecture Required Readings: (2)__
    * Who do you think is the type of programmer targeted by Halide?  Novices? Experts? Etc.?
    * Advanced question: In my opinion, there is one major place where the core design philosophy of Halide is violated.  It is described in Section 4.3 in the paper, but is more clearly described in Section 8.3 of the Ph.D. thesis.  (see sliding window optimizations and storage folding).  Why do you think am I claiming this compiler optimization is a significant departure from the core principles of Halide? (there are also valid arguments against my opinion.)
       * Hint: what aspects of the program’s execution is not explicitly described in the schedule in these situations?
-      
+      * 
+__Pre-Lecture Required Reading: (to read AFTER lecture 5)__
 * [Learning to Optimize Halide with Tree Search and Random Programs](https://halide-lang.org/papers/halide_autoscheduler_2019.pdf). Adams et al. SIGGRAPH 2019 
    * This paper documents the design of the autoscheduling algorithm that is not implemented in the Halide compiler.  This is quite a technical paper, so I recommend that you adopt the "coarse to fine" reading structure that we discussed in class.  Your goal is to get the big points of the paper, not all the details.
    * The back-tracking tree search used in this paper is certainly not a new idea (you've probably implemented algorithms like this in an introductory AI class), but what was interesting was the way the authors formulated the scheduling problem as a sequence of choices that could be optimized using tree search.  Summarize how scheduling is modeled as a sequence of choices?
