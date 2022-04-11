@@ -200,23 +200,7 @@ __Other Recommended Readings:__
 * An excellent survey organizing different types of designs:
     * [Efficient Processing of Deep Neural Networks: A Tutorial and Survey](https://www.rle.mit.edu/eems/wp-content/uploads/2017/11/2017_pieee_dnn.pdf), Zhe et al. IEEE 2017
 
-## Lecture 8: Parallel DNN Training ##
-
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnntrain)
-
-__Post-Lecture Required Reading:__
-
-* There are two required readings post Lecture 8, but they are *pre-reading* for Lecture 9, so please see the readings listed under Lecture 9.
-
-__Other Recommended Readings:__
-* [Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour](https://arxiv.org/abs/1706.02677), Goyal et al. 2017
-   * A nice description of why learning rate should scale with mini-batch size, and empirical studies of how to implement this intuition effectively.
-* [PipeDream: Generalized Pipeline Parallelism for DNN Training](https://cs.stanford.edu/~deepakn/assets/papers/pipedream-sosp19.pdf), Narayanan et al. SOSP 2019 
-* [ImageNet Training in Minutes](https://arxiv.org/abs/1709.05011), You et al. 2018
-* [Scaling Distributed Machine Learning with the Parameter Server](https://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf), Li et al. OSDI 2014
-* [Deep Gradient Compression](https://arxiv.org/abs/1712.01887), Lin et al. ICLR 2018
-
-## Lecture 9: System Support for Curating Training Data ##
+## Lecture 8: System Support for Curating Training Data ##
 
 * [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/trainingdata)
 
@@ -253,7 +237,7 @@ __Other Recommended Readings:__
     * [Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/abs/2006.09882). Caron et al. NeurIPS 2020. (The SwAV paper)
     * [Data Distillation: Towards Omni-Supervised Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Radosavovic_Data_Distillation_Towards_CVPR_2018_paper.pdf), Radosavovic et al. CVPR 2018
 
-## Lecture 10: Raising the Level of Abstraction for Model Creation ##
+## Lecture 9: Raising the Level of Abstraction for Model Creation ##
 
 __Pre-Lecture Required Reading:__
 
@@ -280,100 +264,4 @@ When reading these papers, please consider the following:
 
 __Other Recommended Readings:__
 * Following this lecture, it would be good to take a look at a number of commercial offerings of model creating services. Examples include [Amazon Sagemaker](https://aws.amazon.com/sagemaker/), [Google AutoML](https://cloud.google.com/automl), and [Weights and Biases](https://wandb.ai/).  Or data labeling services like [Scale](https://scale.com/), [Hive Data](https://thehive.ai/hive-data), [Clarifai](https://www.clarifai.com/), etc.
-
-## Lecture 11: Specialization for Efficient Inference on Video Streams ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/modelspecialization)
-
-__Recommended Readings:__
-
-* [Online Model Distillation for Efficient Video Inference](http://openaccess.thecvf.com/content_ICCV_2019/papers/Mullapudi_Online_Model_Distillation_for_Efficient_Video_Inference_ICCV_2019_paper.pdf), Mullapudi et al. ICCV 2019
-* [NoScope: Optimizing Neural Network Queries over Video at Scale](https://arxiv.org/abs/1703.02529). D. Kang et al. 2017
-* [Chameleon: Scalable Adaptation of Video Analytics](http://people.cs.uchicago.edu/~junchenj/docs/Chameleon_SIGCOMM_CameraReady.pdf). Jiang et al. SIGCOMM 2018
-
-## Lecture 12: Video Compression (Traditional and Learned) ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videocompression)
-
-__Post-Lecture Required Reading:__
-
-* [Warehouse-scale video acceleration: co-design and deployment in the wild](https://dl.acm.org/doi/abs/10.1145/3445814.3446723). Ranganathan et al. ASPLOS 2021
-
-This is a very recent paper about the deployment of fixed-function hardware for video encoding and decoding in Google datacenters (Youtube, Google Photos, etc).  I thought it was a great example of a systems paper describing goals, constraints, and cross-cutting issues. Please address the following in your summary:
-
-* An interesting stat from the paper was that it takes over one CPU-hour of compute to encode 150 frames of 2160p video using VP9 (top of Section 4.5). State why omcpanies like Google care so much about spending large amounts of computation to achieve very high quality (or similarly, very low bitrate) video encoding.  Why does more computation help? (the last part is a review from lecture).
-* Please describe the reasons why Youtube must encode a video multiple times and at many resolutions/quality settings? And why is multiple output target (MOT) encoding a useful approach in this environment? Hint, consider low resolution output versions of a high-resolution input video.) 
-* An interesting paragraph towards the end of Section 2 (see header "Video Usage Patterns at Scale") broke the workload down into videos that are viral and highly watched (constituting most of the watch time), videos that are modestly watched, and videos that are rarely watched at all. For each of these categories, describe whether you think the VCU is a helpful platform that that type of video.
-* We all have laptops and mobile devices with hardware accelerators for video encoding, but the requirements for accelerator hardware in a datacenter are quite different.  What were some of the most interesting differences to you?  What are opportunities that the datacenter case affords that might not be there in the case of hardware for consumer devices?
-* In Section 3.3 there is an interesting analysis of how much bandwidth is needed for the VCU hardware to avoid being BW-bound. Was is the role of custom data compression hardware on the VCU?
-* There are key sections talking about the stateless design of the encoder. (End of 3.2). Give some reasons why, in a datacenter environment, the stateless approach is beneficial.  
-__Other Recommended Readings:__
-* [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
-* [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
-* [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
-* [Gradient-Based Pre-Processing for Intra Prediction in High Efficiency Video Coding](https://link.springer.com/article/10.1186/s13640-016-0159-9). BenHajyoussef et al. 2017
-* [The Design, Implementation, and Deployment of a System to Transparently Compress Hundreds of Petabytes of Image Files for a File-Storage Service](https://arxiv.org/abs/1704.06192). Horn et al. 2017.
-* [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
-* [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
-
-## Lecture 13: Video Conferencing Systems ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videoconferencing)
-
-__Post-Lecture Required Reading:__
-
-* [Salsify: Low-Latency Network Video Through Tighter Integration between a Video Codec and a Transport Protocol](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-fouladi.pdf). Fouladi et al. 2018
-
-I really liked this paper because of how it obtained good results by breaking down the abstractions that typically seperate two systems, the video codec, and the network transport protocol.  We aren't a networking class, so parts of this paper may assume background we don't have as a class, but we can get stil get through the main points. (note: I recommend you also check out the easily digestible video and talk slides on the [main Salsify project page](https://snr.stanford.edu/salsify/).  Here are a few things to think about:
-
-* Please explain the two functions of the stateless encoder (explain their inputs and outputs and what the function does): `decode(state, frame)` and `encode(state, image, quality)`.  
-* The traditional approach is for the video codec and network transport to operate independently. The encoder generates encoded bits, and then the network transport protocol does it's best to send those bits across the network.  (If it can't data is lost.). Periodically, the transport layer tells the codec "here's how much capacity I think the network has, try your best to hit that bitrate on average".  How does Salsify approach the problem more holistically? In particular, in your answer the phrase "the codec gives the transport protocol a choice" in your answer.
-* Why does the paper make it a big point to point out that effectively transmission decisions get made *before* encoding, instead of as a result of encoding (post encoding)?
-* Finally, how did the stateless encoder enable this decision.  If instead a transitional video encoder was used and treated as a black box (which takes as incput a sequence of frames and produces a stream of encoded bits), why would the proposed design not be possible?
-
-__Other Recommended Readings:__
-
-* [Overview of the Scalable Video Coding Extension of the H.264/AVC Standard](http://ip.hhi.de/imagecom_G1/assets/pdfs/Overview_SVC_IEEE07.pdf). Schwarz et al. 2007
-* [On the Design of Display Processors](https://www2.cs.arizona.edu/~cscheid/reading/myer-sutherland-design-of-display-processors.pdf). Myer and Sutherland CACM 1968. (Included this because video conferencing systems shifting from server-oriented processing to client processing and back reminded me of Sutherland's "Wheel of Reincarnation".)
-* [A Short on How Zoom Works](http://highscalability.com/blog/2020/5/14/a-short-on-how-zoom-works.html). Todd Hodd. (from HighScalability.com)
-
-## Lecture 14: Real-Time Ray Tracing Workload ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/raytracing)
-
-__Recommended Readings:__
-
-* I recommend slides from [CS248](http://cs248.stanford.edu) or [CS348B](http://cs348b.stanford.edu).
-* It's not real-time focused, but you also will likely be very interested in the [TOG special issue on production raytracing](https://dl.acm.org/toc/tog/2018/37/3).
-* [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html). Pete Shirley.
-
-## Lecture 15: Real-Time Ray Tracing Optimizations ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/rtoptimization)
-
-__Recommended Readings:__
-
-* Fast ray tracing (traving rays through a BVH):
-   * [Understanding the Efficiency of Ray Traversal on GPUs](https://research.nvidia.com/sites/default/files/pubs/2009-08_Understanding-the-Efficiency/aila2009hpg_paper.pdf) Aila HPG 2009
-   * [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
-* BVH Construction:
-   * [Fast Parallel Construction of High-Quality Bounding Volume Hierarchies](https://research.nvidia.com/sites/default/files/pubs/2013-07_Fast-Parallel-Construction/karras2013hpg_paper.pdf). Kerras et al. 2013
-   * [Fast Construction of SAH BVHs on the Intel Many Integrated Core (MIC) Architecture](http://www.sci.utah.edu/~wald/Publications/2012/MICBVH/LRB-BVH.pdf). Ingo Wald, 2012. 
-* Real-Time Ray Tracing Programming Abstractions:
-   * [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
-   * [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
-   * [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
-   * [Embree: A Kernel Framework for Efficient CPU Ray Tracing](http://www.sci.utah.edu/~wald/Publications/2014/embree/embree.pdf). Wald et al. SIGGRAPH 2014
-* Neural Denoising and Supersampling:
-   * [Interactive Reconstruction of Monte Carlo Image Sequences using a Recurrent Denoising Autoencoder](https://research.nvidia.com/sites/default/files/publications/dnn_denoise_author.pdf). Chaitanya et al. TOG 2017
-   * [Neural Supersampling for Real-Time Rendering](https://research.fb.com/wp-content/uploads/2020/06/Neural-Supersampling-for-Real-time-Rendering.pdf). Xiao et al. SIGGRAPH 2020 
-
-## Lecture 16: Real-Time Ray Tracing Optimizations (Part II) ##
-
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/rtoptimization2)
-
-__Recommended Readings:__
-
-* Please see recommended readings from lecture 15.
-
 
