@@ -92,7 +92,7 @@ Please see required readings under lecture 5.
 
 ## Lecture 5: Efficiently Scheduling Image Processing Algorithms ##
 
-* [Lecture slides](http://cs348k.stanford.edu/spring21/lecture/imagescheduling)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/imagescheduling/)
 
 __Pre-Lecture Required Reading: (to read BEFORE lecture 5)__
 * [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
@@ -103,14 +103,14 @@ __Pre-Lecture Required Reading: (to read BEFORE lecture 5)__
    * Who do you think is the type of programmer targeted by Halide?  Novices? Experts? Etc.?
    * Advanced question: In my opinion, there is one major place where the core design philosophy of Halide is violated.  It is described in Section 4.3 in the paper, but is more clearly described in Section 8.3 of the Ph.D. thesis.  (see sliding window optimizations and storage folding).  Why do you think am I claiming this compiler optimization is a significant departure from the core principles of Halide? (there are also valid arguments against my opinion.)
       * Hint: what aspects of the program’s execution is not explicitly described in the schedule in these situations?
-      * 
-__Pre-Lecture Required Reading: (to read AFTER lecture 5)__
+      
+__Post-Lecture Required Reading: (to read AFTER lecture 5)__
 * [Learning to Optimize Halide with Tree Search and Random Programs](https://halide-lang.org/papers/halide_autoscheduler_2019.pdf). Adams et al. SIGGRAPH 2019 
    * This paper documents the design of the autoscheduling algorithm that is not implemented in the Halide compiler.  This is quite a technical paper, so I recommend that you adopt the "coarse to fine" reading structure that we discussed in class.  Your goal is to get the big points of the paper, not all the details.
    * The back-tracking tree search used in this paper is certainly not a new idea (you've probably implemented algorithms like this in an introductory AI class), but what was interesting was the way the authors formulated the scheduling problem as a sequence of choices that could be optimized using tree search.  Summarize how scheduling is modeled as a sequence of choices?
       * Note: one detail you might be interested to take a closer look at is the "coarse-to-fine refinement" part of Section 3.2. This is a slight modification to a standard backtracking tree search.  
-   * An optimizer's goal is to minimize a cost.  In the case of this paper, the cost is the runtime of the scheduled program.  Why is a machine learned model used to *predict the scheduled program's runtime*?  Why not just compile the program and run it on a machine?
-   * The other interesting part of this paper is the engineering of the learned cost model.  This was surprisingly difficult.  Observe that the authors do not present an approach based on end-to-end learning where the input is a Halide program DAG and the output is an estimated cost, instead they use compiler analysis to compute a collection of program features, and then what is learned is how to weight these features in estimating cost (See Section 4.2). For those of you with a bit of deep learning background, I'm interested in your thoughts here.  Do you like the hand-engineered features approach?  
+   * An optimizer's goal is to minimize a cost.  In the case of this paper, the cost is the runtime of the scheduled program? Why is a machine learned model used to *predict the scheduled program's runtime*?  Why not just compile the program and run it on a machine?
+   * The other interesting part of this paper is the engineering of the learned cost model.  This part of the work was surprisingly difficult.  Observe that the authors do not present an approach based on end-to-end learning where the input is a Halide program DAG and the output is an estimated cost, instead they use compiler analysis to compute a collection of program features, and then what is learned is how to weight these features in estimating cost (See Section 4.2). For those of you with a bit of deep learning background, I'm interested in your thoughts here.  Do you like the hand-engineered features approach?  
    
 __Other Recommended Readings:__
 * [Decoupling Algorithms from the Organization of Computation for High Performance Image Processing](http://people.csail.mit.edu/jrk/jrkthesis.pdf). Ragan-Kelley (MIT Ph.D. thesis, 2014)
@@ -124,7 +124,7 @@ __Other Recommended Readings:__
 
 ## Lecture 6: Efficient DNN Inference (Software Techniques) ##
 
-* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnninference)
+* [2021 Lecture slides (last year)](http://cs348k.stanford.edu/spring21/lecture/dnninference)
 
 __Post-Lecture Required Reading:__
 
