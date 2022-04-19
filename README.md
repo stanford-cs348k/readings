@@ -124,7 +124,7 @@ __Other Recommended Readings:__
 
 ## Lecture 6: Efficient DNN Inference (Software Techniques) ##
 
-* [2021 Lecture slides (last year)](http://cs348k.stanford.edu/spring21/lecture/dnninference)
+* [Lecture slides](http://cs348k.stanford.edu/spring22/lecture/dnninference)
 
 __Post-Lecture Required Reading:__
 
@@ -165,6 +165,8 @@ __Post-Lecture Required Reading:__
         * Do you like the design?
   
  See the suggested readings below for a list of possible starting points.
+
+* __In addition, please also see the required readings (pre-readings) for Thursday.__
 
 __Other Recommended Readings:__
 
