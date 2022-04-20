@@ -152,7 +152,7 @@ __Other Recommended Readings:__
 
 ## Lecture 7: DNN Hardware Accelerators ##
 
-* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/dnnhardware)
+* [Lecture slides](http://cs348k.stanford.edu/spring22/lecture/dnnhardware)
 
 __Post-Lecture Required Reading:__
 
