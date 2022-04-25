@@ -204,7 +204,7 @@ __Other Recommended Readings:__
 
 ## Lecture 8: System Support for Curating Training Data ##
 
-* [2021 Lecture slides](http://cs348k.stanford.edu/spring21/lecture/trainingdata)
+* [Lecture slides](http://cs348k.stanford.edu/spring22/lecture/trainingdata)
 
 __Pre-Lecture Required Reading:__
 
@@ -269,7 +269,7 @@ __Other Recommended Readings:__
 
 ## Lecture 10: Video Compression (Traditional and Learned) ##
 
-* [Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videocompression)
+* [Old 2021 Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videocompression)
 
 __Post-Lecture Required Reading:__
 
