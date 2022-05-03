@@ -241,6 +241,8 @@ __Other Recommended Readings:__
 
 ## Lecture 9: Raising the Level of Abstraction for Model Creation ##
 
+* [Lecture Slides](http://cs348k.stanford.edu/spring22/lecture/dnnabstractions)
+
 __Pre-Lecture Required Reading:__
 
 * [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
@@ -269,7 +271,7 @@ __Other Recommended Readings:__
 
 ## Lecture 10: Video Compression (Traditional and Learned) ##
 
-* [Old 2021 Lecture Slides](http://cs348k.stanford.edu/spring21/lecture/videocompression)
+* [Lecture Slides](http://cs348k.stanford.edu/spring22/lecture/videocompression)
 
 __Post-Lecture Required Reading:__
 
@@ -277,7 +279,7 @@ __Post-Lecture Required Reading:__
 
 This is a very recent paper about the deployment of fixed-function hardware for video encoding and decoding in Google datacenters (Youtube, Google Photos, etc).  I thought it was a great example of a systems paper describing goals, constraints, and cross-cutting issues. Please address the following in your summary:
 
-* An interesting stat from the paper was that it takes over one CPU-hour of compute to encode 150 frames of 2160p video using VP9 (top of Section 4.5). State why omcpanies like Google care so much about spending large amounts of computation to achieve very high quality (or similarly, very low bitrate) video encoding.  Why does more computation help? (the last part is a review from lecture).
+* An interesting stat from the paper was that it takes over one CPU-hour of compute to encode 150 frames of 2160p video using VP9 (top of Section 4.5). State why companies like Google care so much about spending large amounts of computation to achieve very high quality (or similarly, very low bitrate) video encoding.  Why does more computation help? (the last part is a review from lecture).
 * Please describe the reasons why Youtube must encode a video multiple times and at many resolutions/quality settings? And why is multiple output target (MOT) encoding a useful approach in this environment? Hint, consider low resolution output versions of a high-resolution input video.) 
 * An interesting paragraph towards the end of Section 2 (see header "Video Usage Patterns at Scale") broke the workload down into videos that are viral and highly watched (constituting most of the watch time), videos that are modestly watched, and videos that are rarely watched at all. For each of these categories, describe whether you think the VCU is a helpful platform that that type of video.
 * We all have laptops and mobile devices with hardware accelerators for video encoding, but the requirements for accelerator hardware in a datacenter are quite different.  What were some of the most interesting differences to you?  What are opportunities that the datacenter case affords that might not be there in the case of hardware for consumer devices?
@@ -292,4 +294,8 @@ __Other Recommended Readings:__
 * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
 * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
 
+# Lecture 11: The Future of Video Conferencing Systems #
+
+__Recommended Readings:__
+* [SVE: Distributed Video Processing at Facebook Scale](https://research.fb.com/wp-content/uploads/2017/10/sosp-226-cameraready.pdf). Huang et al. SOSP 2017
 
