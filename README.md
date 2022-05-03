@@ -284,8 +284,10 @@ This is a very recent paper about the deployment of fixed-function hardware for 
 * An interesting paragraph towards the end of Section 2 (see header "Video Usage Patterns at Scale") broke the workload down into videos that are viral and highly watched (constituting most of the watch time), videos that are modestly watched, and videos that are rarely watched at all. For each of these categories, describe whether you think the VCU is a helpful platform that that type of video.
 * We all have laptops and mobile devices with hardware accelerators for video encoding, but the requirements for accelerator hardware in a datacenter are quite different.  What were some of the most interesting differences to you?  What are opportunities that the datacenter case affords that might not be there in the case of hardware for consumer devices?
 * In Section 3.3 there is an interesting analysis of how much bandwidth is needed for the VCU hardware to avoid being BW-bound. Was is the role of custom data compression hardware on the VCU?
-* There are key sections talking about the stateless design of the encoder. (End of 3.2). Give some reasons why, in a datacenter environment, the stateless approach is beneficial.  
+* There are key sections talking about the stateless design of the encoder. (End of 3.2). Give some reasons why, in a datacenter environment, the stateless approach is beneficial. 
+
 __Other Recommended Readings:__
+
 * [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
 * [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
 * [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
