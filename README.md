@@ -296,7 +296,7 @@ __Other Recommended Readings:__
 * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
 * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
 
-# Lecture 11: The Future of Video Conferencing Systems #
+## Lecture 11: The Future of Video Conferencing Systems ##
 
 * [Lecture Slides](http://cs348k.stanford.edu/spring22/lecture/videoconferencing)
 
