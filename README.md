@@ -317,3 +317,7 @@ __Recommended Readings:__
 * [Salsify: Low-Latency Network Video through Tighter Integration between a Video Codec and a Transport Protocol](https://snr.stanford.edu/salsify/). Fouladi et al. NSDI 2018
 * [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
 * [Social Translucence: An Approach to Designing Systems that Support Social Processes](https://dl.acm.org/doi/10.1145/344949.345004). Erickson and Kellogg. TOCHI 2000.
+
+## Lecture 12: NeRF and Its Systems Implications as a Data Compressor ##
+
+Lecture to come.
