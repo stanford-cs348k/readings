@@ -318,6 +318,40 @@ __Recommended Readings:__
 * [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
 * [Social Translucence: An Approach to Designing Systems that Support Social Processes](https://dl.acm.org/doi/10.1145/344949.345004). Erickson and Kellogg. TOCHI 2000.
 
-## Lecture 12: NeRF and Its Systems Implications as a Data Compressor ##
+## Lecture 12: The Light Field (NeRF Preliminaries) ##
 
-Lecture to come.
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/lightfield/)
+
+__Recommended Readings:__
+* [Light Field Rendering](https://graphics.stanford.edu/papers/light/). Levoy and Hanrahan 1996.
+* [Jump: Virtual Reality Video](https://research.google/pubs/pub45617/). Anderson et al. SIGGRAPH Asia 2016
+* [Instant 3D Photography](http://visual.cs.ucl.ac.uk/pubs/instant3d/). Hedman and Kopf. SIGGRAPH 2018
+
+## Lecture 13: NeRF Training and Rendering ##
+
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/nerfrendering/)
+
+__Recommended Readings:__
+* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf) Mildenhall et al. ECCV 2020
+
+## Lecture 14: Scheduling the 3D Graphics Pipeline ##
+
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/gfxscheduling/)
+
+__Recommended Readings:__
+* [A Trip Down the LOL Graphics Pipeline](https://engineering.riotgames.com/news/trip-down-lol-graphics-pipeline). A nice introductory blog post for Riot Games that illustrates all the different rendering passes used to construct a League of Legends scene. Note how each of these passes draws geometry under different graphics pipeline state configurations.
+* [A Trip Down the Graphics Pipeline](A Trip Down the Graphics Pipeline). A much more detailed blog post by Fabian Giesen describing the Direct3D 10-class pipeline
+* [Pomegranate: A Fully Scalable Graphics Architecture](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/eldridge00_pomegranate.pdf). M. Eldridge et al. SIGGRAPH 2000
+* [Life of a Triangle - NVIDIA's Logical Pipeline](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline). C. Kubisch (NVIDIA GameWorks Blog, 2015)
+* [Fast Tessellated Rendering on Fermi GF100](http://attila.ac.upc.edu/wiki/images/d/db/HPG10_Hot3D_Fermi.pdf). T. Purcell (High Performance Graphics Hot3D talk)
+* [A Sorting Classification of Parallel Rendering](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/molnar94_sorting.pdf). S. Molnar et al. IEEE Computer Graphics and Applications, 1994.
+
+## Lecture 15: Hardware Accelerated Real-Time Ray Tracing ##
+
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/rtrt/)
+
+__Post Lecture Require Reading:__
+* [Embree: A Kernel Framework for Efficient CPU Ray Tracing](https://www.embree.org/papers/2014-Siggraph-Embree.pdf) Wald et al. SIGGRAPH 2014.
+* 
+
+
