@@ -249,7 +249,6 @@ __Pre-Lecture Required Reading:__
 * [Ludwig: a type-based declarative deep learning toolbox](https://arxiv.org/abs/1909.07930), Molino et al. 2019
 
 Often when you hear about machine learning abstractions, we think about ML frameworks like [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), or [MX.Net](https://mxnet.apache.org/).  Instead of having to write key model ML layers yourself, these frameworks present the abstraction of a ML graph "operator", and allow model creation by composing operators into DAGs.  However, the abstraction of designing models by wiring up data flow graphs of operators is still quite low.  One might characterize these abstractions as being targeted for an ML engineer---someone who has taken a lot of ML classes, and has experience implementing model architectures in TensorFlow, experience selecting the right model for the job, or with the know-how to adjust hyperparameters to make training successful.  
-
 The two papers for our discussion are efforts to begin to raise the level of abstraction even higher.  These are systems that emerged out of two major companies (Overton out of Apple, and Ludwig out of Uber), and they share the underlying philosophy that some of the operational details of getting modern ML to work can be abstracted away from users that simply want to use technologies to quickly train, validate, and continue to maintain accurate models.  In short these two systems can be thought of as different takes on Karpathy’s software 2.0 argument, which you can read in this [Medium blog post](https://medium.com/@karpathy/software-2-0-a64152b37c35).  I’m curious about your thoughts on this post as well!
 
 When reading these papers, please consider the following:
@@ -352,6 +351,25 @@ __Recommended Readings:__
 
 __Post Lecture Require Reading:__
 * [Embree: A Kernel Framework for Efficient CPU Ray Tracing](https://www.embree.org/papers/2014-Siggraph-Embree.pdf) Wald et al. SIGGRAPH 2014.
-* 
+
+This is a paper about modern efficient ray tracing framework for modern CPUs. (This is not a GPU hardware-accelerated ray tracer).  I chose it since some of the content in our paper tracks the lecture nicely.  Note that Section 5.2 is on BVH construction, which we did not talk about in class, so feel free to skim. When reading please consider the following:
+
+* Embree is not a ray tracer application. It is a small library of basic primitives that is meant for developers that want to implement a high performance multi-core CPU-based ray tracer.  In your own words, can you list what the three major primitives are (what do they do)?  (Figures 2 and 3 should help). Note that in the conclusion section (Section 9) the authors note some of the drawbacks of their decision to provide a set of individual kernels instead of of a full ray tracer.
+
+* Why do you think Intel made the decision to release a library of important kernels as opposed to a ray tracer?  You could appear to prior kernel libraries we've discussed like cuDNN or matrix multiplication libraries.
+
+* One service provided by Embree is the contstruction of the BVH.  What is the branching factor of Embree's BVH?  
+
+* A major concern of the implementation is making efficient use of SIMD execution units on modern Intel CPUs. (which can be 4, 8, or 16-wide depending on the chip).  The paper describes two ways of vectorizing ray-BVH intersection code: "single ray traversal" (Section 5.1.2) and "packet traversal" (5.1.3). In your own words describe the strategy on how each attempt to parallel the code.  What are the strengths/weaknessness of each approach when considering "coherent" primary rays from the camera and "incoherent" rays that result from light bouncing around the scene. In particular what motivates the "hybrid" method described in Section 5.1.4 that the paper claims is 50% faster than packet tracing alone?  (It might be helpful to refer to today's lecture slides on packet tracing.)  
+
+* In Table 2 of the evaluation, notice the performance (rays/second) of primary rays (rays emitted from the camera) is consistently higher than ray tracing throughput achieved when doing full path tracing.  Recall path tracing will include rays needed to compute light bouncing around the scene.  Why is this the case.  You may want to refer to the packet vs single ray implementations described earlier in the paper, or consider cache locality.
+
+__Other recommended Readings:__
+ * [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
+ * [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
+ * [An energy and bandwidth efficient ray tracing architecture](https://dl.acm.org/doi/10.1145/2492045.2492058). Kopta et al. HPG 2013 
+ * [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
+ * [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
+
 
 
