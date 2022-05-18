@@ -339,7 +339,7 @@ __Recommended Readings:__
 
 __Recommended Readings:__
 * [A Trip Down the LOL Graphics Pipeline](https://engineering.riotgames.com/news/trip-down-lol-graphics-pipeline). A nice introductory blog post for Riot Games that illustrates all the different rendering passes used to construct a League of Legends scene. Note how each of these passes draws geometry under different graphics pipeline state configurations.
-* [A Trip Down the Graphics Pipeline](A Trip Down the Graphics Pipeline). A much more detailed blog post by Fabian Giesen describing the Direct3D 10-class pipeline
+* [A Trip Through the Graphics Pipeline 2011](https://fgiesen.wordpress.com/2011/07/09/a-trip-through-the-graphics-pipeline-2011-index/). A much more detailed blog post by Fabian Giesen describing the Direct3D 10-class pipeline
 * [Pomegranate: A Fully Scalable Graphics Architecture](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/eldridge00_pomegranate.pdf). M. Eldridge et al. SIGGRAPH 2000
 * [Life of a Triangle - NVIDIA's Logical Pipeline](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline). C. Kubisch (NVIDIA GameWorks Blog, 2015)
 * [Fast Tessellated Rendering on Fermi GF100](http://attila.ac.upc.edu/wiki/images/d/db/HPG10_Hot3D_Fermi.pdf). T. Purcell (High Performance Graphics Hot3D talk)
