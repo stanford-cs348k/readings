@@ -412,6 +412,19 @@ __Recommended Readings:__
 __Pre-Lecture Required Reading:__
 * [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He et al. SIGGRAPH 2018
 
+This is a challenging paper, so your goal when reading should be to get the big points and not necessarily understand all the details.  In particular, Section 4 requires a fair amount of graphics programming knowledge.  After getting oriented with the paper, I recommend that you put effort into understanding the code is Figure 1.  On the left side of the figure are C++ classes and HLSL shader code that an engine framework like Unity or Unreal might provide. (You'll see classes and HLSL code for a library of lights, materials, etc.) On the right side of the figure is the application code that uses that library.  In particular find `main.cpp` and make sure you understand what the calls to `bindProgram()` and `setParams()` do "under the hood" in terms of triggering GPU communication or state changes.
+
+In your response, please address the following questions:
+
+* The goal of the Slang language is about providing programmers better support for negotiating the conflicting goals of writing modular, easy-to-maintain shader code and generating high-performance code for GPUs.  This tension is actually best described in Section 2.1 of the [Shader Components](http://graphics.cs.cmu.edu/projects/shadercomp/he17_shadercomp.pdf) paper listed under recommended readings, so you many want to read that section from this prior paper first.  After taking a look, please describe the two major aspects of "performant GPU" code that game developers require. Hint: one is about communication, the other about code specialization.
+
+* Another key design idea of the Slang language is that although it is possible to use bespoke, domain-specific languages to achieve the same goals, minimal extensions to an existing general purpose language is desirable.  Do you agree with this philosophy? Why or why not?
+
+* In your own words, describe what an "associated type" is.  This is something good to know in general. ;-)
+
+* I'd like you to extrapolate a bit about the value of getting the right abstractions in place.  Consider what decisions the compiler/runtime system might be able to do for the programmer in the future given a code library written in terms of generics, interfaces, and associated types. Specifically, given information about what classes are linked together, would it be valid in the future of the Slang compiler/runtime to "choose" between generating and binding highly specialized code for the GPU (like it does today) or perhaps generate a single "general" shader that uses conditional control flow to dynamically switch between code paths depending on the types of classes that fill in the generic template?  In other words, can the Slang compiler choose to perform "despecialization" in the same way that is currently chooses "specialization".  
+
+
 __Other Recommended Readings:__
 * [Shader Components: Modular and High Performance Shader Development](http://graphics.cs.cmu.edu/projects/shadercomp/). Y. He et al. SIGGRAPH 2017
 * [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990 
