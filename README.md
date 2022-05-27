@@ -410,7 +410,7 @@ __Recommended Readings:__
 ## Lecture 19: Guest Lecture: Yong He and Teresa Foley (NVIDIA) ##
 
 __Pre-Lecture Required Reading:__
-* [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He, K. Fatahalian, T. Foley. SIGGRAPH 2018
+* [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He et al. SIGGRAPH 2018
 
 __Other Recommended Readings:__
 * [Shader Components: Modular and High Performance Shader Development](http://graphics.cs.cmu.edu/projects/shadercomp/). Y. He et al. SIGGRAPH 2017
