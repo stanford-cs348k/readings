@@ -349,7 +349,7 @@ __Recommended Readings:__
 
 * [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/rtrt/)
 
-__Post Lecture Require Reading:__
+__Post-Lecture Require Reading:__
 * [Embree: A Kernel Framework for Efficient CPU Ray Tracing](https://www.embree.org/papers/2014-Siggraph-Embree.pdf) Wald et al. SIGGRAPH 2014.
 
 This is a paper about modern efficient ray tracing framework for modern CPUs. (This is not a GPU hardware-accelerated ray tracer).  I chose it since some of the content in our paper tracks the lecture nicely.  Note that Section 5.2 is on BVH construction, which we did not talk about in class, so feel free to skim. When reading please consider the following:
@@ -364,12 +364,46 @@ This is a paper about modern efficient ray tracing framework for modern CPUs. (T
 
 * In Table 2 of the evaluation, notice the performance (rays/second) of primary rays (rays emitted from the camera) is consistently higher than ray tracing throughput achieved when doing full path tracing.  Recall path tracing will include rays needed to compute light bouncing around the scene.  Why is this the case.  You may want to refer to the packet vs single ray implementations described earlier in the paper, or consider cache locality.
 
-__Other recommended Readings:__
+__Other Recommended Readings:__
  * [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
  * [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
  * [An energy and bandwidth efficient ray tracing architecture](https://dl.acm.org/doi/10.1145/2492045.2492058). Kopta et al. HPG 2013 
  * [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
  * [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
 
+## Lecture 16: Hardware Accelerated Real-Time Ray Tracing (Part 2) ##
 
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/rtrt2/)
+
+__Recommended Readings:__
+* [Denoise]
+* [ReSTIR]
+
+## Lecture 17: Guest Lecture: Brian Karis (Epic) ##
+
+* [Lecture Slides](https://advances.realtimerendering.com/s2021/Karis_Nanite_SIGGRAPH_Advances_2021_final.pdf)
+
+__Recommended Video:__
+
+* [Nanite: A Deep Dive](https://www.youtube.com/watch?v=eviSykqSUUw&list=PLabw4gCouThkLIavA-dn4QDmJ_3tqH4LK). B. Karis, SIGGRAPH 2021 Talk
+
+## Lecture 18: Rendering and Simulation for Model Training ##
+
+__Recommended Readings:__
+* []
+* []
+* []
+
+## Lecture 19: Guest Lecture: Yong He and Teresa Foley (NVIDIA) ##
+
+__Pre-Lecture Required Reading:__
+* [Slang: Language Mechanisms for Extensible Real-time Shading Systems](http://graphics.cs.cmu.edu/projects/slang/). Y. He, K. Fatahalian, T. Foley. SIGGRAPH 2018
+
+__Other Recommended Readings:__
+* [Shader Components: Modular and High Performance Shader Development](http://graphics.cs.cmu.edu/projects/shadercomp/). Y. He et al. SIGGRAPH 2017
+* [A Language for Shading and Lighting Calculations](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/hanrahan90_rsl.pdf). P. Hanrahan and J. Lawson. SIGGRAPH 1990 
+* [Cg: A System for Programming Graphics Hardware in a C-like Language](http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15869-f11/www/readings/mark03_cg.pdf). W. R. Mark et al. SIGGRAPH 2003
+* [A Real-Time Procedural Shading System for Programmable Graphics Hardware](http://graphics.stanford.edu/projects/shading/pubs/sig2001/). K. Proudfoot et al. SIGGRAPH 2001
+* [Shade Trees](http://graphics.pixar.com/library/ShadeTrees/paper.pdf). R. Cook. SIGGRAPH 1984
+* [An Image Synthesizer](http://dl.acm.org/citation.cfm?id=325247). K. Perlin. SIGGRAPH 1985
 
