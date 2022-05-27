@@ -376,8 +376,12 @@ __Other Recommended Readings:__
 * [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/rtrt2/)
 
 __Recommended Readings:__
-* [Denoise]
-* [ReSTIR]
+* [Fast Parallel Construction of High-Quality Bounding Volume Hierarchies](https://research.nvidia.com/sites/default/files/pubs/2013-07_Fast-Parallel-Construction/karras2013hpg_paper.pdf). Karras et al. HPG 2013 
+* [Spatiotemporal Reservoir resampling for real-time ray tracing
+with dynamic direct lighting](https://research.nvidia.com/sites/default/files/pubs/2020-07_Spatiotemporal-reservoir-resampling/ReSTIR.pdf). Bitterli et al. SIGGRAPH 2020
+* [Interactive reconstruction of Monte Carlo image sequences using a recurrent denoising autoencoder](https://research.nvidia.com/sites/default/files/publications/dnn_denoise_author.pdf). Chaitanya
+et al. SIGGRAPH 2017
+* [Neural Supersampling for Real-time Rendering](https://research.facebook.com/publications/neural-supersampling-for-real-time-rendering/). Xiao et al. SIGGRAPH 2020
 
 ## Lecture 17: Guest Lecture: Brian Karis (Epic) ##
 
@@ -386,6 +390,9 @@ __Recommended Readings:__
 __Recommended Video:__
 
 * [Nanite: A Deep Dive](https://www.youtube.com/watch?v=eviSykqSUUw&list=PLabw4gCouThkLIavA-dn4QDmJ_3tqH4LK). B. Karis, SIGGRAPH 2021 Talk
+
+__Other Recommended Readings:__
+* [Efficient GPU Rendering of Subdivision Surfaces using Adaptive Quadtrees](http://www.niessnerlab.org/projects/brainerd2016efficient.html). W. Brainerd et al. SIGGRAPH 2016
 
 ## Lecture 18: Rendering and Simulation for Model Training ##
 
