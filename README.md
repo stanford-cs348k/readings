@@ -393,13 +393,19 @@ __Recommended Video:__
 
 __Other Recommended Readings:__
 * [Efficient GPU Rendering of Subdivision Surfaces using Adaptive Quadtrees](http://www.niessnerlab.org/projects/brainerd2016efficient.html). W. Brainerd et al. SIGGRAPH 2016
+* [DiagSplit: Parallel, Crack-Free, Adaptive Tessellation for Micropolygon Rendering](http://graphics.stanford.edu/papers/diagsplit/). Fisher et al. SIGGRAPH Asia 2019
 
 ## Lecture 18: Rendering and Simulation for Model Training ##
 
+* [Lecture Slides](https://gfxcourses.stanford.edu/cs348k/spring22/lecture/renderforml/)
+
 __Recommended Readings:__
-* []
-* []
-* []
+* [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
+* [SEED RL: Scalable and Efficient Deep-RL with Accelerated Central Inference](https://arxiv.org/abs/1910.06591). Espeholt et al. ICLR 2020 (Also see the Google [blog post](https://ai.googleblog.com/2020/03/massively-scaling-reinforcement.html))
+* [Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201). Savva et al. ICCV 2019. ([Project site](https://aihabitat.org/))
+* [RoboTHOR: An Open Simulation-to-Real Embodied AI Platform](https://arxiv.org/abs/2004.06799). Deitke et al. CVPR 2020 ([Project site](https://ai2thor.allenai.org/robothor/))
+* [CARLA: An Open Urban Driving Simulator](https://arxiv.org/abs/1711.03938). Dosovitskiy et al. CoRL 2017 ([Project site](https://carla.org/))
+* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). Makoviychuk et al. 2021 ([Project site](https://developer.nvidia.com/isaac-gym))
 
 ## Lecture 19: Guest Lecture: Yong He and Teresa Foley (NVIDIA) ##
 
