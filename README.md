@@ -6,7 +6,7 @@
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/intro/)
 
-__Post-Lecture Required Readings/Videos: (2)__
+__Post-Lecture Required Readings/Videos:__
 
 * Students that *have not* taken CS149 or feel they need a refresher on basic parallel computer architecture should first watch this [pre-recorded lecture](https://www.youtube.com/watch?v=wtrR9i5zmvg) that is similar to lecture 2 in CS149. It's a full 90 minutes so feel welcome to skip/fast-forward through the parts that you know.  The technical content begins eight minutes in.
 * [The Compute Architecture of Intel Processor Graphics Gen9](https://software.intel.com/sites/default/files/managed/c5/9a/The-Compute-Architecture-of-Intel-Processor-Graphics-Gen9-v1d0.pdf). Intel Corporation
