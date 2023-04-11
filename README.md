@@ -58,3 +58,31 @@ __Other Recommended Readings:__
 * [A Gentle Introduction to Bilateral Filtering and its Applications](http://people.csail.mit.edu/sparis/bf_course/). Paris et al. SIGGRAPH 2008 Course Notes
 * [A Fast Approximation of the Bilateral Filter using a Signal Processing Approach](http://people.csail.mit.edu/sparis/publi/2006/tr/Paris_06_Fast_Bilateral_Filter_MIT_TR.pdf). Paris and Durand. MIT Tech Report 2006 (extends their ECCV 2006 paper)
 
+
+## Lecture 3: Digital Camera Processing Pipeline (Part II) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/camerapipeline2/)
+
+__Post-Lecture Required Readings:__
+
+* [The Frankencamera: An Experimental Platform for Computational Photography](http://graphics.stanford.edu/papers/fcam/). A. Adams et al. SIGGRAPH 2010
+   * Frankencamera was a paper written right about the time mobile phone cameras were becoming “acceptable” in quality, phones were beginning to contain a non-trivial amount of compute power, and computational photography papers were an increasingly hot topic in the SIGGRAPH community. (Note that the Frankencamera paper predates the HDR+ paper by six years.)  At this time many compelling image processing and editing techniques were being created, and many of them revolved around generating high-quality photographs from a sequence of multiple shots or exposures. However, current cameras at the time provided a very poor API for software applications to control the camera hardware and its components. Many of the pieces were there for a programmable camera platform to be built, but someone had to attempt to architect a coherent system to make them accessible. Frankencamera was an attempt to do that: It involved two things:
+      * The design of an API for programming cameras (a mental model of an abstract programmable camera architecture).
+      * And two implementations of that architecture: an open camera reference design, and an implementation on a Nokia smartphone.
+   * When you read the paper, we’re going to focus on the abstract "architecture" presented by a Frankencamera. Specifically I’d like you to think about the following:
+      1. I’d like you to describe the major pieces of the Frankcamera abstract machine (the system’s nouns):  e.g., devices, sensors, processors, etc.  Give some thought to why a sensor is not just any other device? Is there anything special about the sensor?
+      2. Then describe the major operations the machine could perform (the system’s verbs).  For example, in your own words, what is a "shot"? Would you say a shot is a command to the abstract machine? Or is a shot a set of commands? What do you think about the word “timeline” as a good word to describe what a shot is “shot”?
+      3. What output does executing a shot generate?  How is a "frame" different from a shot? Why is this distinction made by the system?
+      4. Would you say that F-cam is a “programmable” camera architecture or a “configurable architecture”.  What kinds of “programs” does the abstract machine run? (Note/hint: see question 2)
+      5. It's always good to establish the scope of what a system is trying to do.  In this case, how would you characterize the particular type of computational photography algorithms that F-cam seeks to support/facilitate/enable?
+   * Students may be interested that vestiges of ideas from the Frankencamera can now be seen in the Android Camera2 API:
+https://developer.android.com/reference/android/hardware/camera2/package-summary
+
+__Other Recommended Readings:__
+* [Synthetic Depth-of-Field with a Single-Camera Mobile Phone](http://graphics.stanford.edu/papers/portrait/wadhwa-portrait-sig18.pdf). Wadha et al. SIGGRAPH 2018.
+   * This is a paper about the implementation of "Portrait Mode" in Google Pixel smartphones. It's a dense paper, similar to the HDR+ paper from 2016, but it is a detailed description of how the system works under the hood.
+* [Handheld Mobile Photography in Very Low Light](https://google.github.io/night-sight/). Liba et al. SIGGRAPH Asia 2019
+   * This is a paper about the implementation of "Night Sight" in Google Pixel smartphones.
+* [Exposure Fusion](http://ieeexplore.ieee.org/document/4392748/). Mertens et al. Computer Graphics and Applications, 2007
+* [Local Laplacian Filters: Edge-aware Image Processing with a Laplacian Pyramid](https://people.csail.mit.edu/sparis/publi/2011/siggraph/). Paris et al. SIGGRAPH 2011
+* [The Laplacian Pyramid as a Compact Image Code](http://ieeexplore.ieee.org/document/1095851/). Burt and Adelson, IEEE Transactions on Communications 1983.
