@@ -95,6 +95,8 @@ For the required reading for the next class, please see required readings under 
 
 ## Lecture 5: Efficiently Scheduling Image Processing Algorithms ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/camerascheduling/)
+
 __Pre-Lecture Required Reading: (to read BEFORE lecture 5)__
 * [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
    * Note: Alternatively you may read the selected chapters in the Ragan-Kelley thesis linked below in recommended readings. (Or the CACM article.) The thesis chapters involve a little more reading than the paper, but in my opinion is a more accessible explanation of the topic, so I recommend it for students.
@@ -125,9 +127,42 @@ __Other Recommended Readings:__
     * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
 * [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
 
-## Lecture 6: Efficient DNN Inference (Software Techniques) ##
+## Lecture 6: Efficient DNN Inference (Part I) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/dnninference/)
+
+__Other Recommended Readings:__
+
+* [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
+    * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
+* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d), by Paul-Louis Pröve (a nice little tutorial)
+* [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842), Szegedy et al. CVPR 2015 (this is the Inception paper).
+    * You may also enjoy reading [this useful blog post](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) about versions of the Inception network.
+* [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861). Howard et al. 2017
+* [What is the State of Neural Network Pruning?](https://arxiv.org/abs/2003.03033), Blalock et al. MLSys 2020
+    * This paper is a good read even if you are not interested in DNN pruning, because the paper addresses issues and common mistakes in how to compare performance-oriented academic work.
+
+## Lecture 7: Efficient DNN Inference (Part II) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/sequenceopt/)
 
 __Post-Lecture Required Reading:__
+* [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135). Dao et al. NeurIPS 2022.
+  * This recent paper applied a clever trick that allows the sequence of operations (a matrix multiply, a softmax, and then another matrix multiply) in an "attention" block to be able to be fused into a single memory-bandwidth efficient operation.  The result of this trick is not only better performance, but that it became practical to run sequence models on larger sequences.  As shown in the paper, the ability to provide longer sequences (wider context for reasoning) lead to higher quality model output.  
+  * Your job in your write is to address one thing. In your own words, describe how the algorithm works to correctly compute `softmax(QK^T)V` block by block. Specifically:
+    * Start by making sure you understand the expression for computing `softmax(x)` for a vector `x`. Convince yourself that the basic formula suggestions you need to read all elements of the vector before you can compute the first element of `softmax(x)`.
+    * Now make sure you understand the factored form of the softmax, which is rwritten in terms of `x1` and `x2`, where `x1` and `x2`, are slices of the original vector `x`.
+    * Now apply this understanding to the blocked algorithm.  Line 9 of Algorithm 1 generates a partial result for a subblock of `S_{ij}=(Q_i K_j^T)`. Then line 10 computes statistics of the rows of `S_{ij}`.  Offer a high level explanation of why the subsequent lines correctly compute the desired result.  The proof on page 23 in Appendix C works out all the math. Pretty cool, right?     
+
+__Other recommended Readings:__
+* [NVIDIA CUTLASS Github repo](https://github.com/NVIDIA/cutlass)
+* [NVIDIA CuDNN Documentation](https://docs.nvidia.com/deeplearning/cudnn/index.html)
+* [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
+    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
+
+## Lecture 8: DNN Hardware Accelerators ##
+
+__Pre-Lecture Required Reading: (to read BEFORE lecture 8)__
 
 * [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/abs/1704.04760). Jouppi et al. ISCA 2017
    * Like many computer architecture papers, the TPU paper includes a lot of *facts* about details of the system.  I encourage you to understand these details, but try to look past all the complexity and try and look for the main lessons learned: things like motivation, key constraints, key principles in the design. Here are the questions I'd like to see you address.
@@ -137,14 +172,121 @@ __Post-Lecture Required Reading:__
     * Section 8 (Discussion) of this paper is an outstanding example of good architectural thinking.  Make sure you understand the points in this section as we'll discuss a number of them in class.  Particularly for us, what is the point of the bullet "Pitfall: Architects have neglected important NN tasks."?
 
 __Other Recommended Readings:__
-* [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
-    * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
-* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d), by Paul-Louis Pröve (a nice little tutorial)
-* [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842), Szegedy et al. CVPR 2015 (this is the Inception paper).
-    * You may also enjoy reading [this useful blog post](https://towardsdatascience.com/a-simple-guide-to-the-versions-of-the-inception-network-7fc52b863202) about versions of the Inception network.
-* [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861). Howard et al. 2017
-* [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
-    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
-* [What is the State of Neural Network Pruning?](https://arxiv.org/abs/2003.03033), Blalock et al. MLSys 2020
-    * This paper is a good read even if you are not interested in DNN pruning, because the paper addresses issues and common mistakes in how to compare performance-oriented academic work.
-* [Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559), Liu et al. ECCV 2018
+
+* NVIDIA Tensor Core
+    * <https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf>
+    * <https://www.anandtech.com/show/12673/titan-v-deep-learning-deep-dive/3>
+    * <https://developer.nvidia.com/blog/optimizing-gpu-performance-tensor-cores/>
+    * <https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9926-tensor-core-performance-the-ultimate-guide.pdf>
+* Google TPU v3
+    * HotChips: <https://hotchips.org/assets/program/conference/day2/HotChips2020_ML_Training_Google_Norrie_Patil.v01.pdf>
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
+    * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
+    * <https://cloud.google.com/tpu/docs/system-architecture>
+* Cerebras WSE
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Cerebras.NataliaVassilieva.v02.pdf>
+    * Corporate Whitepaper... <https://cerebras.net/resources/achieving-industry-best-ai-performance-through-a-systems-approach/>
+* NVIDIA DLA (open source)
+    * <http://nvdla.org>
+* GraphCore IPU
+    * <https://www.graphcore.ai/products/ipu>
+* Microsoft Brainwave
+    * <https://www.microsoft.com/en-us/research/uploads/prod/2018/03/mi0218_Chung-2018Mar25.pdf>
+* SambaNova's Cardinal (very little public documentation)
+    * <https://sambanova.ai/>
+* Apple's ML accelerator in their M12 chip
+* Anything from companies on this list ;-)
+    * <https://www.crn.com/slide-shows/components-peripherals/the-10-coolest-ai-chip-startups-of-2020>>
+* Academic efforts, like:
+    * [SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks](https://arxiv.org/abs/1708.04485), Parashar et al. ISCA 2017
+    * [EIE: Efficient Inference Engine on Compressed Deep Neural Network](https://arxiv.org/abs/1602.01528), Han et al. ISCA 2016
+    * [vDNN: Virtualized Deep Neural Networks for Scalable, Memory-Efficient Neural Network Design](https://arxiv.org/abs/1602.08124), Rhu et al. MICRO 2016
+    * [Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Network](http://eyeriss.mit.edu/), Chen et al. ISCA 2016
+* An excellent survey organizing different types of designs:
+    * [Efficient Processing of Deep Neural Networks: A Tutorial and Survey](https://www.rle.mit.edu/eems/wp-content/uploads/2017/11/2017_pieee_dnn.pdf), Zhe et al. IEEE 2017
+    
+## Lecture 9: System Support for Curating Training Data ##
+
+__Pre-Lecture Required Reading: (to read BEFORE lecture 9)__
+
+There are two required readings for this lecture. Use the second reading to supplement the first. The prompt questions are shared across the readings.
+* [Snorkel: Rapid Training Data Creation with Weak Supervision](http://www.vldb.org/pvldb/vol11/p269-ratner.pdf). Ratner et al. VLDB 2017.  
+* [Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale](https://arxiv.org/abs/1812.00417). Bach et al. SIGMOD 2019
+   * This is a paper about the deployment of Snorkel at Google.  Pay particular attention to the enumeration of "core principles" in Section 1 and the final "Discussion" in section 7.  *Skimming this paper in conjunction with the first required reading is recommended*.
+   * You also might want to check out the [Snorkel company blog](https://www.snorkel.org/blog/) for more digestible examples.
+* __Prompt questions:__
+   * First let's get our terminology straight.  What is meant by "weak supervision", and how does it differ from the traditional supervised learning scenario where a training procedure is given a training set consisting of (1) a set of data examples and (2) a corresponding set of "ground truth" labels for each of these examples?  
+   * Like in all systems, I'd like everyone to pay particular attention to the design principles described in Section 1 of the Ratner et al. paper, as well as the principles defined in the Drybell paper. If you had to boil the entire philosophy of Snorkel down to one thing, what would you say it is?  Hint: look at principle 1 in the Ratner et al. paper. "If accurate labels are expensive, but data is cheap, find a way to use all the sources of __________ you can get your hands on." 
+   * Previously humans injected their knowedge by labeling data examples. Under the Snorkel paradigm, now humans inject their knowledge how? 
+   * The main *abstraction* in Snorkel is the *labeling function*. Please describe what the output interface of a labeling function is. Then, and most importantly, __what is the value__ of this abstraction.  Hint: you probably want to refer to the key principle of Snorkel in your answer.
+   * What is the role of the __final model training__ part of Snorkel? (That is, training an off-the-shelf DNN architecture on the probabalistic labels produced by Snorkel.)  Why not just use the probablistic labels as the model itself?
+   * One interesting aspect of Snorkel is the notion of learning from "non-servable assets". (This is more clearly articulated in the Snorkel DryBell paper, so take a look there). This is definitely not an issue that would be high on the list of academic concerns, but it is quite important in indusrty. What is a non-servable asset and how does the Snorkel approach make it possible to "learn from" non-servable assets even if they are not available at later runtimes. 
+   * From the ML perspective, the key technical insight of Snorkel (and of most follow on Snorkel papers, see [here](https://arxiv.org/abs/1810.02840), [here](https://www.cell.com/patterns/fulltext/S2666-3899(20)30019-2), and [here](https://arxiv.org/abs/1910.09505) for some examples) is the mathematical modeling of correlations between labeling functions in order to more accurately estimate probabilistic labels.  We will not talk in detail about these generative algorithms in class, but many of you will enjoy learning about them.  
+   * In general, I'd like you to reflect on Snorkel and (if time) some of the recommended papers below. (see the Rekall blog post, or the Model Assertions paper for different takes.) I'm curious about your comments. 
+
+__Other Recommended Readings:__
+
+* [Accelerating Machine Learning with Training Data Management](https://ajratner.github.io/assets/papers/thesis.pdf). Alex Ratner's Stanford Ph.D. Dissertation (2019)
+   * This is the thesis that covers Snorkel and related systems. As was the case when we studied Halide, it can often be helpful to read Ph.D. theses, since they are written up after the original publication on a topic, and often include more discussion of the bigger picture, and also the widsom of hindsight.  I highly recommend Alex's thesis.  
+* Two related papers:
+  * [Overton: A Data System for Monitoring and Improving Machine-Learned Products](https://arxiv.org/abs/1909.05372), Ré et al. 2019
+  * [Ludwig: a type-based declarative deep learning toolbox](https://arxiv.org/abs/1909.07930), Molino et al. 2019
+  * Often when you hear about machine learning abstractions, we think about ML frameworks like [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), or [MX.Net](https://mxnet.apache.org/).  Instead of having to write key model ML layers yourself, these frameworks present the abstraction of a ML graph "operator", and allow model creation by composing operators into DAGs.  However, the abstraction of designing models by wiring up data flow graphs of operators is still quite low.  One might characterize these abstractions as being targeted for an ML engineer---someone who has taken a lot of ML classes, and has experience implementing model architectures in TensorFlow, experience selecting the right model for the job, or with the know-how to adjust hyperparameters to make training successful.  
+The two papers for our discussion are efforts to begin to raise the level of abstraction even higher.  These are systems that emerged out of two major companies (Overton out of Apple, and Ludwig out of Uber), and they share the underlying philosophy that some of the operational details of getting modern ML to work can be abstracted away from users that simply want to use technologies to quickly train, validate, and continue to maintain accurate models.  In short these two systems can be thought of as different takes on Karpathy’s software 2.0 argument, which you can read in this [Medium blog post](https://medium.com/@karpathy/software-2-0-a64152b37c35).  I’m curious about your thoughts on this post as well!
+* [Model Assertions for Monitoring and Improving ML Models](https://cs.stanford.edu/~matei/papers/2020/mlsys_model_assertions.pdf). Kang et al. MLSys 2020
+    * A similar idea here, but with different human-provided priors about how to turn existing knowledge in a model into additional supervision.
+* [Rekall: Specifying Video Events using Compositions of Spatiotemporal Labels](https://arxiv.org/abs/1910.02993), Fu et al. 2019
+    * In the context of Snorkel, Rekall could be viewed as a system for writing labeling functions for learning models for detecting events in video.  Alternatively, from a databases perspective, Rekall can be viewed as a system for defining models by not learning anything at all -- and just having the query itself be the model.   
+    * Blog post: <https://dawn.cs.stanford.edu/2019/10/09/rekall/>, code: <https://github.com/scanner-research/rekall>
+* [Waymo's recent blog post on image retrieval systems as data-curation systems](https://blog.waymo.com/2020/02/content-search.html), Guo et al 2020.
+* [Selection via Proxy: Efficient Data Selection for Deep Learning](https://cs.stanford.edu/people/matei/papers/2020/iclr_svp.pdf), Coleman et al. ICLR 2020.
+* __The unsupervised or semi-supervised learning angle.__  We'd be remiss not to talk about the huge body of work that attempts to reduce the amount of labeled training data required using unsupervised learning techniques.
+    * [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165). Brown et al. NeurIPS 2020. (The GPT-3 paper)
+    * [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709). Chen et al. ICLM 2020 (The SimCLR paper)
+    * [Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/abs/2006.09882). Caron et al. NeurIPS 2020. (The SwAV paper)
+    * [Data Distillation: Towards Omni-Supervised Learning](http://openaccess.thecvf.com/content_cvpr_2018/papers/Radosavovic_Data_Distillation_Towards_CVPR_2018_paper.pdf), Radosavovic et al. CVPR 2018
+    
+## Lecture 10: Video Compression (Traditional and Learned) ##
+
+__Post-Lecture Required Reading:__
+
+* [Warehouse-scale video acceleration: co-design and deployment in the wild](https://dl.acm.org/doi/abs/10.1145/3445814.3446723). Ranganathan et al. ASPLOS 2021
+
+This is a recent paper about the deployment of fixed-function hardware for video encoding and decoding in Google datacenters (Youtube, Google Photos, etc).  I thought it was a great example of a systems paper describing goals, constraints, and cross-cutting issues. Please address the following in your summary:
+
+* An interesting stat from the paper was that it takes over one CPU-hour of compute to encode 150 frames of 2160p video using VP9 (top of Section 4.5). State why companies like Google care so much about spending large amounts of computation to achieve very high quality (or similarly, very low bitrate) video encoding.  Why does more computation help? (the last part is a review from lecture).
+* Please describe the reasons why Youtube must encode a video multiple times and at many resolutions/quality settings? And why is multiple output target (MOT) encoding a useful approach in this environment? Hint, consider low resolution output versions of a high-resolution input video.) 
+* An interesting paragraph towards the end of Section 2 (see header "Video Usage Patterns at Scale") broke the workload down into videos that are viral and highly watched (constituting most of the watch time), videos that are modestly watched, and videos that are rarely watched at all. For each of these categories, describe whether you think the VCU is a helpful platform that that type of video.
+* We all have laptops and mobile devices with hardware accelerators for video encoding, but the requirements for accelerator hardware in a datacenter are quite different.  What were some of the most interesting differences to you?  What are opportunities that the datacenter case affords that might not be there in the case of hardware for consumer devices?
+* In Section 3.3 there is an interesting analysis of how much bandwidth is needed for the VCU hardware to avoid being BW-bound. Was is the role of custom data compression hardware on the VCU?
+* There are key sections talking about the stateless design of the encoder. (End of 3.2). Give some reasons why, in a datacenter environment, the stateless approach is beneficial. 
+
+__Other Recommended Readings:__
+
+* [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
+* [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
+* [Salsify: Low-Latency Network Video through Tighter Integration between a Video Codec and a Transport Protocol](https://snr.stanford.edu/salsify/). Fouladi et al. NSDI 2018
+* [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
+* [Gradient-Based Pre-Processing for Intra Prediction in High Efficiency Video Coding](https://link.springer.com/article/10.1186/s13640-016-0159-9). BenHajyoussef et al. 2017
+* [The Design, Implementation, and Deployment of a System to Transparently Compress Hundreds of Petabytes of Image Files for a File-Storage Service](https://arxiv.org/abs/1704.06192). Horn et al. 2017.
+* [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
+* [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
+
+## Lecture 11: The Future of Video Conferencing Systems ##
+
+__Post-Lecture Required Reading:__
+* [Beyond Being There](http://worrydream.com/refs/Hollan%20-%20Beyond%20Being%20There.pdf). Hollan and Stornetta. CHI 1992
+
+This is a classic paper from the early human-computer interaction community that challenges the notion that recreating reality in digital form should be the "north star" goal of the design of virtual environments.  We're now 30 years past the paper, and technology and our ways of communicating using technology has progressed significantly, but one might argue given all the recent talk about "The Metaverse" that technologists may still be making the same mistakes. Please address the following in your summary:
+
+* In the section titled "Being There", the authors provide a "crutch vs. shoes" analogy.  Consider modern video-conferencing systems you might use on a daily basis, and does the analogy apply?
+* I'd like you to reflect on your usage of Zoom/Teams/Meet/Slack/Discord/etc. and consider what are the features of these systems that cause you to choose to use them.  Consider the modalities of text, audio, and video. When and why do you choose to use each?  Are there situations where too much resolution or too much capture fidelity hurts the experience of communicating?
+* Now think about a topic that you are all experts in: online/virtual classes at Stanford.  Can you think of examples where professors used the pandemic as an opportunity to communicate in a way that was "better than being there"?  Can you think of situations where classes tried to replicate the experience of "being there" and it fell flat? Comment on how you think the themes of "beyond being there" might apply to virtual education and teaching?
+* The authors hypothesize: "What if we were able to create communication tools that were richer than face-to-face?"  But of course, this was back in 1992.  Today we have technologies and systems that arguably answer this question in the positive.  What tools, platforms, systems come to mind to you?
+* The idea of __intersubjectivity__ discussed in the document is interesting.  What are ways that current tools fail in this regard and how might they be improved?  Note: one good example of a success in the intersubjectivity department is the simple animated "dot dot dot" indicating someone on the other side of a DM conversation is typing.  Perhaps one failure example is how little information we get out of the online/offline indicator on Slack.
+* So is Facebook, er. I mean Meta, right?  Is a high-fidelity VR social experience going to change the way we work with others? Or will the next big innovation in how with communicate be something more like Instastram, TikTok, or WhatsApp? 
+
+__Recommended Readings:__
+* [SVE: Distributed Video Processing at Facebook Scale](https://research.fb.com/wp-content/uploads/2017/10/sosp-226-cameraready.pdf). Huang et al. SOSP 2017
+* [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
+* [Social Translucence: An Approach to Designing Systems that Support Social Processes](https://dl.acm.org/doi/10.1145/344949.345004). Erickson and Kellogg. TOCHI 2000.
