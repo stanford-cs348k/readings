@@ -312,13 +312,23 @@ __Recommended Readings:__
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/nerfsystems/)
 
-__ Recommended Readings:__
+__Recommended Readings:__
 * [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf) Mildenhall et al. ECCV 2020
 
 ## Lecture 14: Rendering and Simulation for Model Training ##
 
 __Pre-Lecture Required Reading:__
  * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) Park et al. CHI 2023
+
+Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters.  But agents that behave realistically have many other applications as well: they can stand in as proxies for software testers to find bugs or help designers assess the playability or difficulty of levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world gives rise to more global phenomenon such as organization of society or the creation of empires, as anyone that's played games like The Sims might have experienced.  This paper is about designing a new class of simulated agents that use queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or rules.  I'd like you to think about the following questions:
+
+* First let's start with some technical details.  The key subroutine used in this paper is a query to a stateless large language model (LLM). The input to this query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. The paper hypothesizes that this stateless operation (with small, finite inputs) will pose challenges for creating characters that behave like humans. What is the nature of this challenge? (hint: continuity)
+
+* The paper's experiments are performed in a small "Sims"-like work called Smallville.  While it's easy to picture how to code-up an agent to manipulate Smallville (move to place X, turn stove to on, etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agent needs to translate the text string responses from the LLM to agents in the game.  How does it do this?  For example, if the agent is in a bedroom and the LLM says the character needs to clean up the kitchen, how does the agent turn this direction into actions in the game?
+
+
+
+
 
 __Post-Lecture Required Reading:__
  * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation]() Shacklett et al. SIGGRAPH 2023
