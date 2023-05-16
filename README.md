@@ -162,6 +162,8 @@ __Other recommended Readings:__
 
 ## Lecture 8: DNN Hardware Accelerators ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/dnnhardware/)
+
 __Pre-Lecture Required Reading: (to read BEFORE lecture 8)__
 
 * [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/abs/1704.04760). Jouppi et al. ISCA 2017
@@ -207,6 +209,8 @@ __Other Recommended Readings:__
     
 ## Lecture 9: System Support for Curating Training Data ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/supervision/)
+
 __Pre-Lecture Required Reading: (to read BEFORE lecture 9)__
 
 There are two required readings for this lecture. Use the second reading to supplement the first. The prompt questions are shared across the readings.
@@ -248,6 +252,8 @@ The two papers for our discussion are efforts to begin to raise the level of abs
     
 ## Lecture 10: Video Compression (Traditional and Learned) ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/videocompression/)
+
 __Post-Lecture Required Reading:__
 
 * [Warehouse-scale video acceleration: co-design and deployment in the wild](https://dl.acm.org/doi/abs/10.1145/3445814.3446723). Ranganathan et al. ASPLOS 2021
@@ -274,6 +280,8 @@ __Other Recommended Readings:__
 
 ## Lecture 11: The Future of Video Conferencing Systems ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/videoconf/)
+
 __Post-Lecture Required Reading:__
 * [Beyond Being There](http://worrydream.com/refs/Hollan%20-%20Beyond%20Being%20There.pdf). Hollan and Stornetta. CHI 1992
 
@@ -290,3 +298,29 @@ __Recommended Readings:__
 * [SVE: Distributed Video Processing at Facebook Scale](https://research.fb.com/wp-content/uploads/2017/10/sosp-226-cameraready.pdf). Huang et al. SOSP 2017
 * [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
 * [Social Translucence: An Approach to Designing Systems that Support Social Processes](https://dl.acm.org/doi/10.1145/344949.345004). Erickson and Kellogg. TOCHI 2000.
+
+## Lecture 12: The Light Field and NeRF Preliminaries ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/nerf/)
+
+__Recommended Readings:__
+* [Light Field Rendering](https://graphics.stanford.edu/papers/light/). Levoy and Hanrahan 1996.
+* [Jump: Virtual Reality Video](https://research.google/pubs/pub45617/). Anderson et al. SIGGRAPH Asia 2016
+* [Instant 3D Photography](http://visual.cs.ucl.ac.uk/pubs/instant3d/). Hedman and Kopf. SIGGRAPH 2018
+
+## Lecture 13: The NeRF Explosion ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/nerfsystems/)
+
+__ Recommended Readings:__
+* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf) Mildenhall et al. ECCV 2020
+
+## Lecture 14: Rendering and Simulation for Model Training ##
+
+__Pre-Lecture Required Reading:__
+ * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) Park et al. CHI 2023
+
+__Post-Lecture Required Reading:__
+ * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation]() Shacklett et al. SIGGRAPH 2023
+
+
