@@ -313,19 +313,19 @@ __Recommended Readings:__
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/nerfsystems/)
 
 __Recommended Readings:__
-* [Neural Volumes: Learning Dynamic Renderable Volumes from Images](https://research.facebook.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/) Lombardi et al. SIGGRAPH 2019 
-* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf) Mildenhall et al. ECCV 2020
- ** This is the NeRF paper 
+* [Neural Volumes: Learning Dynamic Renderable Volumes from Images](https://research.facebook.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/). Lombardi et al. SIGGRAPH 2019 
+* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf). Mildenhall et al. ECCV 2020
+  * This is the original NeRF paper
 * [PlenOctrees for Real-time Rendering of Neural Radiance Fields](https://alexyu.net/plenoctrees/). Yu et al ICCV 2021
-* [Plenoxels: Radiance Fields without Neural Networks](https://alexyu.net/plenoxels/) Fridovich-Keil et al. CVPR 2022
-* [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) Müller et al. SIGGRAPH 2022
-* [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/) Takikawa et al. CVPR 2021 
-* [Block-NeRF: Scalable Large Scene Neural View Synthesis](https://waymo.com/research/block-nerf/) Tancik et al. CVPR 2022
+* [Plenoxels: Radiance Fields without Neural Networks](https://alexyu.net/plenoxels/). Fridovich-Keil et al. CVPR 2022
+* [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/). Müller et al. SIGGRAPH 2022
+* [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/). Takikawa et al. CVPR 2021 
+* [Block-NeRF: Scalable Large Scene Neural View Synthesis](https://waymo.com/research/block-nerf/). Tancik et al. CVPR 2022
 
 ## Lecture 14: Rendering and Simulation for Model Training ##
 
 __Pre-Lecture Required Reading:__
- * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) Park et al. CHI 2023
+ * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442). Park et al. CHI 2023
 
 Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters.  But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themese from the course, and I'd like you to think about the following questions:
 
@@ -340,6 +340,6 @@ Generating plausible agents that behave "like humans" has long been an interest 
 * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particular hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7).  What do you think?  Do you believe that important aspects of the agent architecture hae merit?  
 
 __Post-Lecture Required Reading:__
- * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation]() Shacklett et al. SIGGRAPH 2023
+ * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](). Shacklett et al. SIGGRAPH 2023
 
 
