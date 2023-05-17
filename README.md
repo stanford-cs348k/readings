@@ -340,6 +340,6 @@ Generating plausible agents that behave "like humans" has long been an interest 
 * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particular hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7).  What do you think?  Do you believe that important aspects of the agent architecture hae merit?  
 
 __Post-Lecture Required Reading:__
- * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](). Shacklett et al. SIGGRAPH 2023
+ * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://drive.google.com/file/d/1gYH9igU2dJtg2EpRrfNBpFl9GZvHTcR4/view?usp=sharing). Shacklett et al. SIGGRAPH 2023
 
 
