@@ -313,22 +313,31 @@ __Recommended Readings:__
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/nerfsystems/)
 
 __Recommended Readings:__
+* [Neural Volumes: Learning Dynamic Renderable Volumes from Images](https://research.facebook.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/) Lombardi et al. SIGGRAPH 2019 
 * [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf) Mildenhall et al. ECCV 2020
+ ** This is the NeRF paper 
+* [PlenOctrees for Real-time Rendering of Neural Radiance Fields](https://alexyu.net/plenoctrees/). Yu et al ICCV 2021
+* [Plenoxels: Radiance Fields without Neural Networks](https://alexyu.net/plenoxels/) Fridovich-Keil et al. CVPR 2022
+* [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/) Müller et al. SIGGRAPH 2022
+* [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/) Takikawa et al. CVPR 2021 
+* [Block-NeRF: Scalable Large Scene Neural View Synthesis](https://waymo.com/research/block-nerf/) Tancik et al. CVPR 2022
 
 ## Lecture 14: Rendering and Simulation for Model Training ##
 
 __Pre-Lecture Required Reading:__
  * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442) Park et al. CHI 2023
 
-Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters.  But agents that behave realistically have many other applications as well: they can stand in as proxies for software testers to find bugs or help designers assess the playability or difficulty of levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world gives rise to more global phenomenon such as organization of society or the creation of empires, as anyone that's played games like The Sims might have experienced.  This paper is about designing a new class of simulated agents that use queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or rules.  I'd like you to think about the following questions:
+Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters.  But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themese from the course, and I'd like you to think about the following questions:
 
-* First let's start with some technical details.  The key subroutine used in this paper is a query to a stateless large language model (LLM). The input to this query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. The paper hypothesizes that this stateless operation (with small, finite inputs) will pose challenges for creating characters that behave like humans. What is the nature of this challenge? (hint: continuity)
+* First let's start with some technical details. The paper's experiments are performed in a small "Sims"-like work called Smallville. The key subroutine used by agents in this paper is a query to a stateless large language model (LLM). For those of you that have used ChatGPT or similar systems like Google's Bard, just picture this module working like those systems. The input query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. It's easy to picture how to code-up a "bot" to operate within Smallville (use game APIs to move to place X, turn stove to "on", etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agents described in this paper need to translate the text string responses from the LLM to agent actions in the game. What is the mechanism for turning LLM responses into agent actions in the game? (For example, if the agent is in a bedroom and the LLM says the character should clean up the kitchen, how does the agent turn this direction into actions in the game?) This is discussed in Section 5.
 
-* The paper's experiments are performed in a small "Sims"-like work called Smallville.  While it's easy to picture how to code-up an agent to manipulate Smallville (move to place X, turn stove to on, etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agent needs to translate the text string responses from the LLM to agents in the game.  How does it do this?  For example, if the agent is in a bedroom and the LLM says the character needs to clean up the kitchen, how does the agent turn this direction into actions in the game?
+* The paper hypothesizes that this stateless module (with small, finite inputs) will be insufficient for creating characters that behave over long time scales in a consistent and rational way. Summarize the reasons for this challenge? (hint: consider continuity)
 
+* To address the challenge described above, the paper's solution is to "summarize" a long history of the agent into a finite-length input for the LLM.  There are two parts to this approach. The first is the "memory stream".  Describe what the memory stream's purpose is in the agent architecture.  Then describe how retrieval is used to select what data fromt the memory stream should be used in each query.
 
+* Of course, over a long simulation, enough activity happens to an agent that a memory stream grows quite long.  One way to address this might be to ask ChatGPT to summary a long text string into a shorter one.  But the authors go with a different approach that they call __reflection__. How is reflection implemented and give your thoughts on this approach, which indeed is a form of summarization of the memory stream.
 
-
+* Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particular hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7).  What do you think?  Do you believe that important aspects of the agent architecture hae merit?  
 
 __Post-Lecture Required Reading:__
  * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation]() Shacklett et al. SIGGRAPH 2023
