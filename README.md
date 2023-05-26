@@ -329,7 +329,7 @@ __Recommended Readings:__
 __Pre-Lecture Required Reading:__
  * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442). Park et al. CHI 2023
 
-Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters.  But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themes from the course, and I'd like you to think about the following questions:
+Although the topic of the lecture was about "training" agents, this paper is a little different. Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters. But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themes from the course, and I'd like you to think about the following questions:
 
 * First let's start with some technical details. The paper's experiments are performed in a small "Sims"-like work called Smallville. The key subroutine used by agents in this paper is a query to a stateless large language model (LLM). For those of you that have used ChatGPT or similar systems like Google's Bard, just picture this module working like those systems. The input query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. It's easy to picture how to code-up a "bot" to operate within Smallville (use game APIs to move to place X, turn stove to "on", etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agents described in this paper need to translate the text string responses from the LLM to agent actions in the game. What is the mechanism for turning LLM responses into agent actions in the game? (For example, if the agent is in a bedroom and the LLM says the character should clean up the kitchen, how does the agent turn this direction into actions in the game?) This is discussed in Section 5.
 
@@ -341,7 +341,20 @@ Generating plausible agents that behave "like humans" has long been an interest 
 
 * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particular hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7).  What do you think?  Do you believe that important aspects of the agent architecture have merit?  
 
-__Post-Lecture Required Reading:__
+__Other Recommended Readings:__
+
+* [Emergent Tool Use From Multi-Agent Autocurricula](https://openai.com/research/emergent-tool-use). Baker et al. ICLR 2020.
+* [Open-Ended Learning Leads to Generally Capable Agents](https://www.deepmind.com/blog/generally-capable-agents-emerge-from-open-ended-play). DeepMind 2021.
+* [Habitat: A Platform for Embodied AI Research](https://arxiv.org/abs/1904.01201). Savva et al. ICCV 2019. ([Project site](https://aihabitat.org/))
+* [RoboTHOR: An Open Simulation-to-Real Embodied AI Platform](https://arxiv.org/abs/2004.06799). Deitke et al. CVPR 2020 ([Project site](https://ai2thor.allenai.org/robothor/))
+* [ProcTHOR: Large-Scale Embodied AI Using Procedural Generation](https://procthor.allenai.org/) Deitke et al. NeurIPS 2022. 
+* [CARLA: An Open Urban Driving Simulator](https://arxiv.org/abs/1711.03938). Dosovitskiy et al. CoRL 2017 ([Project site](https://carla.org/))
+
+## Lecture 15: Fast Simulation for Model Training  ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/manyworldsim/)
+
+__Pre-Lecture Required Reading:__
  * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://drive.google.com/file/d/1gYH9igU2dJtg2EpRrfNBpFl9GZvHTcR4/view?usp=sharing). Shacklett et al. SIGGRAPH 2023
 
 If you were to create a computer game today, you'd probably not write the entire game from scratch. Instead, you'd choose to write your game using the APIs provided by a game engine framework, such as  e.g., [Unity](https://unity.com/), [Unreal](https://www.unrealengine.com/), or [Phaser](https://phaser.io/)) because it would be not only far more productive to do so, but also because you'd probably not be able to implement key parts of your game (like advanced rendering, physics, input collection from controllers, etc) as well as domain experts in these areas. In other words, existing engines provide valuable, well-implemented building blocks for creating a game, which allows game developers to focus on implementing the _logic and content specific to their game_ (specific game rules, creating worlds, etc.).
@@ -362,9 +375,40 @@ As you read the paper, please respond to the following questions:
 
 * Ignoring robotics applications, are there good reasons to train AI agents for the purpose of making video games better?  What might you do with a very high performance batch simulator?
 
+__Other Recommended Readings:__
+* [Accelerating Reinforcement Learning through GPU Atari Emulation](https://arxiv.org/abs/1907.08467). Dalton et al. NeurIPS 2020.
+* [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
+* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). 
 
-## Lecture 14: Diffusion-based Image Generation (Part I) ##
+## Lecture 16: Controlling Generative AI for Image Creation ##
 
-__Pre-Lecture Required Preparation:__
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/diffusion1)
 
+__Pre-lecture required activity:__ Please use any public generative AI tool to create your own images prior to class.  In addition, I've provides several scenes (via example images) that I'd like you to try to create via prompt engineering, in-painting, etc. Imagine that you had these scenes "in your head" as a notion of a picture you wanted to create. Why challenges did you run into trying to create these scenes using text-based prompts?
+
+__Post-lecture Required Reading:__ 
+* [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible). Agrawala 2023.
+
+This reading is a recent blog post by Stanford Professor Maneesh Agrawala.  I'd like you to react to the blog post in the context of the image generation task I gave you as the pre-lecture activity: using generative AI to make a still life shot of a dining room setting (or any other image where you had a strong opinion on what you wanted it to look like.) Here are a few questions:
+  
+  * The central thesis of the blog post is that it's the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of your experience making images that embody the goals in your head, how did the unpredictability of the system inhibit your ability to create the target image.  Please give specific examples in your answer.  Really thorough answers might document a sequence of attempts to achieve a goal, discussion why and how you changed your prompts on each step.
+
+  * What are the controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the recommended readings that offer more advanced editing controls for image generation using generative AI.
+
+__Other Recommended Readings:__
+
+* [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543) Zhang et al. ArXiv 2023.
+* [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://www.timothybrooks.com/instruct-pix2pix/). Brooks et al. CVPR 2023.
+* [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/) Hertz et al. ArXiv 2022.
+* [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/) Avrahami et al. CVPR 2022.
+* [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/) Ruiz et al. CVPR 2023.
+* [Collage Diffusion](https://arxiv.org/abs/2303.00262) Sarukkai et al. ArXiv 2023.
+
+## Lecture 17: Performance Optimizations for Diffusion-Based Image Generation ##
+
+
+
+
+
+ 
 
