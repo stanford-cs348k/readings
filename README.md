@@ -89,7 +89,7 @@ __Other Recommended Readings:__
 
 ## Lecture 4: Digital Camera Processing Pipeline (Part III) ####
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/digitalcamera3/)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/camerabstractions/)
 
 For the required reading for the next class, please see required readings under lecture 5. During we continued discussion of digital camera processing pipeline topics. For suggested going further readings, please see the list of readings given under Lecture 4 . 
 
