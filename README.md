@@ -1,6 +1,6 @@
 # Reading and Discussion List for Stanford CS348K
 
-* Web site for most recent offering of the course: <http://cs348k.stanford.edu/spring23>
+This page contains discussion prompts for papers on the reading list for Stanford CS348K: Visual Computing Systems, taught by [Kayvon Fatahahalian](http://graphics.stanford.edu/~kayvonf/) You can find the web site for most recent offering of the course here: <http://cs348k.stanford.edu>
 
 ## Lecture 1: Throughput Computing Review ##
 
@@ -406,9 +406,47 @@ __Other Recommended Readings:__
 
 ## Lecture 17: Performance Optimizations for Diffusion-Based Image Generation ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/diffusion2)
 
+__Recommended Readings:__
 
+* [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752.pdf) Rombach et al. CVPR 2022
+* [Cascaded Diffusion Models for High Fidelity Image Generation](https://cascaded-diffusion.github.io/) Ho et al. JMLR 2022
+* [On Distillation of Guided Diffusion Models](https://arxiv.org/abs/2210.03142) Meng et al. CVPR 2023
 
+## Lecture 18: High-Performance GPU Ray Tracing ##
 
+There is no required reading for this lecture.  However it's recommended that all students brush up on the concept of ray-scene traversal using a bounding volume hierarchy (BVH).
+
+* Here are [ray-scene intersection notes from Stanford CS248A](https://gfxcourses.stanford.edu/cs248a/winter23/lecture/accelstructure/).
+* For those that have not taken CS248A or a similar ray tracing class, the place to start would be Pete Shirley's [Ray Tracing in One Weekend](https://raytracing.github.io/) series.  BVH insersection is covered in [chapter 3 of the second book](https://raytracing.github.io/books/RayTracingTheNextWeek.html).
+
+__Recommended Readings:__
+
+I've grouped the recommending readings below according to various concerns of the high performance raytracing.  
+
+__Systems and Hardware:__
+
+* [OptiX: A General Purpose Ray Tracing Engine](https://research.nvidia.com/publication/optix-general-purpose-ray-tracing-engine). Parker et al. SIGGRAPH 2010
+* [Embree: A Kernel Framework for Efficient CPU Ray Tracing](https://www.embree.org/papers/2014-Siggraph-Embree.pdf) Wald et al. SIGGRAPH 2014.
+* [Introduction to DirectX Ray Tracing](http://intro-to-dxr.cwyman.org/). SIGGRAPH 2018 Course
+* [DirectX Ray Tracing Functional Spec](https://microsoft.github.io/DirectX-Specs/d3d/Raytracing.html#rays)
+* [An energy and bandwidth efficient ray tracing architecture](https://dl.acm.org/doi/10.1145/2492045.2492058). Kopta et al. HPG 2013 
  
+__Intersection Algorithms: (goal: faster ray-scene intersection)__
+   
+* [Fast Parallel Construction of High-Quality Bounding Volume Hierarchies](https://research.nvidia.com/sites/default/files/pubs/2013-07_Fast-Parallel-Construction/karras2013hpg_paper.pdf). Karras et al. HPG 2013 
+* [Architecture Considerations for Tracing Incoherent Rays](https://research.nvidia.com/publication/architecture-considerations-tracing-incoherent-rays). Aila et al. HPG 2010
+
+__Importance Sampling: (goal: reduce number of rays that need to be traced)__ 
+
+* [Spatiotemporal Reservoir resampling for real-time ray tracing
+with dynamic direct lighting](https://research.nvidia.com/sites/default/files/pubs/2020-07_Spatiotemporal-reservoir-resampling/ReSTIR.pdf). Bitterli et al. SIGGRAPH 2020
+
+__Neural Postprocessing:__
+
+* [Interactive reconstruction of Monte Carlo image sequences using a recurrent denoising autoencoder](https://research.nvidia.com/sites/default/files/publications/dnn_denoise_author.pdf). Chaitanya
+et al. SIGGRAPH 2017
+* [Neural Supersampling for Real-time Rendering](https://research.facebook.com/publications/neural-supersampling-for-real-time-rendering/). Xiao et al. SIGGRAPH 2020
+
 
