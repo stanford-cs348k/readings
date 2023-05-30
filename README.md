@@ -1,6 +1,6 @@
 # Reading and Discussion List for Stanford CS348K
 
-This page contains discussion prompts for papers on the reading list for Stanford CS348K: Visual Computing Systems, taught by [Kayvon Fatahahalian](http://graphics.stanford.edu/~kayvonf/) You can find the web site for most recent offering of the course here: <http://cs348k.stanford.edu>
+This page contains discussion prompts for papers on the reading list for Stanford CS348K: Visual Computing Systems, taught by [Kayvon Fatahahalian](http://graphics.stanford.edu/~kayvonf/). You can find the web site for most recent offering of the course here: <http://cs348k.stanford.edu>.
 
 ## Lecture 1: Throughput Computing Review ##
 
