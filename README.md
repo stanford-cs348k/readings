@@ -416,6 +416,8 @@ __Recommended Readings:__
 
 ## Lecture 18: High-Performance GPU Ray Tracing ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring23/lecture/rtrt/)
+
 There is no required reading for this lecture.  However it's recommended that all students brush up on the concept of ray-scene traversal using a bounding volume hierarchy (BVH).
 
 * Here are [ray-scene intersection notes from Stanford CS248A](https://gfxcourses.stanford.edu/cs248a/winter23/lecture/accelstructure/).
