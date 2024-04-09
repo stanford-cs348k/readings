@@ -79,3 +79,42 @@ https://developer.android.com/reference/android/hardware/camera2/package-summary
   * [Local Laplacian Filters: Edge-aware Image Processing with a Laplacian Pyramid](https://people.csail.mit.edu/sparis/publi/2011/siggraph/). Paris et al. SIGGRAPH 2011
   * [The Laplacian Pyramid as a Compact Image Code](http://ieeexplore.ieee.org/document/1095851/). Burt and Adelson, IEEE Transactions on Communications 1983.
  
+## Lecture 3: Digital Camera Processing Pipeline (Part II) ####
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera2/)
+
+For the required reading for the next class, please see required readings under lecture 4. During class we focused our discussion on the architecture of the Frankencamera virtual machine, and continued the lecture on algorithms used in a modern digital camera processing pipeline. For suggested going further readings, please see the list of readings given under Lecture 3. 
+
+## Lecture 4: Efficiently Scheduling Image Processing Algorithms ##
+
+__Pre-Lecture Required Reading: (to read BEFORE lecture 4)__
+* [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
+   * Note: Alternatively you may read the selected chapters in the Ragan-Kelley thesis linked below in recommended readings. (Or the CACM article.) The thesis chapters involve a little more reading than the paper, but in my opinion they are a more accessible explanation of the topic, so I recommend it for students.
+   * In reading this paper, I want you to specifically focus on describing the _philosophy of Halide_.  Specifically, if we ignore the "autotuner" described in Section 5 of the paper (you can skip this section), what is the role of the Halide programmer, and what is the role of the Halide system/compiler?
+      * Hint 1: Which of the two (the programmer or the compiler) is responsible for major optimization decisions?
+      * Hint 2: Can a change to a schedule change the output of a Halide program?
+   * It's useful to think of the Halide "scheduling language" (not the algorithm description language) as a language for manipulating a set of loop nests.  What does it mean to fuse one loop with another loop?  Writing some psuedocode might help you explain this.
+   * Let's consider what type of programmer Halide provides the most value for. Ignoring the autoscheduler (and just considering the language algorithm expression language and scheduling language), what class of programmer do you think is the target of Halide?  Novice programmers? Experts in code optimization? Students that have taken a class like CS149? Why do you think so?
+   * In your own words, in two-three sentences or less, attempt to summarize what you think is the most important idea in the design of Halide?
+   * Advanced question: In my opinion, there is one major place where the core design philosophy of Halide is violated. It is described in Section 4.3 in the paper, but is more clearly described in Section 8.3 of the Ph.D. thesis. (See sliding window optimizations and storage folding).  Why do you think am I claiming this compiler optimization is a significant departure from the core principles of Halide? (There are also valid arguments against my opinion.)
+      * Hint: what aspects of the program’s execution is not explicitly described in the schedule in these situations?
+      
+__Post-Lecture Required Reading: (to read AFTER lecture 5)__
+* [Learning to Optimize Halide with Tree Search and Random Programs](https://halide-lang.org/papers/halide_autoscheduler_2019.pdf). Adams et al. SIGGRAPH 2019 
+   * This paper documents the design of the modern autoscheduling algorithm that is now implemented in the Halide compiler.  This is a very technical paper, so I recommend that you adopt the "read for high-level understanding first, then dive into some details" reading strategy I suggested in class. Your goal should be to get the big points of the paper, not all the details.
+   * The back-tracking tree search used in this paper is certainly not a new idea (you might have implemented algorithms like this in an introductory AI class), but what was interesting was the way the authors formulated the code scheduling problem as a sequence of choices that could be optimized using tree search. Please summarize how scheduling a Halide program is modeled as a sequence of choices. Specifically, what are the choices at each step?
+      * Note: one detail you might be interested to take a closer look at is the "coarse-to-fine refinement" part of Section 3.2. This is a slight modification to a standard back tracking tree search.  
+   * An optimizer's goal is to minimize a cost metric.  In the case of this paper, the cost is the runtime of the scheduled program. Why is a machine-learned model used to *predict the scheduled program's runtime*?  Why not just compile the program and run it on a real computer to measure its cost?
+   * The other interesting part of this paper is the engineering of the learned cost model.  This part of the work was surprisingly difficult, perhaps the hardest part of the project. Observe that the authors do not present an approach based on end-to-end learning where the input is a Halide program DAG and the output is the estimated cost of this program. Instead they use traditional compiler analysis of the program's AST to compute a collection of program *features*, then what is learned is how to weight these features when estimating cost (See Section 4.2). For those of you with a bit of deep learning background, I'm interested in your thoughts here.  Do you like the hand-engineered features approach?  Why not go end-to-end?
+      * Alternatively, in 2024, an obvious thing to try would be to provide an LLM the Halide source code and ask the LLM what it things the program's cost is?  Do you think this would work? Why or why not?
+   
+__Other Recommended Readings:__
+* [Decoupling Algorithms from the Organization of Computation for High Performance Image Processing](http://people.csail.mit.edu/jrk/jrkthesis.pdf). Ragan-Kelley (MIT Ph.D. thesis, 2014)
+    * Please read Chapters 1, 4, 5, and 6.1 of the thesis
+    * You might also find this [CACM article](https://cacm.acm.org/magazines/2018/1/223877-halide/fulltext?mobile=false) on Halide from 2018 an accessible read.
+* [Halide Language Website](http://halide-lang.org/) (contains documentation and many tutorials)
+* Check out this useful [Youtube Video](https://www.youtube.com/watch?v=3uiEyEKji0M) on Halide scheduling
+* [Differentiable Programming for Image Processing and Deep Learning in Halide](https://people.csail.mit.edu/tzumao/gradient_halide/). Li et al. SIGGRAPH 2018
+* [TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](https://www.usenix.org/system/files/osdi18-chen.pdf) Chen et al. OSDI 2018
+    * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
+* [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
