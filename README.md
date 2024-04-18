@@ -89,7 +89,9 @@ __Other Recommended Readings:__
 * [Handheld Mobile Photography in Very Low Light](https://google.github.io/night-sight/). Liba et al. SIGGRAPH Asia 2019
     * This is a paper about the implementation of "Night Sight" in Google Pixel smartphones.  
 
-## Lecture 4: Efficiently Scheduling Image Processing Algorithms ##
+## Lectures 4 and 5: Efficiently Scheduling Image Processing Algorithms ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/imagescheduling/)
 
 __Pre-Lecture Required Reading: (to read BEFORE lecture 4)__
 
@@ -127,3 +129,37 @@ __Other Recommended Readings:__
 * [TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](https://www.usenix.org/system/files/osdi18-chen.pdf) Chen et al. OSDI 2018
    * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
 * [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
+
+## Lecture 6: Efficient DNN Inference and Scheduling ####
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnscheduling/)
+
+__Post-Lecture Required Reading:__
+
+* [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/abs/1704.04760). Jouppi et al. ISCA 2017
+   * Like many computer architecture papers, the TPU paper includes a lot of *facts* about details of the system.  I encourage you to understand these details, but look past all the complexity and try and look for the main lessons learned: things like motivation of the architects, key constraints they were working under, key principles in their resultign design. Here are the questions I'd like to see you address.
+   * What was the motivation for Google to seriously consider the use of a custom processor for accelerating DNN computations in their datacenters, as opposed to using CPUs or GPUs? (Section 2)
+   * I'd like you to resummarize how the `matrix_multiply` operation works.  More precisely, can you flesh out the details of how the TPU carries out the work described in this sentence at the bottom of page 3: "A matrix operation takes a variable-sized B*256 input, multiplies it by a 256x256 constant weight input, and produces a B*256 output, taking B pipelined cycles to complete". Don't worry if you can't, we'll talk about it in class.
+   * We are going to talk about the "roofline" charts in Section 4 during class. Roofline plots are a useful tool for understanding the performance of software on a system. These graphs plot the max performance of the chip (Y axis) given a program with an arithmetic intensity (X -- ratio of math operations to data access). How are these graphs used to assess the performance of the TPU and to characterize the workloads run on the TPU? (which workloads making good use of the TPU?)
+    * Section 8 (Discussion) of this paper is an outstanding example of good architectural thinking.  Make sure you understand the points in this section as we'll discuss a number of them in class.  Particularly for us in CS348K, what is the point of the bullet "Pitfall: Architects have neglected important NN tasks."?
+
+__Other Recommended Readings:__
+* [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
+    * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
+* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/
+* [NVIDIA CUTLASS Github repo](https://github.com/NVIDIA/cutlass)
+* [NVIDIA CuDNN Documentation](https://docs.nvidia.com/deeplearning/cudnn/index.html)
+* [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
+    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
+* NVIDIA Tensor Core
+    * <https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf>
+    * <https://www.anandtech.com/show/12673/titan-v-deep-learning-deep-dive/3>
+    * <https://developer.nvidia.com/blog/optimizing-gpu-performance-tensor-cores/>
+    * <https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9926-tensor-core-performance-the-ultimate-guide.pdf>
+* Google TPU v3
+    * HotChips: <https://hotchips.org/assets/program/conference/day2/HotChips2020_ML_Training_Google_Norrie_Patil.v01.pdf>
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
+    * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
+    * <https://cloud.google.com/tpu/docs/system-architecture>
+  
+
