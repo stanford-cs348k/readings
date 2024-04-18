@@ -146,7 +146,7 @@ __Post-Lecture Required Reading:__
 __Other Recommended Readings:__
 * [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
     * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
-* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/
+* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/)
 * [NVIDIA CUTLASS Github repo](https://github.com/NVIDIA/cutlass)
 * [NVIDIA CuDNN Documentation](https://docs.nvidia.com/deeplearning/cudnn/index.html)
 * [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
