@@ -75,7 +75,7 @@ __Other Recommended Readings:__
   * [Local Laplacian Filters: Edge-aware Image Processing with a Laplacian Pyramid](https://people.csail.mit.edu/sparis/publi/2011/siggraph/). Paris et al. SIGGRAPH 2011
   * [The Laplacian Pyramid as a Compact Image Code](http://ieeexplore.ieee.org/document/1095851/). Burt and Adelson, IEEE Transactions on Communications 1983.
  
-## Lecture 3: Digital Camera Processing Pipeline (Part II) ####
+## Lecture 3: Digital Camera Processing Pipeline (Part II) ##
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera2/)
 
@@ -130,7 +130,7 @@ __Other Recommended Readings:__
    * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
 * [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
 
-## Lecture 6: Efficient DNN Inference and Scheduling ####
+## Lecture 6: Efficient DNN Inference and Scheduling ##
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnscheduling/)
 
@@ -161,5 +161,32 @@ __Other Recommended Readings:__
     * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
     * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
     * <https://cloud.google.com/tpu/docs/system-architecture>
+
+## Lecture 7: Hardware Acceleration of DNNs ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnhardware/)
+
+__Recommended Readings:__
+
+## Lecture 8: Generative AI for Image Creation (Part I) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnscheduling/](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative1/)
+
+__Recommended Readings:__
+
+## Lecture 9: Generative AI for Image Creation (Part II) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative2/)
+
+__Post-Lecture Required Reading:
+
+* [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible) M. Agrawala 2023
+  * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content: the fact that it's incredibly important for a user to be able to form a predictive model of what the AI will produce when given a certain input. 
+
+
+
+
+
+
   
 
