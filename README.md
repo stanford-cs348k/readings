@@ -185,14 +185,14 @@ __Recommended Readings:__
 
 __Recommended Readings:__
 
- * [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543) Zhang et al. ArXiv 2023.
+ * [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543). Zhang et al. ArXiv 2023.
  * [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://www.timothybrooks.com/instruct-pix2pix/). Brooks et al. CVPR 2023.
- * [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/) Hertz et al. ArXiv 2022.
- * [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/) Avrahami et al. CVPR 2022.
- * [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/) Ruiz et al. CVPR 2023.
- * [Collage Diffusion](https://arxiv.org/abs/2303.00262) Sarukkai et al. ArXiv 2023.
+ * [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/). Hertz et al. ArXiv 2022.
+ * [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/). Avrahami et al. CVPR 2022.
+ * [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/). Ruiz et al. CVPR 2023.
+ * [Collage Diffusion](https://arxiv.org/abs/2303.00262). Sarukkai et al. ArXiv 2023.
  * [LooseControl: Lifting ControlNet for Generalized Depth Conditioning](https://shariqfarooq123.github.io/loose-control/). Bhat et al. Arxiv 2023.
- * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116) Sarukkai et al. Arxiv 2024
+ * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116). Sarukkai et al. Arxiv 2024
 
 ## Lecture 9: Generative AI for Image Creation (Part II) ##
 
@@ -200,7 +200,7 @@ __Recommended Readings:__
 
 __Post-Lecture Required Reading:__
 
-* [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible) M. Agrawala 2023
+* [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible). M. Agrawala 2023
   * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content. I'd like you to react to the blog post in the context of the image generation task we performed together in class: using generative AI to make a poster for a Stanford dance event.  (Alternatively, feel welcome to try a free online generative AI tool like [Krea.ai](https://www.krea.ai/apps/image/realtime), [Clibdrop](https://clipdrop.co/stable-diffusion-turbo), or [Midjourney's free tier](https://www.imagine.art/) and try a design exercise of your own!  
   * Please describe the concept of "repair strategies" discussed in the blog. In your words describe the concept of repair, and give one example of a repair strategy that might be used in an image creation process.
   * What does Agrawala claim is the objective of of "establishing common ground" when working with another human, or in our case, a digital AI tool?
@@ -210,10 +210,29 @@ __Post-Lecture Required Reading:__
 
 __Other Recommended Readings:__
 
- * [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752.pdf) Rombach et al. CVPR 2022
- * [Cascaded Diffusion Models for High Fidelity Image Generation](https://cascaded-diffusion.github.io/) Ho et al. JMLR 2022
- * [On Distillation of Guided Diffusion Models](https://arxiv.org/abs/2210.03142) Meng et al. CVPR 2023
- * [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/abs/2208.09392) Bansal et al. NeurIPS 2023 
+ * [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752.pdf). Rombach et al. CVPR 2022
+ * [Cascaded Diffusion Models for High Fidelity Image Generation](https://cascaded-diffusion.github.io/). Ho et al. JMLR 2022
+ * [On Distillation of Guided Diffusion Models](https://arxiv.org/abs/2210.03142). Meng et al. CVPR 2023
+ * [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/abs/2208.09392). Bansal et al. NeurIPS 2023 
+
+## Lecture 10: Generating Video, Animation, 3D Geometry, Worlds and More ##
+
+__Other Recommended Readings:__
+ * Coming soon.
+
+## Lecture 11: Creating AI Agents (Including LLM-based Problem Solving) ##
+
+__Pre-Lecture Required Reading:__
+
+ * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442). Park et al. CHI 2023
+   * Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters. But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themes from the course, and I'd like you to think about the following questions:
+   * First let's start with some technical details. The paper's experiments are performed in a small "Sims"-like work called Smallville. The key subroutine used by agents in this paper is a query to a stateless large language model (LLM). For those of you that have used ChatGPT or similar systems like Google's Bard, just picture this module working like those systems. The input query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. It's easy to picture how to code-up a "bot" to operate within Smallville (use game APIs to move to place X, turn stove to "on", etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agents described in this paper need to translate the text string responses from the LLM to agent actions in the game. What is the mechanism for turning LLM responses into agent actions in the game? (For example, if the agent is in a bedroom and the LLM says the character should clean up the kitchen, how does the agent turn this direction into actions in the game?) This is discussed in Section 5.
+   * The paper hypothesizes that this stateless module (with small, finite inputs) will be insufficient for creating characters that behave over long time scales in a consistent and rational way. Summarize the reasons for this challenge? (hint: consider continuity)
+   * To address the challenge described above, the paper's solution is to "summarize" a long history of the agent into a finite-length input for the LLM.  There are two parts to this approach. The first is the "memory stream".  Describe what the memory stream's purpose is in the agent architecture.  Then describe how retrieval is used to select what data from the memory stream should be used in each query. (Why doesn't the system just provide the entire memory stream to a query?)
+   * Of course, over a long simulation, enough activity happens to an agent that a memory stream grows quite long.  One way to address this might be to ask ChatGPT to generate a summary of a long text string into a shorter one.  But the authors go with a different approach that they call __reflection__. How is reflection implemented and give your thoughts on this approach, which indeed is a form of summarization of the memory stream.
+   * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particularly hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7). How do the authors evaluate their work? What do you think?  Do you believe that important aspects of the agent architecture have merit?
+   * BTW, code is here (https://github.com/joonspk-research/generative_agents), and it's been replicated in by the [AI Town Project](https://www.convex.dev/ai-town).
+
 
 
 
