@@ -44,7 +44,7 @@ __Other Recommended Readings:__
  
 ## Lecture 2: Digital Camera Processing Pipeline (Part I) ##
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera1/)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera1)
 
 __Post-Lecture Required Readings:__
 
@@ -77,7 +77,7 @@ __Other Recommended Readings:__
  
 ## Lecture 3: Digital Camera Processing Pipeline (Part II) ##
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera2/)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera2)
 
 For the required reading for the next class, please see required readings under lecture 4. During class we focused our discussion on the architecture of the Frankencamera virtual machine, and continued the lecture on algorithms used in a modern digital camera processing pipeline. For suggested going further readings, please see the list of readings given under Lecture 3. 
 
@@ -181,7 +181,7 @@ __Recommended Readings:__
 
 ## Lecture 8: Generative AI for Image Creation (Part I) ##
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnscheduling/](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative1/)
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative1/)
 
 __Recommended Readings:__
 
@@ -201,13 +201,12 @@ __Recommended Readings:__
 __Post-Lecture Required Reading:__
 
 * [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible) M. Agrawala 2023
-  * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content: the fact that it's incredibly important for a user to be able to form a predictive model of what the AI will produce when given a certain input. 
-
-I'd like you to react to the blog post in the context of the image generation task I gave you as the pre-lecture activity: using generative AI to make a still life shot of a dining room setting (or any other image where you had a strong opinion on what you wanted it to look like.) Here are a few questions:
-  
-  * The central thesis of the blog post is that it's the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of your experience making images that embody the goals in your head, how did the unpredictability of the system inhibit your ability to create the target image.  Please give specific examples in your answer.  Really thorough answers might document a sequence of attempts to achieve a goal, discussion why and how you changed your prompts on each step.
-
-  * What are the controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the recommended readings that offer more advanced editing controls for image generation using generative AI.
+  * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content. I'd like you to react to the blog post in the context of the image generation task we performed together in class: using generative AI to make a poster for a Stanford dance event.  (Alternatively, feel welcome to try a free online generative AI tool like [Krea.ai](https://www.krea.ai/apps/image/realtime), [Clibdrop](https://clipdrop.co/stable-diffusion-turbo), or [Midjourney's free tier](https://www.imagine.art/) and try a design exercise of your own!  
+  * Please describe the concept of "repair strategies" discussed in the blog. In your words describe the concept of repair, and give one example of a repair strategy that might be used in an image creation process.
+  * What does Agrawala claim is the objective of of "establishing common ground" when working with another human, or in our case, a digital AI tool?
+  * The central thesis of the blog post is that it's the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of our class experience (or your own experience making images), how did the unpredictability of the system inhibit our ability to create the target image.  Please give specific examples in your answer.  If you are making an image on your own, a thorough answer might document a sequence of attempts to achieve a goal, discuss why and how you changed your prompts on each step.
+  * I'd like to you think about controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the "other recommended readings" (given in the prior lecture) that offer more advanced editing controls for image generation using generative AI.
+  * Finally, pick one of the controls that you listed in the previous question, and describe the ``conceptual model" that a user (you) have while using the tool (see section in the blog post about "conceptual model" vs "true system model".  Can you think of how to reduce the problem of training an AI to have a similar conceptual model to the problem of creating paired training data for the task?  Many of the examples we discussed in class followed this pattern.   
 
 __Other Recommended Readings:__
 
