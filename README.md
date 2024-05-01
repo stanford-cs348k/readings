@@ -151,6 +151,12 @@ __Other Recommended Readings:__
 * [NVIDIA CuDNN Documentation](https://docs.nvidia.com/deeplearning/cudnn/index.html)
 * [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
     * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
+
+## Lecture 7: Hardware Acceleration of DNNs ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnhardware/)
+
+__Recommended Readings:__
 * NVIDIA Tensor Core
     * <https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf>
     * <https://www.anandtech.com/show/12673/titan-v-deep-learning-deep-dive/3>
@@ -161,12 +167,17 @@ __Other Recommended Readings:__
     * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
     * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
     * <https://cloud.google.com/tpu/docs/system-architecture>
-
-## Lecture 7: Hardware Acceleration of DNNs ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnhardware/)
-
-__Recommended Readings:__
+  * Cerebras WSE
+    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Cerebras.NataliaVassilieva.v02.pdf>
+    * Corporate Whitepaper... <https://cerebras.net/resources/achieving-industry-best-ai-performance-through-a-systems-approach/>
+* NVIDIA DLA (open source)
+    * <http://nvdla.org>
+* GraphCore IPU
+    * <https://www.graphcore.ai/products/ipu>
+* Microsoft Brainwave
+    * <https://www.microsoft.com/en-us/research/uploads/prod/2018/03/mi0218_Chung-2018Mar25.pdf>
+* SambaNova's Cardinal (very little public documentation)
+    * <https://sambanova.ai/>
 
 ## Lecture 8: Generative AI for Image Creation (Part I) ##
 
@@ -174,16 +185,36 @@ __Recommended Readings:__
 
 __Recommended Readings:__
 
+ * [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543) Zhang et al. ArXiv 2023.
+ * [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://www.timothybrooks.com/instruct-pix2pix/). Brooks et al. CVPR 2023.
+ * [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/) Hertz et al. ArXiv 2022.
+ * [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/) Avrahami et al. CVPR 2022.
+ * [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/) Ruiz et al. CVPR 2023.
+ * [Collage Diffusion](https://arxiv.org/abs/2303.00262) Sarukkai et al. ArXiv 2023.
+ * [LooseControl: Lifting ControlNet for Generalized Depth Conditioning](https://shariqfarooq123.github.io/loose-control/). Bhat et al. Arxiv 2023.
+ * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116) Sarukkai et al. Arxiv 2024
+
 ## Lecture 9: Generative AI for Image Creation (Part II) ##
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative2/)
 
-__Post-Lecture Required Reading:
+__Post-Lecture Required Reading:__
 
 * [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible) M. Agrawala 2023
   * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content: the fact that it's incredibly important for a user to be able to form a predictive model of what the AI will produce when given a certain input. 
 
+I'd like you to react to the blog post in the context of the image generation task I gave you as the pre-lecture activity: using generative AI to make a still life shot of a dining room setting (or any other image where you had a strong opinion on what you wanted it to look like.) Here are a few questions:
+  
+  * The central thesis of the blog post is that it's the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of your experience making images that embody the goals in your head, how did the unpredictability of the system inhibit your ability to create the target image.  Please give specific examples in your answer.  Really thorough answers might document a sequence of attempts to achieve a goal, discussion why and how you changed your prompts on each step.
 
+  * What are the controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the recommended readings that offer more advanced editing controls for image generation using generative AI.
+
+__Other Recommended Readings:__
+
+ * [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752.pdf) Rombach et al. CVPR 2022
+ * [Cascaded Diffusion Models for High Fidelity Image Generation](https://cascaded-diffusion.github.io/) Ho et al. JMLR 2022
+ * [On Distillation of Guided Diffusion Models](https://arxiv.org/abs/2210.03142) Meng et al. CVPR 2023
+ * [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/abs/2208.09392) Bansal et al. NeurIPS 2023 
 
 
 
