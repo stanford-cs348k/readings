@@ -193,6 +193,7 @@ __Recommended Readings:__
  * [Collage Diffusion](https://arxiv.org/abs/2303.00262). Sarukkai et al. ArXiv 2023.
  * [LooseControl: Lifting ControlNet for Generalized Depth Conditioning](https://shariqfarooq123.github.io/loose-control/). Bhat et al. Arxiv 2023.
  * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116). Sarukkai et al. Arxiv 2024
+ * [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/). Blog by Lilian Weng, 2021
 
 ## Lecture 9: Generative AI for Image Creation (Part II) ##
 
@@ -220,7 +221,11 @@ __Other Recommended Readings:__
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative3/)
 
 __Other Recommended Readings:__
- * Coming soon.
+ * [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](https://research.nvidia.com/labs/toronto-ai/VideoLDM/). Blattman et al. CVPR 2023
+ * [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](https://arxiv.org/abs/2311.15127). Blattmann et al. 2023 
+ * [DreamFusion: Text-to-3D using 2D Diffusion](https://dreamfusion3d.github.io/). Poole et al. 2002
+ * [Zero-1-to-3: Zero-shot One Image to 3D Object](https://zero123.cs.columbia.edu/). Liu et al. 2023
+ * [MDM: Human Motion Diffusion Model](https://guytevet.github.io/mdm-page/). Tevet et al. ICLR 2023
 
 ## Lecture 11: Creating AI Agents (Including LLM-based Problem Solving) ##
 
@@ -239,11 +244,21 @@ __Pre-Lecture Required Reading:__
 
 __Post-Lecture Required Reading:__
 
-* [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://voyager.minedojo.org/) 
-   * Reading prompt to be posted shortly.
- 
+* [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://voyager.minedojo.org/)
+    * This is another paper that uses pretrained language models as the key engine for creating autonomous agents for playing a game.  In this case, the focus is on an "open world" game, Minecraft. Note that after reading the paper, you might want to see the Voyager Algorithm" in Appendix A.1, and the actual prompt structure as given in Appendix A.3.4. Here are some questions to respond to:
+    * In many ways the structure of the solution is similar to the examples we discussed in class:  There's an LLM tasked to emit a "plan" describing what the Minecraft character should do. The plan is expressed as Python code which makes calls to a Minecraft API which actually controls the in-game character. The LLM uses techniques such as in-context prompting and reflection to produce successful plans.  However, in this paper there's a new idea that we didn't see in prior work: the LLM is responsible for generating the next task to perform itself!  Talk about (a) how the system proposes new tasks to complete (b) why the task order matters ("curriculum"), and (c) how a successful completion of a task grows the API that the agent has access to in the future.
+    * What is the "skill library" that the agent has access to?
+    * When a plan does not successfully solve a task, the agent receives two forms of feedback. One might come from the python interpreter, another is from the Minecraft engine itself. What are the two forms of feedback and how does the system use that feedback to "try again" and make a new plan in the hopes of succeeding?
+    * Let's turn our attention to evaluation.  What is the key metrics that the authors use as a proxy for "better"?
+    * What are the key aspects of the system that you think are the most important to evaluate?  Remember, think about what ideas are proposed as "good ideas", and the evaluation should show evidence that these ideas matter in terms of improving the key metrics.
 
+__Other Recommended Readings:__
 
+* [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://progprompt.github.io/). Singh et al. ICRA 2023
+* [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf). Wei et al. NeurIPS 2022
+* [ViperGPT: Visual Inference via Python Execution for Reasoning](https://viper.cs.columbia.edu/). Menon et al. ICCV 2023 
+* [Lil' Logs LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). Blog by Lilian Weng 2023
+* [A Survey on Large Language Model-Based Game Agents](https://github.com/git-disl/awesome-LLM-game-agent-papers). List maintained by Sihao Hu
 
 
   
