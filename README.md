@@ -217,10 +217,14 @@ __Other Recommended Readings:__
 
 ## Lecture 10: Generating Video, Animation, 3D Geometry, Worlds and More ##
 
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative3/)
+
 __Other Recommended Readings:__
  * Coming soon.
 
 ## Lecture 11: Creating AI Agents (Including LLM-based Problem Solving) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/aiagents1)
 
 __Pre-Lecture Required Reading:__
 
@@ -233,6 +237,11 @@ __Pre-Lecture Required Reading:__
    * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particularly hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7). How do the authors evaluate their work? What do you think?  Do you believe that important aspects of the agent architecture have merit?
    * BTW, code is here (https://github.com/joonspk-research/generative_agents), and it's been replicated in by the [AI Town Project](https://www.convex.dev/ai-town).
 
+__Post-Lecture Required Reading:__
+
+* [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://voyager.minedojo.org/) 
+   * Reading prompt to be posted shortly.
+ 
 
 
 
