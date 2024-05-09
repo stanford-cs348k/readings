@@ -286,7 +286,7 @@ As you read the paper, please respond to the following questions:
 
 * Ignoring robotics applications, are there good reasons to train AI agents for the purpose of making video games better?  What might you do with a very high performance batch simulator?
 
-* Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some [example game stater code](https://github.com/shacklettbp/madrona_escape_room).  We'd love it if you wanted to write your own game in Madrona! ;-)
+* Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some [example game starter code](https://github.com/shacklettbp/madrona_escape_room).  We'd love it if you wanted to write your own game in Madrona! ;-)
 
 __Other Recommended Readings:__
 * [Accelerating Reinforcement Learning through GPU Atari Emulation](https://arxiv.org/abs/1907.08467). Dalton et al. NeurIPS 2020.
