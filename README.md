@@ -260,6 +260,39 @@ __Other Recommended Readings:__
 * [Lil' Logs LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). Blog by Lilian Weng 2023
 * [A Survey on Large Language Model-Based Game Agents](https://github.com/git-disl/awesome-LLM-game-agent-papers). List maintained by Sihao Hu
 
+## Lecture 12: Fast 3D World Simulation for Model Training (Part I) ##
 
-  
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/trainingsim)
+
+__Post-Lecture Required Reading:__
+
+* [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://madrona-engine.github.io/shacklett_siggraph23.pdf). Shacklett et al. SIGGRAPH 2023
+
+If you were to create a computer game today, you'd probably not write the entire game from scratch. Instead, you'd choose to write your game using the APIs provided by a game engine framework, such as  e.g., [Unity](https://unity.com/), [Unreal](https://www.unrealengine.com/), or [Phaser](https://phaser.io/)) because it would be not only far more productive to do so, but also because you'd probably not be able to implement key parts of your game (like advanced rendering, physics, input collection from controllers, etc) as well as domain experts in these areas. In other words, existing engines provide valuable, well-implemented building blocks for creating a game, which allows game developers to focus on implementing the _logic and content specific to their game_ (specific game rules, creating worlds, etc.).
+
+In this paper open the open source [Madrona Engine](https://madrona-engine.github.io/) the authors observed that there was an emerging need to create simulators that execute at very high throughput when running a "batch" of thousands of independent instances of a world. Early examples of these "batch simulators" can be found here for [Atari games](https://arxiv.org/abs/1907.08467) (github [here](https://github.com/NVlabs/cule)), [robotics physics simulations](https://arxiv.org/abs/2108.10470), and [navigation of indoor environments](https://graphics.stanford.edu/projects/bps3D/). These batch simulators were all written from scratch. This paper is based on a simple claim: it is likely that in the near future there will be a need to make many more unique simulators for training agents like computer game bots, robots, etc., and that not everyone that wants to create a simulator will an expert at high-performance programming on GPUs.  Therefore, there should be a "game framework" for high performance batch simulators.  
+
+As you read the paper, please respond to the following questions:
+
+* As always, make sure you read and understand the requirements and goals of the system as presented in sections 1 and 2.  The paper lists these goals clearly. Please make sure you understand all of them, but I'd like you to focus your response on the "PERFORMANCE" goal. Specifically, performance in this paper does not mean "run in parallel on the GPU", it means "efficiently run in parallel on the GPU".  For those that have taken CS149, think back to the basic principles of SIMD execution and efficient memory access. What are the key ideas in this paper that pertain specifically to the "high performance" goal?
+  * Hint: GPUs perform best when they can execute the same instruction across many threads AND, when those threads access data, high-performance GPU memory performs best when adjacent threads are accessing adjacent memory addresses.     
+
+* There are two major abstractions in the presented system: components and the computation graph (there's a good description in Section 4).  Let's focus on components first.  How are components for all worlds stored in a single table? Give at least one reason why this leads to high GPU performance.  (See Section 5.1). Note, it may be helpful to dive into the description of how Madrona implements component deletion as a way to check your understanding of this part of the paper (see the text related to Figure 2.)
+
+* The authors choose to implement all game logic components as a computation graph (all instances use the same graph), and then execute the computation graph for ALL game instances by running a single graph node N for all instances, then moving on to the next graph node.  Give at lease one reason why this leads to high GPU performance (possible answers lie in rest of Section 5).
+
+* This is a good paper to dig into the evaluation, so we can discuss in class what questions the evaluation is trying to answer.  There are four configurations evaluated in Section 7, (BATCH-ECS-GPU, ECS-GPU, ECS-CPU, and REF-CPU).  For each of the configurations, please provide an explanation of how the configuration is used in a comparison to make a claim about "X is better than Y".  For example, the paper provides ECS-CPU as a good high-performance C++ implementation because comparing just BATCH-ECS-GPU to REF-CPU alone doesn't prove the ideas in the paper are the reason for the observed speedups.  For example, with only that comparison, the speedup could be due to the faster speed of a GPU vs a CPU, or low performance of Python code vs. high oerformance CUDA code.   
+  * Hint: the goal of a scientific paper evaluation is to show that the ideas in the paper have merit.  It is not to show that the authors are better programmers than the programmers of prior work.
+
+* Ignoring robotics applications, are there good reasons to train AI agents for the purpose of making video games better?  What might you do with a very high performance batch simulator?
+
+* Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some [example game stater code](https://github.com/shacklettbp/madrona_escape_room).  We'd love it if you wanted to write your own game in Madrona! ;-)
+
+__Other Recommended Readings:__
+* [Accelerating Reinforcement Learning through GPU Atari Emulation](https://arxiv.org/abs/1907.08467). Dalton et al. NeurIPS 2020.
+* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470).
+* [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
+* [EnvPool Github Repo](https://github.com/sail-sg/envpool)
+
+
 
