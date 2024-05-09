@@ -293,6 +293,7 @@ __Other Recommended Readings:__
 * [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). Makoviychuk et al. 2021
 * [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
 * [EnvPool Github Repo](https://github.com/sail-sg/envpool)
+* [MuJoCo MJX](https://mujoco.readthedocs.io/en/stable/mjx.html). GPU-accelerated MuJoCo.
 
 
 
