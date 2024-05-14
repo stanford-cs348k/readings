@@ -294,6 +294,19 @@ __Other Recommended Readings:__
 * [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
 * [EnvPool Github Repo](https://github.com/sail-sg/envpool)
 * [MuJoCo MJX](https://mujoco.readthedocs.io/en/stable/mjx.html). GPU-accelerated MuJoCo.
+* [Waymax: An Accelerated, Data-Driven Simulator for Large-Scale Autonomous Driving Research](https://waymo.com/research/waymax/). Guilino et al. 2023
+  
+## Lecture 13: Fast 3D World Simulation for Model Training (Part II) ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/trainingsim2)
+
+__Post-Lecture Required Reading:__
+
+* [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024/home). Bruce et al. 2024
+   * Reading prompt/questions coming soon! We are going to have an in-class debate.
+
+__Other Recommended Readings:__
+   * See recommended readings from the prior lecture.   
 
 
 
