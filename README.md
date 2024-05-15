@@ -303,7 +303,16 @@ __Other Recommended Readings:__
 __Post-Lecture Required Reading:__
 
 * [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024/home). Bruce et al. 2024
-   * Reading prompt/questions coming soon! We are going to have an in-class debate.
+   * So far in this course we've talked about foundation models for generating images (or videos, meshes, etc.).  We've also talked about implementing virtual world simulators that can be used as training grounds for AI agents.  There are two problems with world simulation: First, despite the optimization efforts we talked about last class, it can be expensive to simulate detailed worlds. Second, if the goal is to train a general problem solving agent, it's hard to find a diverse set of worlds to train that agent on. There certainly aren't millions of games! In this paper, the authors attempt to skip the challenges of designing and executing world simulators, and instead seek to learn an ___interactive world model___ from just video data that can respond to user input.  Let's first address these technical questions. 
+   * The input to the training procedure is just unlabeled video.  Please describe what is meant by the "latent action" that the method attempts to infer.  
+   * Please describe the inputs and outputs of each step of the process (the video tokenier, the lateny action model, and the dynamics model).  What is the responsibility of each step.  The details of how the steps are implemented with transformer DNN architectures are not relevant to our discussion (students without ML background can feel confident to skip the details of the implementation, but I want everyone to understand how the pieces fit together.)
+   * Since the point of the paper is to create generators for interactive environments, the evaluation of the method should assess how well this goal was achieved.  The authors offer up a metric for assessing "controllability" (See section 3.0).  Do you buy the metric as a measure of "goodness" of an interactive environment?  What are questions you might ask about an interactive environment to assess whether it was a good one? (you might consider things like: consistency? plausibility?)
+   * IMPORTANT: In class our discussion will be a debate about whether it is more promising to push on the line of work in Genie to learn interactive world simulators, or whether it's more promising to invest in technology of faster, more detailed world simulation engines like those discussed in the Madrona class session.  Please be prepared to argue with your classmates in favor of one side.  Here are some issues to consider:
+      *  What are the pros/cons of each approach? You might want to consider:
+          * The costs of making an interactive environment for a specific situation?  (simulation costs? content creating costs?)
+          * How would you specify what an interactive environment should do?  (in the paper they seem to simply provide a single starting image)
+         
+
 
 __Other Recommended Readings:__
    * See recommended readings from the prior lecture.   
