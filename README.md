@@ -315,10 +315,51 @@ __Post-Lecture Required Reading:__
           * How will you generate a huge diversity of experiences and worlds?
           * What does it mean for an AI agent to be a general problem solver?
          
-
-
 __Other Recommended Readings:__
    * See recommended readings from the prior lecture.   
 
+## Lecture 14: Data-Driven vs. Traditional Modeling Driven World Simulation  ##
 
+This lecture was an in-class discussion of the pros and cons of data-driven world simulation ("world models", e.g., DeepMind's Genie) vs. traditional modeling driven world simulation (e.g, a game engine).  
+
+## Lecture 15: Guest Speaker: Learning to Play Counterstrike (Guest Lecture by David Durst) ##
+
+This lecture was a guest lecture by Stanford Ph.D. student David Durst about his work designing AI Counterstrike bots.
+
+## Lecture 16: Video Compression + Video Conferencing Systems ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/videocompression/)
+
+__Recommended Readings:__
+
+ * [Warehouse-scale video acceleration: co-design and deployment in the wild](https://dl.acm.org/doi/abs/10.1145/3445814.3446723). Ranganathan et al. ASPLOS 2021
+    * This is the Google VCU paper I discussed in lecture 
+ * [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
+ * [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
+ * [Salsify: Low-Latency Network Video through Tighter Integration between a Video Codec and a Transport Protocol](https://snr.stanford.edu/salsify/). Fouladi et al. NSDI 2018
+ * [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
+ * [Gradient-Based Pre-Processing for Intra Prediction in High Efficiency Video Coding](https://link.springer.com/article/10.1186/s13640-016-0159-9). BenHajyoussef et al. 2017
+ * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
+ * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
+ * [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
+
+## Lecture 17: Differentiable Rendering and Optimizable Representations for 3D Scenes ##
+
+* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/geomoptimization/)
+
+__Recommended Readings:__
+
+* [Neural Volumes: Learning Dynamic Renderable Volumes from Images](https://research.facebook.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/). Lombardi et al. SIGGRAPH 2019 
+* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf). Mildenhall et al. ECCV 2020
+  * This is the original NeRF paper
+* [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).  Kerbl et al. SIGGRAPH 2023
+* [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/). Müller et al. SIGGRAPH 2022
+* [Plenoxels: Radiance Fields without Neural Networks](https://alexyu.net/plenoxels/). Fridovich-Keil et al. CVPR 2022
+* [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/). Takikawa et al. CVPR 2021 
+* [Block-NeRF: Scalable Large Scene Neural View Synthesis](https://waymo.com/research/block-nerf/). Tancik et al. CVPR 2022
+
+## Lecture 18: OpenAI's Sora (Guest Lecture by Tim Brooks) ##
+
+__Pre-Lecture Required Reading:__
+  * [Video Generation Models at World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). OpenAI Technical Report 2024.
 
