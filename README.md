@@ -4,8 +4,6 @@ This page contains discussion prompts for papers on the reading list for the Sta
 
 ## Lecture 1: Course Introduction ##
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/intro/)
-
 __Post-Lecture Required Readings:__
 
 * [What Makes a Graphics Systems Paper Beautiful](https://graphics.stanford.edu/~kayvonf/notes/systemspaper/). Fatahalian (2019)
@@ -24,27 +22,7 @@ __Post-Lecture Required Readings:__
 
 __Other Recommended Readings:__
 
-* Students that *have not* taken CS149 or feel they need a refresher on basic parallel computer architecture should first watch this [pre-recorded lecture](https://www.youtube.com/watch?v=wtrR9i5zmvg) that is similar to lecture 2 in CS149. It's a full 90 minutes so feel welcome to skip/fast-forward through the parts that you know.  The technical content begins eight minutes in.
-* [The Compute Architecture of Intel Processor Graphics Gen9](https://software.intel.com/sites/default/files/managed/c5/9a/The-Compute-Architecture-of-Intel-Processor-Graphics-Gen9-v1d0.pdf). Intel Corporation
-  * This is not an academic paper, but a whitepaper from Intel describing the architectural geometry of a recent GPU.  Focus on the description of the processor in Sections 5.3-5.5. Then, given your knowledge of the concepts discussed in the prerecorded video and in lecture 1 (multi-core, SIMD, multi-threading, etc.), I'd like you to describe the organization of the processor (using terms from the lecture, not Intel terms). For example:
-    * What is the basic processor building block?
-    * How many times is this block replicated for additional parallelism?
-    * How many hardware threads does it support?
-    * What width of SIMD instructions are executed by those threads? Are there different widths supported? Why is this the case?
-    * Does the core have superscalar execution capabilities?
-  * Consider your favorite data-parallel programming language, such as GLSL/HLSL shading languages from graphics, [CUDA](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html), OpenCL, [ISPC](https://ispc.github.io/), NumPy, TensorFlow, or just an OpenMP #pragma parallel for. Can you think through how an "embarrassingly parallel" for loop can be mapped to this architecture? (You don't need to write this down in your writeup, but you could if you wish.)
-  * Note that an update to the Gen9 architecuture is Gen11, which you can read about [here](https://www.intel.com/content/dam/develop/external/us/en/documents/the-architecture-of-intel-processor-graphics-gen11-r1new.pdf).  (We chose to have to read the Gen9 whitepaper since it's a bit more detailed on the compute sections.)
-  * __For those that want to go further, I also encourage you to read [NVIDIA's V100 (Volta) Architecture whitepaper](https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf), linked in the "further reading" below.__ Can you put the organization of this GPU in correspondence with the organization of the Intel GPU? You could make a table contrasting the features of a modern AVX-capable Intel CPU, Intel Integrated Graphics (Gen9), NVIDIA GPUs (Volta, Ampere) etc.  Hint: here are some diagrams from CS149: [here](https://gfxcourses.stanford.edu/cs149/fall21/lecture/multicorearch/slide_80) and [here](https://gfxcourses.stanford.edu/cs149/fall21/lecture/gpuarch/slide_46).
-* [Volta: Programmability and Performance](https://www.hotchips.org/wp-content/uploads/hc_archives/hc29/HC29.21-Monday-Pub/HC29.21.10-GPU-Gaming-Pub/HC29.21.132-Volta-Choquette-NVIDIA-Final3.pdf). Hot Chips 29 (2017)
-  * This Hot Chips presentation documents features in NVIDIA Volta GPU.  Take a good look at how a chip is broken down into 80 streaming multi-processors (SMs), and that each SM can issue up to 4 warp instructions per clock, and supports up to concurrent 64 warps.  You may also want to look at the [NVIDIA Volta Whitepaper](https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf).
-* [The Story of ISPC](https://pharr.org/matt/blog/2018/04/18/ispc-origins.html). Pharr (2018)
-  * Matt Pharr's multi-part blog post is an riveting description of the history of [ISPC](https://ispc.github.io/), a simple, and quite useful, language and compiler for generating SIMD code for modern CPUs from a SPMD programming model.  ISPC was motivated by the frustration that the SPMD programming benefits of CUDA and GLSL/HLSL on GPUs could easily be realized on CPUs, provided applications were written in a simpler, constrained programming system that did not have all the analysis challenges of a language like C/C++.
-* [Scalability! But at What COST?](http://www.frankmcsherry.org/assets/COST.pdf) McSherry, Isard, and Murray. HotOS 2015
-  * The arguments in this paper are very consistent with the way we think about performance in the visual computing domain.  In other words, efficiency and raw performance are different than "scalable".
- 
 ## Lecture 2: Digital Camera Processing Pipeline (Part I) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera1)
 
 __Post-Lecture Required Readings:__
 
@@ -89,11 +67,11 @@ __Other Recommended Readings:__
 * [Handheld Mobile Photography in Very Low Light](https://google.github.io/night-sight/). Liba et al. SIGGRAPH Asia 2019
     * This is a paper about the implementation of "Night Sight" in Google Pixel smartphones.  
 
-## Lectures 4 and 5: Efficiently Scheduling Image Processing Algorithms ##
+## Lecture 4: Efficiently Scheduling Image Processing Algorithms ##
 
 * [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/imagescheduling/)
 
-__Pre-Lecture Required Reading: (to read BEFORE lecture 4)__
+__Pre-Lecture Required Reading: (two papers)__
 
 * [Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines](http://people.csail.mit.edu/jrk/halide-pldi13.pdf). Ragan-Kelley, Adams, et al. PLDI 2013 
    * Note: Alternatively you may read the selected chapters in the Ragan-Kelley thesis linked below in recommended readings. (Or the CACM article.) The thesis chapters involve a little more reading than the paper, but in my opinion they are a more accessible explanation of the topic, so I recommend it for students.
@@ -105,8 +83,6 @@ __Pre-Lecture Required Reading: (to read BEFORE lecture 4)__
    * In your own words, in two-three sentences or less, attempt to summarize what you think is the most important idea in the design of Halide?
    * Advanced question: In my opinion, there is one major place where the core design philosophy of Halide is violated. It is described in Section 4.3 in the paper, but is more clearly described in Section 8.3 of the Ph.D. thesis. (See sliding window optimizations and storage folding).  Why do you think am I claiming this compiler optimization is a significant departure from the core principles of Halide? (There are also valid arguments against my opinion.)
       * Hint: what aspects of the program’s execution is not explicitly described in the schedule in these situations?
-      
-__Post-Lecture Required Reading: (to read AFTER lecture 4)__
 
 * [Learning to Optimize Halide with Tree Search and Random Programs](https://halide-lang.org/papers/halide_autoscheduler_2019.pdf). Adams et al. SIGGRAPH 2019 
    * This paper documents the design of the modern autoscheduling algorithm that is now implemented in the Halide compiler.  This is a very technical paper, so I recommend that you adopt the "read for high-level understanding first, then dive into some details" reading strategy I suggested in class. Your goal should be to get the big points of the paper, not all the details.
@@ -129,237 +105,3 @@ __Other Recommended Readings:__
 * [TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](https://www.usenix.org/system/files/osdi18-chen.pdf) Chen et al. OSDI 2018
    * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
 * [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
-
-## Lecture 6: Efficient DNN Inference and Scheduling ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnscheduling/)
-
-__Post-Lecture Required Reading:__
-
-* [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://arxiv.org/abs/1704.04760). Jouppi et al. ISCA 2017
-   * Like many computer architecture papers, the TPU paper includes a lot of *facts* about details of the system.  I encourage you to understand these details, but look past all the complexity and try and look for the main lessons learned: things like motivation of the architects, key constraints they were working under, key principles in their resultign design. Here are the questions I'd like to see you address.
-   * What was the motivation for Google to seriously consider the use of a custom processor for accelerating DNN computations in their datacenters, as opposed to using CPUs or GPUs? (Section 2)
-   * I'd like you to resummarize how the `matrix_multiply` operation works.  More precisely, can you flesh out the details of how the TPU carries out the work described in this sentence at the bottom of page 3: "A matrix operation takes a variable-sized B*256 input, multiplies it by a 256x256 constant weight input, and produces a B*256 output, taking B pipelined cycles to complete". Don't worry if you can't, we'll talk about it in class.
-   * We are going to talk about the "roofline" charts in Section 4 during class. Roofline plots are a useful tool for understanding the performance of software on a system. These graphs plot the max performance of the chip (Y axis) given a program with an arithmetic intensity (X -- ratio of math operations to data access). How are these graphs used to assess the performance of the TPU and to characterize the workloads run on the TPU? (which workloads making good use of the TPU?)
-    * Section 8 (Discussion) of this paper is an outstanding example of good architectural thinking.  Make sure you understand the points in this section as we'll discuss a number of them in class.  Particularly for us in CS348K, what is the point of the bullet "Pitfall: Architects have neglected important NN tasks."?
-
-__Other Recommended Readings:__
-* [Stanford CS231: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).
-    * If you haven't taken CS231N, I recommend that you read through the lecture notes of modules 1 and 2 for very nice explanation of key topics.
-* [An Introduction to different Types of Convolutions in Deep Learning](https://towardsdatascience.com/)
-* [NVIDIA CUTLASS Github repo](https://github.com/NVIDIA/cutlass)
-* [NVIDIA CuDNN Documentation](https://docs.nvidia.com/deeplearning/cudnn/index.html)
-* [Facebook Tensor Comprehensions](https://research.fb.com/announcing-tensor-comprehensions/)
-    * The associated Arxiv paper is [Tensor Comprehensions: Framework-Agnostic High-Performance Machine Learning Abstractions](https://arxiv.org/abs/1802.04730), Vasilache et al. 2018.
-
-## Lecture 7: Hardware Acceleration of DNNs ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/dnnhardware/)
-
-__Recommended Readings:__
-* NVIDIA Tensor Core
-    * <https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/nvidia-ampere-architecture-whitepaper.pdf>
-    * <https://www.anandtech.com/show/12673/titan-v-deep-learning-deep-dive/3>
-    * <https://developer.nvidia.com/blog/optimizing-gpu-performance-tensor-cores/>
-    * <https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9926-tensor-core-performance-the-ultimate-guide.pdf>
-* Google TPU v3
-    * HotChips: <https://hotchips.org/assets/program/conference/day2/HotChips2020_ML_Training_Google_Norrie_Patil.v01.pdf>
-    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Google.SameerKumarDehaoChen.v02.pdf>
-    * <https://www.nextplatform.com/2018/05/10/tearing-apart-googles-tpu-3-0-ai-coprocessor/>
-    * <https://cloud.google.com/tpu/docs/system-architecture>
-  * Cerebras WSE
-    * HotChips: <https://hotchips.org/assets/program/tutorials/HC2020.Cerebras.NataliaVassilieva.v02.pdf>
-    * Corporate Whitepaper... <https://cerebras.net/resources/achieving-industry-best-ai-performance-through-a-systems-approach/>
-* NVIDIA DLA (open source)
-    * <http://nvdla.org>
-* GraphCore IPU
-    * <https://www.graphcore.ai/products/ipu>
-* Microsoft Brainwave
-    * <https://www.microsoft.com/en-us/research/uploads/prod/2018/03/mi0218_Chung-2018Mar25.pdf>
-* SambaNova's Cardinal (very little public documentation)
-    * <https://sambanova.ai/>
-
-## Lecture 8: Generative AI for Image Creation (Part I) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative1/)
-
-__Recommended Readings:__
-
- * [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543). Zhang et al. ArXiv 2023.
- * [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://www.timothybrooks.com/instruct-pix2pix/). Brooks et al. CVPR 2023.
- * [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/). Hertz et al. ArXiv 2022.
- * [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/). Avrahami et al. CVPR 2022.
- * [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/). Ruiz et al. CVPR 2023.
- * [Collage Diffusion](https://arxiv.org/abs/2303.00262). Sarukkai et al. ArXiv 2023.
- * [LooseControl: Lifting ControlNet for Generalized Depth Conditioning](https://shariqfarooq123.github.io/loose-control/). Bhat et al. Arxiv 2023.
- * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116). Sarukkai et al. Arxiv 2024
- * [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/). Blog by Lilian Weng, 2021
-
-## Lecture 9: Generative AI for Image Creation (Part II) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative2/)
-
-__Post-Lecture Required Reading:__
-
-* [Unpredictable Black Boxes are Terrible Interfaces](https://magrawala.substack.com/p/unpredictable-black-boxes-are-terrible). M. Agrawala 2023
-  * This is a recent blog post by Stanford Professor Maneesh Agrawala that dives into a fundamental challenge of using recent generative AI tools to create content. I'd like you to react to the blog post in the context of the image generation task we performed together in class: using generative AI to make a poster for a Stanford dance event.  (Alternatively, feel welcome to try a free online generative AI tool like [Krea.ai](https://www.krea.ai/apps/image/realtime), [Clibdrop](https://clipdrop.co/stable-diffusion-turbo), or [Midjourney's free tier](https://www.imagine.art/) and try a design exercise of your own!  
-  * Please describe the concept of "repair strategies" discussed in the blog. In your words describe the concept of repair, and give one example of a repair strategy that might be used in an image creation process.
-  * What does Agrawala claim is the objective of of "establishing common ground" when working with another human, or in our case, a digital AI tool?
-  * The central thesis of the blog post is that it's the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of our class experience (or your own experience making images), how did the unpredictability of the system inhibit our ability to create the target image.  Please give specific examples in your answer.  If you are making an image on your own, a thorough answer might document a sequence of attempts to achieve a goal, discuss why and how you changed your prompts on each step.
-  * I'd like to you think about controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the "other recommended readings" (given in the prior lecture) that offer more advanced editing controls for image generation using generative AI.
-  * Finally, pick one of the controls that you listed in the previous question, and describe the ``conceptual model" that a user (you) have while using the tool (see section in the blog post about "conceptual model" vs "true system model".  Can you think of how to reduce the problem of training an AI to have a similar conceptual model to the problem of creating paired training data for the task?  Many of the examples we discussed in class followed this pattern.   
-
-__Other Recommended Readings:__
-
- * [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752.pdf). Rombach et al. CVPR 2022
- * [Cascaded Diffusion Models for High Fidelity Image Generation](https://cascaded-diffusion.github.io/). Ho et al. JMLR 2022
- * [On Distillation of Guided Diffusion Models](https://arxiv.org/abs/2210.03142). Meng et al. CVPR 2023
- * [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/abs/2208.09392). Bansal et al. NeurIPS 2023 
-
-## Lecture 10: Generating Video, Animation, 3D Geometry, Worlds and More ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/generative3/)
-
-__Other Recommended Readings:__
- * [Align your Latents: High-Resolution Video Synthesis with Latent Diffusion Models](https://research.nvidia.com/labs/toronto-ai/VideoLDM/). Blattman et al. CVPR 2023
- * [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](https://arxiv.org/abs/2311.15127). Blattmann et al. 2023 
- * [DreamFusion: Text-to-3D using 2D Diffusion](https://dreamfusion3d.github.io/). Poole et al. 2002
- * [Zero-1-to-3: Zero-shot One Image to 3D Object](https://zero123.cs.columbia.edu/). Liu et al. 2023
- * [MDM: Human Motion Diffusion Model](https://guytevet.github.io/mdm-page/). Tevet et al. ICLR 2023
-
-## Lecture 11: Creating AI Agents (Including LLM-based Problem Solving) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/aiagents1)
-
-__Pre-Lecture Required Reading:__
-
- * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442). Park et al. CHI 2023
-   * Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters. But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models (e.g. ChatGPT) to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themes from the course, and I'd like you to think about the following questions:
-   * First let's start with some technical details. The paper's experiments are performed in a small "Sims"-like work called Smallville. The key subroutine used by agents in this paper is a query to a stateless large language model (LLM). For those of you that have used ChatGPT or similar systems like Google's Bard, just picture this module working like those systems. The input query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. It's easy to picture how to code-up a "bot" to operate within Smallville (use game APIs to move to place X, turn stove to "on", etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agents described in this paper need to translate the text string responses from the LLM to agent actions in the game. What is the mechanism for turning LLM responses into agent actions in the game? (For example, if the agent is in a bedroom and the LLM says the character should clean up the kitchen, how does the agent turn this direction into actions in the game?) This is discussed in Section 5.
-   * The paper hypothesizes that this stateless module (with small, finite inputs) will be insufficient for creating characters that behave over long time scales in a consistent and rational way. Summarize the reasons for this challenge? (hint: consider continuity)
-   * To address the challenge described above, the paper's solution is to "summarize" a long history of the agent into a finite-length input for the LLM.  There are two parts to this approach. The first is the "memory stream".  Describe what the memory stream's purpose is in the agent architecture.  Then describe how retrieval is used to select what data from the memory stream should be used in each query. (Why doesn't the system just provide the entire memory stream to a query?)
-   * Of course, over a long simulation, enough activity happens to an agent that a memory stream grows quite long.  One way to address this might be to ask ChatGPT to generate a summary of a long text string into a shorter one.  But the authors go with a different approach that they call __reflection__. How is reflection implemented and give your thoughts on this approach, which indeed is a form of summarization of the memory stream.
-   * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particularly hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7). How do the authors evaluate their work? What do you think?  Do you believe that important aspects of the agent architecture have merit?
-   * BTW, code is here (https://github.com/joonspk-research/generative_agents), and it's been replicated in by the [AI Town Project](https://www.convex.dev/ai-town).
-
-__Post-Lecture Required Reading:__
-
-* [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://voyager.minedojo.org/)
-    * This is another paper that uses pretrained language models as the key engine for creating autonomous agents for playing a game.  In this case, the focus is on an "open world" game, Minecraft. Note that after reading the paper, you might want to see the Voyager Algorithm" in Appendix A.1, and the actual prompt structure as given in Appendix A.3.4. Here are some questions to respond to:
-    * In many ways the structure of the solution is similar to the examples we discussed in class:  There's an LLM tasked to emit a "plan" describing what the Minecraft character should do. The plan is expressed as Python code which makes calls to a Minecraft API which actually controls the in-game character. The LLM uses techniques such as in-context prompting and reflection to produce successful plans.  However, in this paper there's a new idea that we didn't see in prior work: the LLM is responsible for generating the next task to perform itself!  Talk about (a) how the system proposes new tasks to complete (b) why the task order matters ("curriculum"), and (c) how a successful completion of a task grows the API that the agent has access to in the future.
-    * What is the "skill library" that the agent has access to?
-    * When a plan does not successfully solve a task, the agent receives two forms of feedback. One might come from the python interpreter, another is from the Minecraft engine itself. What are the two forms of feedback and how does the system use that feedback to "try again" and make a new plan in the hopes of succeeding?
-    * Let's turn our attention to evaluation.  What is the key metrics that the authors use as a proxy for "better"?
-    * What are the key aspects of the system that you think are the most important to evaluate?  Remember, think about what ideas are proposed as "good ideas", and the evaluation should show evidence that these ideas matter in terms of improving the key metrics.
-
-__Other Recommended Readings:__
-
-* [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://progprompt.github.io/). Singh et al. ICRA 2023
-* [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf). Wei et al. NeurIPS 2022
-* [ViperGPT: Visual Inference via Python Execution for Reasoning](https://viper.cs.columbia.edu/). Menon et al. ICCV 2023 
-* [Lil' Logs LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). Blog by Lilian Weng 2023
-* [A Survey on Large Language Model-Based Game Agents](https://github.com/git-disl/awesome-LLM-game-agent-papers). List maintained by Sihao Hu
-
-## Lecture 12: Fast 3D World Simulation for Model Training (Part I) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/trainingsim)
-
-__Post-Lecture Required Reading:__
-
-* [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://madrona-engine.github.io/shacklett_siggraph23.pdf). Shacklett et al. SIGGRAPH 2023
-
-If you were to create a computer game today, you'd probably not write the entire game from scratch. Instead, you'd choose to write your game using the APIs provided by a game engine framework, such as  e.g., [Unity](https://unity.com/), [Unreal](https://www.unrealengine.com/), or [Phaser](https://phaser.io/)) because it would be not only far more productive to do so, but also because you'd probably not be able to implement key parts of your game (like advanced rendering, physics, input collection from controllers, etc) as well as domain experts in these areas. In other words, existing engines provide valuable, well-implemented building blocks for creating a game, which allows game developers to focus on implementing the _logic and content specific to their game_ (specific game rules, creating worlds, etc.).
-
-In this paper open the open source [Madrona Engine](https://madrona-engine.github.io/) the authors observed that there was an emerging need to create simulators that execute at very high throughput when running a "batch" of thousands of independent instances of a world. Early examples of these "batch simulators" can be found here for [Atari games](https://arxiv.org/abs/1907.08467) (github [here](https://github.com/NVlabs/cule)), [robotics physics simulations](https://arxiv.org/abs/2108.10470), and [navigation of indoor environments](https://graphics.stanford.edu/projects/bps3D/). These batch simulators were all written from scratch. This paper is based on a simple claim: it is likely that in the near future there will be a need to make many more unique simulators for training agents like computer game bots, robots, etc., and that not everyone that wants to create a simulator will an expert at high-performance programming on GPUs.  Therefore, there should be a "game framework" for high performance batch simulators.  
-
-As you read the paper, please respond to the following questions:
-
-* As always, make sure you read and understand the requirements and goals of the system as presented in sections 1 and 2.  The paper lists these goals clearly. Please make sure you understand all of them, but I'd like you to focus your response on the "PERFORMANCE" goal. Specifically, performance in this paper does not mean "run in parallel on the GPU", it means "efficiently run in parallel on the GPU".  For those that have taken CS149, think back to the basic principles of SIMD execution and efficient memory access. What are the key ideas in this paper that pertain specifically to the "high performance" goal?
-  * Hint: GPUs perform best when they can execute the same instruction across many threads AND, when those threads access data, high-performance GPU memory performs best when adjacent threads are accessing adjacent memory addresses.     
-
-* There are two major abstractions in the presented system: components and the computation graph (there's a good description in Section 4). Let's focus on components first.  How are components for all worlds stored in a single table? Give at least one reason why this leads to high GPU performance.  (See Section 5.1). Note, it may be helpful to dive into the description of how Madrona implements component deletion as a way to check your understanding of this part of the paper (see the text related to Figure 2.)
-
-* The authors choose to implement all game logic components as a computation graph (all instances use the same graph), and then execute the computation graph for ALL game instances by running a single graph node N for all instances, then moving on to the next graph node.  Give at lease one reason why this leads to high GPU performance (possible answers lie in rest of Section 5).
-
-* This is a good paper to dig into the evaluation, so we can discuss in class what questions the evaluation is trying to answer.  There are four configurations evaluated in Section 7, (BATCH-ECS-GPU, ECS-GPU, ECS-CPU, and REF-CPU).  For each of the configurations, please provide an explanation of how the configuration is used in a comparison to make a claim about "X is better than Y".  For example, the paper provides ECS-CPU as a good high-performance C++ implementation because comparing just BATCH-ECS-GPU to REF-CPU alone doesn't prove the ideas in the paper are the reason for the observed speedups.  For example, with only that comparison, the speedup could be due to the faster speed of a GPU vs a CPU, or low performance of Python code vs. high-performance CUDA code.   
-  * Hint: the goal of a scientific paper evaluation is to show that the ideas in the paper have merit.  It is not to show that the authors are better programmers than the programmers of prior work.
-
-* Ignoring robotics applications, are there good reasons to train AI agents for the purpose of making video games better?  What might you do with a very high performance batch simulator?
-
-* Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some [example game starter code](https://github.com/shacklettbp/madrona_escape_room).  We'd love it if you wanted to write your own game in Madrona! ;-)
-
-__Other Recommended Readings:__
-* [Accelerating Reinforcement Learning through GPU Atari Emulation](https://arxiv.org/abs/1907.08467). Dalton et al. NeurIPS 2020.
-* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). Makoviychuk et al. 2021
-* [Large Batch Simulation for Deep Reinforcement Learning](https://graphics.stanford.edu/projects/bps3D/). Shacklett et al. ICLR 2021.
-* [EnvPool Github Repo](https://github.com/sail-sg/envpool)
-* [MuJoCo MJX](https://mujoco.readthedocs.io/en/stable/mjx.html). GPU-accelerated MuJoCo.
-* [Waymax: An Accelerated, Data-Driven Simulator for Large-Scale Autonomous Driving Research](https://waymo.com/research/waymax/). Guilino et al. 2023
-  
-## Lecture 13: Fast 3D World Simulation for Model Training (Part II) ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/trainingsim2)
-
-__Post-Lecture Required Reading:__
-
-* [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024/home). Bruce et al. 2024
-   * So far in this course we've talked about foundation models for generating images (or videos, meshes, etc.).  We've also talked about implementing virtual world simulators that can be used as training grounds for AI agents.  There are two problems with world simulation: First, despite the optimization efforts we talked about last class, it can be expensive to simulate detailed worlds. Second, if the goal is to train a general problem solving agent, it's hard to find a diverse set of worlds to train that agent on. There certainly aren't millions of games! In this paper, the authors attempt to skip the challenges of designing and executing world simulators, and instead seek to learn an ___interactive world model___ from just video data that can respond to user input.  Let's first address these technical questions. 
-   * The input to the training procedure is just unlabeled video.  Please describe what is meant by the "latent action" that the method attempts to infer.  
-   * Please describe the inputs and outputs of each step of the process (the video tokenzier, the lateny action model, and the dynamics model).  What is the responsibility of each step? The details of how the steps are implemented with a spatiotemporal transformer architecture is not relevant to our discussion (students without ML background can skip the details of the implementation, but I want everyone to understand how the pieces fit together.
-   * Since the point of the paper is to create a model that can "generate interactive environments", the evaluation of the proposed method should assess how well this goal was achieved. The visual quality metric is just a metric for "does the experience look real", which has nothing to do with interactivity.  However, the authors offer up a new metric for assessing "controllability" (See section 3.0).  What is the intuition behind the metric they propose?  Do you buy the metric as a measure of "goodness" of an interactive environment?  What are questions you might ask about an interactive environment to assess whether it was a good one? Perhaps you might consider things like: consistency? plausibility? Challenging to solve in a particular way?  Tests a particular skill? Fun to play?
-   * IMPORTANT: In class our discussion will be a debate about whether you believe over the next 10 years, if you wanted to train the most general and capable AI agents the world has ever seen... do you feel it is more promising to push forward on the approach of learning interactive world simulators from large-scale observations, or whether it's more promising to invest in technology of faster, more detailed world simulation engines like those discussed in the Madrona class session. __You have to take a side!__  Please be prepared to argue with your classmates in favor of one side.  Here are some issues to consider:
-      *  What are the pros/cons of each approach? Consider:
-          * The costs of making an interactive environment for a specific situation?  (run-time per frame of output costs? Content creation costs? Simulation implementation costs?)
-          * Consider procedural approaches to creating content, like [ProcThor](https://procthor.allenai.org/) or [XLand](https://deepmind.google/discover/blog/generally-capable-agents-emerge-from-open-ended-play/).
-          * How would you specify what an interactive environment should do?  (in the Genie paper they seem to simply provide a single starting image and a text Prompt)
-          * How will you generate a huge diversity of experiences and worlds?
-          * What does it mean for an AI agent to be a general problem solver?
-         
-__Other Recommended Readings:__
-   * See recommended readings from the prior lecture.   
-
-## Lecture 14: Data-Driven vs. Traditional Modeling Driven World Simulation  ##
-
-This lecture was an in-class discussion of the pros and cons of data-driven world simulation ("world models", e.g., DeepMind's Genie) vs. traditional modeling driven world simulation (e.g, a game engine).  
-
-## Lecture 15: Guest Speaker: Learning to Play Counterstrike (Guest Lecture by David Durst) ##
-
-This lecture was a guest lecture by Stanford Ph.D. student David Durst about his work designing AI Counterstrike bots.
-
-## Lecture 16: Video Compression + Video Conferencing Systems ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/videocompression/)
-
-__Recommended Readings:__
-
- * [Warehouse-scale video acceleration: co-design and deployment in the wild](https://dl.acm.org/doi/abs/10.1145/3445814.3446723). Ranganathan et al. ASPLOS 2021
-    * This is the Google VCU paper I discussed in lecture 
- * [Overview of the H.264/AVC Video Coding Standard](https://ieeexplore.ieee.org/document/1218189). Wiegand et al. IEEE TCSVT '03
- * [vbench: Benchmarking Video Transcoding in the Cloud](http://arcade.cs.columbia.edu/vbench-asplos18.pdf). Lottarini et al. ASPLOS 18
- * [Salsify: Low-Latency Network Video through Tighter Integration between a Video Codec and a Transport Protocol](https://snr.stanford.edu/salsify/). Fouladi et al. NSDI 2018
- * [Encoding, Fast and Slow: Low-Latency Video Processing Using Thousands of Tiny Threads](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-fouladi.pdf). Fouladi et al. NSDI 17
- * [Gradient-Based Pre-Processing for Intra Prediction in High Efficiency Video Coding](https://link.springer.com/article/10.1186/s13640-016-0159-9). BenHajyoussef et al. 2017
- * [Neural Adaptive Content-Aware Internet Video Delivery](https://www.usenix.org/system/files/osdi18-yeo.pdf). Yeo et al OSDI 18.
- * [Learning Binary Residual Representations for Domain-specific Video Streaming](https://arxiv.org/pdf/1712.05087.pdf). Tsai et al. AAAI 18
- * [Nonverbal Overload: A Theoretical Argument for the Causes of Zoom Fatigue](https://tmb.apaopen.org/pub/nonverbal-overload/release/2). Bailenson 2021.
-
-## Lecture 17: Differentiable Rendering and Optimizable Representations for 3D Scenes ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/geomoptimization/)
-
-__Recommended Readings:__
-
-* [Neural Volumes: Learning Dynamic Renderable Volumes from Images](https://research.facebook.com/publications/neural-volumes-learning-dynamic-renderable-volumes-from-images/). Lombardi et al. SIGGRAPH 2019 
-* [Representing Scenes as Neural Radiance Fields for View Synthesis](https://www.matthewtancik.com/nerf). Mildenhall et al. ECCV 2020
-  * This is the original NeRF paper
-* [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/).  Kerbl et al. SIGGRAPH 2023
-* [Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://nvlabs.github.io/instant-ngp/). Müller et al. SIGGRAPH 2022
-* [Plenoxels: Radiance Fields without Neural Networks](https://alexyu.net/plenoxels/). Fridovich-Keil et al. CVPR 2022
-* [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/). Takikawa et al. CVPR 2021 
-* [Block-NeRF: Scalable Large Scene Neural View Synthesis](https://waymo.com/research/block-nerf/). Tancik et al. CVPR 2022
-
-## Lecture 18: OpenAI's Sora (Guest Lecture by Tim Brooks) ##
-
-__Pre-Lecture Required Reading:__
-  * [Video Generation Models at World Simulators](https://openai.com/index/video-generation-models-as-world-simulators/). OpenAI Technical Report 2024.
-
