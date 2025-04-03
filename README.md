@@ -53,8 +53,6 @@ __Other Recommended Readings:__
  
 ## Lecture 3: Digital Camera Processing Pipeline (Part II) ##
 
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/camera2)
-
 For the required reading for the next class, please see required readings under lecture 4. During class we focused our discussion on the architecture of the Frankencamera virtual machine, and continued the lecture on algorithms used in a modern digital camera processing pipeline. For suggested going further readings, please see the list of readings below.
 
 __Other Recommended Readings:__
@@ -66,8 +64,6 @@ __Other Recommended Readings:__
     * This is a paper about the implementation of "Night Sight" in Google Pixel smartphones.  
 
 ## Lecture 4: Efficiently Scheduling Image Processing Algorithms ##
-
-* [Lecture slides](https://gfxcourses.stanford.edu/cs348k/spring24/lecture/imagescheduling/)
 
 __Pre-Lecture Required Reading: (two papers)__
 
