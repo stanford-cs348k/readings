@@ -39,7 +39,7 @@ __Post-Lecture Required Readings:__
 https://developer.android.com/reference/android/hardware/camera2/package-summary
 
 __Other Recommended Readings:__
-  * The old [Stanford CS448A course notes](http://graphics.stanford.edu/courses/cs448a-10/) remains a very good reference for camera image processing pipeline algorithms and issues.
+  * The course notes from [Stanford CS448A](http://graphics.stanford.edu/courses/cs448a-10/) remain a very good reference for camera image processing pipeline algorithms and issues. This was an old Stanford course taught by Marc Levoy.
   * [Clarkvision.com](http://www.clarkvision.com/articles/index.html) has some very interesting material on cameras.
   * [Demosaicking: Color Filter Array Interpolation](http://ieeexplore.ieee.org/document/1407714/). Gunturk et al. IEEE Signal Processing Magazine, 2005
   * [Unprocessing Images for Learned Raw Denoising](https://www.timothybrooks.com/tech/unprocessing/). Brooks et al. CVPR 2019
