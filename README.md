@@ -2,6 +2,13 @@
 
 This page contains discussion prompts for papers on the reading list for the Stanford course CS348K: Visual Computing Systems, taught by [Kayvon Fatahahalian](http://graphics.stanford.edu/~kayvonf/). You can find the web site for most recent offering of the course here: <http://cs348k.stanford.edu>.
 
+__Please keep in mind that all reading responses should always include a response to the following prompt:__ 
+
+Describe your top N (N < 3) takeaways from the discussions in the last class. 
+ * What was the most surprising/interesting thing you learned?
+ * Is there anything you feel passionate about (Agreed with, disagreed with?) that you want to react to?
+ * What was your big takeaway in general?
+
 ## Lecture 1: Course Introduction ##
 
 __Post-Lecture Required Readings:__
