@@ -149,3 +149,11 @@ __Pre-Lecture Required Reading:__
   * I'd like to you think about controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the "other recommended readings" (given in the prior lecture) that offer more advanced editing controls for image generation using generative AI.
   * Finally, pick one of the controls that you listed in the previous question, and describe the ``conceptual model" that a user (you) have while using the tool (see section in the blog post about "conceptual model" vs "true system model".  Can you think of how to reduce the problem of training an AI to have a similar conceptual model to the problem of creating paired training data for the task?  Many of the examples we discussed in class followed this pattern.   
     
+## Lecture 7: Neurosymbolic Systems ##
+
+__Post-Lecture Required Reading:__
+ * [MoVer: Motion Verification for Motion Graphics Animations](https://mover-dsl.github.io/). Ma et al. SIGGRAPH 2025
+   * Reading response questions coming soon...
+  
+__Other Recommended Readings:__
+ * Coming shortly...
