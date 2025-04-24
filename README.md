@@ -148,6 +148,18 @@ __Pre-Lecture Required Reading:__
   * The central thesis of the blog post is that it is the unpredictability of how inputs (e.g., text strings) map to outputs (images) that causes us so much trouble using generative AI.  Specifically in the case of our own image creation experience (see above), did the unpredictability of the system inhibit our ability to create the target imag?.  Please give specific examples in your answer.  A thorough answer might document a sequence of attempts to achieve a goal, discuss why and how you changed your prompts on each step.
   * I'd like to you think about controls _you wish you had_ when you were performing this task? Given some examples of __operations__ or __commands__ that you would like to have to control the system? (commands need not be text, they could be sliders, etc.) In the language of Agrawala's blog post, would you prefer to express your goals in the form of "repairs", "constraints", or in some other way?  In your answer, you make wish to skim through some of the "other recommended readings" (given in the prior lecture) that offer more advanced editing controls for image generation using generative AI.
   * Finally, pick one of the controls that you listed in the previous question, and describe the ``conceptual model" that a user (you) have while using the tool (see section in the blog post about "conceptual model" vs "true system model".  Can you think of how to reduce the problem of training an AI to have a similar conceptual model to the problem of creating paired training data for the task?  Many of the examples we discussed in class followed this pattern.   
+
+__Other Recommended Readings:__
+
+ * [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543). Zhang et al. ArXiv 2023.
+ * [InstructPix2Pix: Learning to Follow Image Editing Instructions](https://www.timothybrooks.com/instruct-pix2pix/). Brooks et al. CVPR 2023.
+ * [Prompt-to-Prompt Image Editing with Cross-Attention Control](https://prompt-to-prompt.github.io/). Hertz et al. ArXiv 2022.
+ * [Blended Diffusion: Text-driven Editing of Natural Images](https://omriavrahami.com/blended-diffusion-page/). Avrahami et al. CVPR 2022.
+ * [DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://dreambooth.github.io/). Ruiz et al. CVPR 2023.
+ * [Collage Diffusion](https://arxiv.org/abs/2303.00262). Sarukkai et al. ArXiv 2023.
+ * [LooseControl: Lifting ControlNet for Generalized Depth Conditioning](https://shariqfarooq123.github.io/loose-control/). Bhat et al. Arxiv 2023.
+ * [Block and Detail: Scaffolding Sketch-to-Image Generation](https://arxiv.org/abs/2402.18116). Sarukkai et al. Arxiv 2024
+ * [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/). Blog by Lilian Weng, 2021
     
 ## Lecture 7: Neurosymbolic Systems for Generating and Interpreting Content ##
 
@@ -169,3 +181,8 @@ __Other Recommended Readings:__
  * [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://progprompt.github.io/) Sing et al. ICRA 2023
  * [The Scene Language: Representing Scenes with Programs, Words, and Embeddings](https://ai.stanford.edu/~yzzhang/projects/scene-language/) Zhang et al. CVPR 2025
  * [Iterative Motion Editing with Natural Language](https://purvigoel.github.io/iterative-motion-editing/) Goel et al. SIGGRAPH 2023
+
+__Lecture 8: Curating Training Sets: The Unsung Hero of Generative AI__
+
+__Post-Lecture Require Reading:__
+  * Coming soon...
