@@ -182,7 +182,7 @@ __Other Recommended Readings:__
  * [The Scene Language: Representing Scenes with Programs, Words, and Embeddings](https://ai.stanford.edu/~yzzhang/projects/scene-language/) Zhang et al. CVPR 2025
  * [Iterative Motion Editing with Natural Language](https://purvigoel.github.io/iterative-motion-editing/) Goel et al. SIGGRAPH 2023
 
-__Lecture 8: Curating Training Sets: The Unsung Hero of Generative AI__
+## Lecture 8: Curating Training Sets: The Unsung Hero of Generative AI ##
 
 __Post-Lecture Require Reading:__
   * Coming soon...
