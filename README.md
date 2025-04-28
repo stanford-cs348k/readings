@@ -185,4 +185,11 @@ __Other Recommended Readings:__
 ## Lecture 8: Curating Training Sets: The Unsung Hero of Generative AI ##
 
 __Post-Lecture Require Reading:__
-  * Coming soon...
+  * [DataComp-LM: In search of the next generation of training sets for language models](https://arxiv.org/abs/2406.11794). Li et al. NeurIPS 2024
+    * This is a paper about curating datasets for text generation models, but it's lessons are very applicable to visual data as well (see the DataComp paper under "Other Recommended Readings" for an exploration of dataset curation for text-image models). It's one of a small number of academic papers that begins to look at the design of the dataset that gomes into models, instead of the design of the model itself. Please respond to the following questions:  
+
+__Other Recommended Readings:__
+  * [DataComp](DataComp: In search of the next generation of multimodal datasets). Gadre et al. NeurIPS 2023.
+  * [Visual Fact Checker: Enabling High-Fidelity Detailed Caption Generation](https://research.nvidia.com/labs/dir/vfc/). Ge et al. CVPR 2024
+  * [Playground v3: Improving Text-to-Image Alignment with Deep-Fusion Large Language Models](https://arxiv.org/abs/2409.10695). Liu et al 2024
+  * [ShareGPT4V: Improving Large Multi-Modal Models with Better Captions](https://sharegpt4v.github.io/). Chen et al. ECCV 2024.
