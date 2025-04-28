@@ -185,11 +185,23 @@ __Other Recommended Readings:__
 ## Lecture 8: Curating Training Sets: The Unsung Hero of Generative AI ##
 
 __Post-Lecture Required Reading:__
-  * [DataComp-LM: In search of the next generation of training sets for language models](https://arxiv.org/abs/2406.11794). Li et al. NeurIPS 2024
-    * This is a paper about curating datasets for text generation models, but it's lessons are very applicable to visual data as well (see the DataComp paper under "Other Recommended Readings" for an exploration of dataset curation for text-image models). It's one of a small number of academic papers that begins to look at the design of the dataset that gomes into models, instead of the design of the model itself. Please respond to the following questions:  
-
+  * [DataComp: In search of the next generation of multimodal datasets](https://www.datacomp.ai/dcclip/index.html#home). Gadre et al. NeurIPS 2023
+    * This is one of a small number of academic papers that begins to look at the design of the dataset that gomes into models, instead of the design of the model itself. Please consider the following questions:
+    * This is a benchmarking paper, and in this paper, the authors argue that the field should hold the DNN MODEL DESIGN constant, and "compete" on the design of training datasets, rather than hold the training set constant and compete on the accuracy of the model.  What are the authors trying to get the community to explore and understand better?
+    * In your reading, just focus on the "Filtering Track" of the benchmark (ignore the "Bring Your Own Data" part.) What is the "CommonPool" created by the authors?  What processing was done to create the "CommonPool"?
+    * What are the motivations for creating multiple CommonPool sizes for the community? (Table 3)
+    * What DataComp-1B compared to CommonPool?  (You can see DataComp-1B in the last row of Table 1.)
+    * Note that each data example is a an image/text pair.  What do you think the motivation is for each of the "basic filtering", "text filtering", and "image filtering"?  Does your intuition suggest it can help?
+    * Give me your opinion on whether CLIP score filtering makes sense (you may need to Google CLIP what clip embedding is. In short, CLIP allows an image and a text string to be "embedded" in spaces where you can compute the "distance" between the image and the text via a dot product) and as well as the "distance to imageNet category" aspect of text filtering. Both of these made me stop and think a bit about whether they made sense to me.
+    * How did the authors evaluate the quality of a given dataset?
+    * Figure 2 is an interesting graph.  In your own words please describe the "MAIN TAKEAWAY" from the graph.  I'll start with one takeaway to help: When randomly filtering data from the common pool to create a dataset, retaining more data in the training set leads to better model performance.
+    * Figure 3 is also an interesting graph. What is the main point from this figure? In other words, why is it notable that there is high corrolation between results from SMALL commonPool experiments and the MEDIUM commonPool experiments?
+    * Finally, after reading the paper, if you have some background in working with LLMs and LLM datasets, you might enjoy reading the DataComp-LM paper in the "other recommended readings" section.  It's a more modern version of the this paper from 2024 that focused on curating text datasets for language model training.
+      
 __Other Recommended Readings:__
-  * [DataComp: In search of the next generation of multimodal datasets](https://www.datacomp.ai/dcclip/index.html#home). Gadre et al. NeurIPS 2023.
+  * [DataComp-LM: In search of the next generation of training sets for language models](https://arxiv.org/abs/2406.11794). Li et al. NeurIPS 2024
+     * This is a paper about curating datasets for text generation models, but its lessons are very applicable to visual data as well. 
   * [Visual Fact Checker: Enabling High-Fidelity Detailed Caption Generation](https://research.nvidia.com/labs/dir/vfc/). Ge et al. CVPR 2024
   * [Playground v3: Improving Text-to-Image Alignment with Deep-Fusion Large Language Models](https://arxiv.org/abs/2409.10695). Liu et al 2024
-  * [ShareGPT4V: Improving Large Multi-Modal Models with Better Captions](https://sharegpt4v.github.io/). Chen et al. ECCV 2024.
+  * [ShareGPT4V: Improving Large Multi-Modal Models with Better Captions](https://sharegpt4v.github.io/). Chen et al. ECCV 2024
+  * [Edify 3D: Scalable High-Quality 3D Asset Generation](https://arxiv.org/abs/2411.07135). Bala et al. 2024
