@@ -210,6 +210,8 @@ __Other Recommended Readings:__
 
   __Post-Lecture Required Reading:__
    * [Exploring Game Space of Minimal Action Games via Parameter Tuning and Survival Analysis](https://www.nealen.net/papers/08030128.pdf). Isaksen et al. 2018
+      * In this paper the goal is to use a model of model of human play to predict game difficulty. Given this difficulty measure, the authors present several ideas for how it could be used to influence game design (build games with adaptive levels of difficult, explore the game design space, etc.) Note: I recommend you begin by taking a few moments to play a version of Flappy Bird yourself, [which you can do here](https://flappybird.io/). Then consider the following questions:
+      * __Questions coming soon...__   
 
 ## Lecture 10: High-Performance Simulation for Agent Training ## 
 
