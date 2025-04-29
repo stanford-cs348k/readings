@@ -211,7 +211,19 @@ __Other Recommended Readings:__
   __Post-Lecture Required Reading:__
    * [Exploring Game Space of Minimal Action Games via Parameter Tuning and Survival Analysis](https://www.nealen.net/papers/08030128.pdf). Isaksen et al. 2018
       * In this paper the goal is to use a model of model of human play to predict game difficulty. Given this difficulty measure, the authors present several ideas for how it could be used to influence game design (build games with adaptive levels of difficult, explore the game design space, etc.) Note: I recommend you begin by taking a few moments to play a version of Flappy Bird yourself, [which you can do here](https://flappybird.io/). Then consider the following questions:
-      * __Questions coming soon...__   
+      *  The authors often refer to the "game space" of Flappy Bird.  What is a "game space" and for the case of Flappy Bird how is that space parameterized? (e.g., give one example of a parameter.)
+      *  I'd like you to think of another genre of game (or a specific game itself) that you enjoy, and hypothesize what the game space might look like? Is it easy to parameterize?  What might the most important parameters be?  Obviously a small number of parameters is desirable, but with small numbers of parameters, the meaning of each parameter might becoome sufficiently high level that it's hard to think of how you'd implement it. In your selected game genre, what's an example of a parameter that might logically be the right parameter to have, but it is completely unclear what the implementation of that parameter might be?
+      * In this paper, the authors create a "human-like" agent by hand-crafting a specific algorithm for solving Flappy Bird challenges, and then limiting that agent with human-inspired difficulties.  One such limitation is the number of times a key can be pressed per second. Another limitation is misjudging when the key should be pressed.  How do the authors model a novice player? A highly skilled player?
+      * An interesting assumption about the player model is that a novel player is modeled by "corrupting" the decisions of an "expert".  Do you think this is a good model for an novice player?  What might be a problem with this approach?
+      * Please define the hazard function h(x), and what is the meaning of a game where h(x)=0? (Is the game very easy or very hard?)
+      * In Figure 15(a), the game is designed to get more challenging with each obstacle passed (as score goes up). However, the hazard rate h(x) is roughly constant in the bottom green line.  How is this possible?
+      * In Figure 12(a), the shape of the curves is different depending on player skill (note this is a plot of f(x) -- the probability of getting score x, not hazard rate h(x)). Can you explain the difference in shape between the black line (highest skill) and bluest line (lowest skill)?
+      * Give me a simple algorithm for generate a random Flappy Bird game from the game space that is "playable" for a given player profile.
+      * Section 8c is titled "Computational Creativity".
+         * What is the roll of the "human-like" agent in enabling "computational creativity"
+         * Philosophical question. Do you think the system is being creative?
+      * Finally, I'd like you to comment on the scalability of the approach discussed in this paper.  Do you think it will work for more complex games? Why or why not? (Question: consider the challenges associated with a designing a human-like agent for more complex games.)
+ 
 
 ## Lecture 10: High-Performance Simulation for Agent Training ## 
 
