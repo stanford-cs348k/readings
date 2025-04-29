@@ -208,12 +208,12 @@ __Other Recommended Readings:__
 
 ## Lecture 9: Creating Agents for Virtual Worlds ##
 
-  __Post Lecture Required Reading:__
+  __Post-Lecture Required Reading:__
    * [Exploring Game Space of Minimal Action Games via Parameter Tuning and Survival Analysis](https://www.nealen.net/papers/08030128.pdf). Isaksen et al. 2018
 
 ## Lecture 10: High-Performance Simulation for Agent Training ## 
 
-__Post Lecture Required Reading:__
+__Post-Lecture Required Reading:__
 
 * [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://madrona-engine.github.io/shacklett_siggraph23.pdf). Shacklett et al. SIGGRAPH 2023
 
