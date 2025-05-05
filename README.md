@@ -247,6 +247,28 @@ As you read the paper, please respond to the following questions:
 
 * Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some example game starter code on the Madrona github repo.
 
-   
+## Lecture 11: World Simulation Based on "World-Models" ## 
+
+__Post-Lecture Required Reading:__
+
+For this lecture, there are two required readings:
   
+* [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024/home). Bruce et al. 2024
+   * So far in this course we've talked about foundation models for generating images (or videos, meshes, etc.).  We've also talked about implementing virtual world simulators that can be used as training grounds for AI agents.  There are two problems with the simulators we've discussed so far: First, despite the optimization efforts we talked about last class, it can be expensive to simulate detailed worlds. Second, if the goal is to train a general problem solving agent, it's hard to find a diverse set of worlds to train that agent on. There certainly aren't games spanning the range of task we'd like AI agents to perform! And it would be prohibitive to implement a new game for each new task. In this paper, the authors attempt to skip the challenges of designing and executing world simulators, and instead seek to learn an ___interactive world model___ from just video data that can respond to user input.  Note that the questions below stem from the Genie paper listed above. The second required reading is the Genie 2 article from late December 2024.  Let's first address these technical questions... 
+   * The input to the training procedure is just unlabeled video.  Please describe what is meant by the "latent action" that the method attempts to infer.  
+   * Please describe the inputs and outputs of each step of the process (the video tokenzier, the lateny action model, and the dynamics model).  What is the responsibility of each step? The details of how the steps are implemented with a spatiotemporal transformer architecture is not relevant to our discussion (students without ML background can skip the details of the implementation, but I want everyone to understand how the pieces fit together.
+   * Since the point of the paper is to create a model that can "generate interactive environments", the evaluation of the proposed method should assess how well this goal was achieved. The visual quality metric is just a metric for "does the experience look real", which has nothing to do with interactivity.  However, the authors offer up a new metric for assessing "controllability" (See section 3.0).  What is the intuition behind the metric they propose?  Do you buy the metric as a measure of "goodness" of an interactive environment?  What are questions you might ask about an interactive environment to assess whether it was a good one? Perhaps you might consider things like: consistency? plausibility? Challenging to solve in a particular way?  Tests a particular skill? Fun to play?
+   * IMPORTANT: In class our discussion will be a debate about whether you believe over the next 10 years, if you wanted to train the most general and capable AI agents the world has ever seen... do you feel it is more promising to push forward on the approach of learning interactive world simulators from large-scale observations, or whether it's more promising to invest in technology of faster, more detailed world simulation engines like those discussed in the Madrona class session. __You have to take a side!__  Please be prepared to argue with your classmates in favor of one side of the debate.  Here are some issues to consider:
+      *  What are the pros/cons of each approach? Consider:
+          * The costs of making an interactive environment for a specific situation?  (run-time per frame of output costs? Content creation costs? Simulation implementation costs?)
+          * Consider procedural approaches to creating content, like [ProcThor](https://procthor.allenai.org/) or [XLand](https://deepmind.google/discover/blog/generally-capable-agents-emerge-from-open-ended-play/) or [Kinetix](https://kinetix-env.github.io/).
+          * How would you specify what an interactive environment should do?  (in the Genie paper they seem to simply provide a single starting image and a text Prompt)
+          * How will you generate a huge diversity of experiences and worlds?
+          * What does it mean for an AI agent to be a general problem solver?
+* [Genie 2: A Large-Scale Foundation World Model](https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/) Parker-Holder et al. 2024
+   * This is a required reading, but there are no questions specific to the reading (just focus on the questions above).  However, I wasn't you do read through this article to get a sense of the capabilities of modern world models (in late 2024).
+
+__Other Recommended Readings:__
+
+* [DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176)  
   
