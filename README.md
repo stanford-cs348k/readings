@@ -247,6 +247,14 @@ As you read the paper, please respond to the following questions:
 
 * Finally, interested students might wish to take a look at the [Madrona web site](https://madrona-engine.github.io/), or even dig into some example game starter code on the Madrona github repo.
 
+__Other Recommended Readings:__
+* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). Makoviychuk et al. 2021
+* [Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks](https://kinetix-env.github.io/). Matthews et al. 2024
+* [Waymax: An Accelerated, Data-Driven Simulator for Large-Scale Autonomous Driving Research](https://arxiv.org/abs/2310.08710). Gulino et al. 2023
+* [GPUDrive: Data-driven, multi-agent driving simulation at 1 million FPS](https://arxiv.org/abs/2408.01584). Kazemkhani et al. 2025
+
+  
+
 ## Lecture 11: World Simulation Based on "World-Models" ## 
 
 __Post-Lecture Required Reading:__
@@ -270,5 +278,8 @@ For this lecture, there are two required readings:
 
 __Other Recommended Readings:__
 
-* [DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176)  
+* [DayDreamer: World Models for Physical Robot Learning](https://arxiv.org/abs/2206.14176). We et al. 2024
+* [Oasis: A Universe in a Transformer](https://oasis-model.github.io/) Decart/Etched 2024
+* [Diffusion for World Modeling: Visual Details Matter in Atari](https://diamond-wm.github.io/) Alonso et al. 2024
+
   
