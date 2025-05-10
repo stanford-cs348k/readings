@@ -206,7 +206,7 @@ __Other Recommended Readings:__
   * [ShareGPT4V: Improving Large Multi-Modal Models with Better Captions](https://sharegpt4v.github.io/). Chen et al. ECCV 2024
   * [Edify 3D: Scalable High-Quality 3D Asset Generation](https://arxiv.org/abs/2411.07135). Bala et al. 2024
 
-## Lecture 9: Creating Agents for Virtual Worlds ##
+## Lecture 9: The Role of Virtual World Simulation in Training Agents ##
 
   __Post-Lecture Required Reading:__
    * [Exploring Game Space of Minimal Action Games via Parameter Tuning and Survival Analysis](https://www.nealen.net/papers/08030128.pdf). Isaksen et al. 2018
@@ -224,7 +224,7 @@ __Other Recommended Readings:__
          * Philosophical question. Do you think the system described is being creative?
       * Finally, I'd like you to comment on the scalability of the approach discussed in this paper. Do you think it will work for more complex games? Why or why not? (Consider the challenges associated with a designing a human-like agent for more complex games.) 
 
-## Lecture 10: High-Performance Simulation for Agent Training ## 
+## Lecture 10: High-Performance Simulation for Agent Training  (Part 1) ## 
 
 __Post-Lecture Required Reading:__
 
@@ -253,11 +253,13 @@ __Other Recommended Readings:__
 * [Waymax: An Accelerated, Data-Driven Simulator for Large-Scale Autonomous Driving Research](https://arxiv.org/abs/2310.08710). Gulino et al. 2023
 * [GPUDrive: Data-driven, multi-agent driving simulation at 1 million FPS](https://arxiv.org/abs/2408.01584). Kazemkhani et al. 2025
 
-  
+## Lecture 11: High-Performance Simulation for Agent Training (Part 2) ## 
 
-## Lecture 11: World Simulation Based on "World-Models" ## 
+* __Please see reading listed for lecture 10 above.__
 
-__Post-Lecture Required Reading:__
+## Lecture 12: Generative Interactive "World Models" ## 
+
+__Pre-Lecture Required Reading:__
 
 For this lecture, there are two required readings:
   
@@ -282,4 +284,37 @@ __Other Recommended Readings:__
 * [Oasis: A Universe in a Transformer](https://oasis-model.github.io/) Decart/Etched 2024
 * [Diffusion for World Modeling: Visual Details Matter in Atari](https://diamond-wm.github.io/) Alonso et al. 2024
 
-  
+## Lecture 13: LLM-Based Problem Solving Agents (Part 1) ##
+
+__Pre-Lecture Required Reading:__
+
+* [Voyager: An Open-Ended Embodied Agent with Large Language Models](https://voyager.minedojo.org/)
+    * This paper uses pretrained language models for creating autonomous agents for playing a game.  In this case, the focus is on an "open world" game, Minecraft, where the player can explore a world and perform a wide range of tasks.  Note that after reading the paper, you might want to see the "Voyager Algorithm" in Appendix A.1, and the actual prompt structure as given in Appendix A.3.4. Here are some questions to respond to:
+    * In many ways the structure of the Voyager agent is similar to many other agents today, and used principles discussed in the neuro-symbolic generative models lecture. There's an LLM tasked to emit a "plan" describing what the Minecraft character should do. The plan is expressed as Python code (written by the LLM) which makes calls to a predefined Minecraft API (called [Mineflayer](https://github.com/PrismarineJS/mineflayer)) which actually controls the in-game character. The LLM uses techniques which we will discuss in class, such as in-context prompting and "reflection" to produce successful plans.  However, in this paper there's a new idea that's less common in other AI agent designs: *the LLM is responsible for generating the next task to perform itself!*  Please describe (a) how the system proposes new tasks to complete (b) why the order of the tasks matters (what is a "curriculum"), and (c) how a successful completion of a task results in an expansion of the API the agent has access to in the future.
+    * What is the "skill library" that the agent has access to?
+    * When a plan does not successfully solve a task, the agent receives two forms of feedback. One comes from the python interpreter and the other is from the Minecraft engine itself. What are the two forms of feedback and how does the system use that feedback to "try again" and make a new plan in the hopes of succeeding?
+    * Let's turn our attention to evaluation.  What are the key metrics that the authors use as a proxy for "better" than prior work?
+    * What are the key aspects of the system that you think are the most important to evaluate?  Remember, think about what ideas are proposed as "good ideas", and the evaluation should show evidence that these ideas matter in terms of improving the key metrics.
+
+__Other Recommended Readings:__
+
+* [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://progprompt.github.io/). Singh et al. ICRA 2023
+* [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf). Wei et al. NeurIPS 2022
+* [ViperGPT: Visual Inference via Python Execution for Reasoning](https://viper.cs.columbia.edu/). Menon et al. ICCV 2023 
+* [Lil' Logs LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/). Blog by Lilian Weng 2023
+* [A Survey on Large Language Model-Based Game Agents](https://github.com/git-disl/awesome-LLM-game-agent-papers). List maintained by Sihao Hu
+
+## Lecture 14: LLM-Based Problem Solving Agents (Part 2) ##
+
+__Pre-Lecture Required Reading:__
+
+ * [Generative Agents: Interative Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442). Park et al. CHI 2023
+   * Generating plausible agents that behave "like humans" has long been an interest of video game designers seeking to create non-playable characters. But agents that behave realistically have many other applications as well: they can serve as proxies for software testers to find bugs in games or help designers assess the playability or difficulty of game levels.  If we think more broadly, behavior that emerges from many agents performing plausible tasks over time in a simulated world can potentially give rise to global phenomenon such as organization of teams or the creation of empires (as anyone that's played games like The Sims might have experienced! :-)) This paper is about designing simulated agents that leverage queries to large-language models to produce interesting behavior without significant hand-coded logic or programmed rules. This paper touches on a number of themes from the course, and I'd like you to think about the following questions:
+   * First let's start with some technical details. The paper's experiments are performed in a small "Sims"-like work called Smallville. The key subroutine used by agents in this paper is a query to a stateless large language model (LLM). The input query is a text string of finite length (e.g., a few thousand characters), and the output of the LLM is text string response. It's easy to picture how to code-up a "bot" to operate within Smallville (use game APIs to move to place X, turn stove to "on", etc.), and it's easy to understand how one could generate prompts for an LLM and receive responses, the agents described in this paper need to translate the text string responses from the LLM to agent actions in the game. What is the mechanism for turning LLM responses into agent actions in the game? (For example, if the agent is in a bedroom and the LLM says the character should clean up the kitchen, how does the agent turn this direction into actions in the game?) This is discussed in Section 5.
+   * The paper hypothesizes that this stateless module (with small, finite inputs) will be insufficient for creating characters that behave over long time scales in a consistent and rational way. Summarize the reasons for this challenge? (hint: consider continuity)
+   * To address the challenge described above, the paper's solution is to "summarize" a long history of the agent into a finite-length input for the LLM.  There are two parts to this approach. The first is the "memory stream".  Describe what the memory stream's purpose is in the agent architecture.  Then describe how retrieval is used to select what data from the memory stream should be used in each query. (Why doesn't the system just provide the entire memory stream to a query?)
+   * Of course, over a long simulation, enough activity happens to an agent that a memory stream grows quite long.  One way to address this might be to ask ChatGPT to generate a summary of a long text string into a shorter one.  But the authors go with a different approach that they call __reflection__. How is reflection implemented and give your thoughts on this approach, which indeed is a form of summarization of the memory stream.
+   * Ideas in a paper can sometimes sound really interesting, but then you get to the evaluation section and realize that the cool ideas aren't really that helpful.  This is a particularly hard piece of work to evaluate, and I'd like you to take a detailed look at the evaluation sections (Section 6 and 7). How do the authors evaluate their work? What do you think?  Do you believe that important aspects of the agent architecture have merit?
+   * BTW, code is here (https://github.com/joonspk-research/generative_agents), and it's been replicated in by the [AI Town Project](https://www.convex.dev/ai-town).
+
+
