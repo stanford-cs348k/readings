@@ -2,6 +2,8 @@
 
 This page contains discussion prompts for papers on the reading list for the latest version of the Stanford Computer Science course CS348K: Visual Computing Systems, taught by [Kayvon Fatahahalian](http://graphics.stanford.edu/~kayvonf/). You can find the web site for most recent offering of the course here: <http://cs348k.stanford.edu>.
 
+You can find reading lists for prior course offerings in [/prev_years](prev_years).
+
 __Note to students: please remember that all reading responses should always include a response to the following prompt:__ 
 
 Describe your top N (N < 3) takeaways from the discussions in the last class. 
