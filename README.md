@@ -29,6 +29,9 @@ __Post-Lecture Required Readings:__
    * (AFTER CLASS 2) Why is the motivation for the weighted merging process described in Section 5?  Why did the authors not use the simpler approach of just adding up all the aligned images? (Can you justify the designer's decision by appealing to one of the stated design principles?)
    * (AFTER CLASS 2) Finally, take a look at the "finishing" steps in Section 6.  Many of those steps should sound familiar to you after today’s lecture (or for sure after lecture 3).
 
+__Post-Lecture Recommended Readings:__
+  * If you have not taken CS248A, I recommend watching the lecture 16 [on the digital camera pipeline](https://gfxcourses.stanford.edu/cs248a/winter26/lecture/cameraprocessing/). You can find the lecture video on the Canvas page for CS248A Winter 2026. Please ask the staff for observer access.
+
 ## Lecture 2: Digital Camera Pipeline (Part I) - Algorithms ##
 
 __Post-Lecture Required Readings:__
