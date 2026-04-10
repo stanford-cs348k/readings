@@ -99,9 +99,44 @@ __Other Recommended Readings:__
 * [Halide Language Website](http://halide-lang.org/) (contains documentation and many tutorials)
 * Check out this useful [Youtube Video](https://www.youtube.com/watch?v=3uiEyEKji0M) on Halide scheduling
 * [Efficient automatic scheduling of imaging and vision pipelines for the GPU](https://dl.acm.org/doi/abs/10.1145/3485486). Andersen et al. OOPSLA 2021.
-* [Differentiable Programming for Image Processing and Deep Learning in Halide](https://people.csail.mit.edu/tzumao/gradient_halide/). Li et al. SIGGRAPH 2018
 * [Searching for Fast Demosaicking Algorithms](https://dl.acm.org/doi/full/10.1145/3508461) Ma et al. SIGGRAPH 2022
+
+## Lecture 5: LLM-Based Kernel Generation ##  
+
+__Pre-Lecture Required Reading:__
+* [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://arxiv.org/abs/2506.13131)
+  * Using LLMs to generate code is now commonplace, and so it is natural to consider the question: can an LLM automatically optimize my code to increase it's performance on a specific target architecture? In this paper from DeepMind, the goal is to put the LLM in a evolutionary search loop to look for good solutions. When you read the paper, focus on the big picture structure of the approach on less on the details (although I imagine a selection of the class will be very interested in the details). The results section (Section 3) is very interesting in terms of what the search process finds, and CS348K students should in particular pay attention to 3.3.2-3.3.4 (since those are highly relevant application domains).
+  * The "open source" version of AlphaEvolve is called [OpenEvolve](https://github.com/algorithmicsuperintelligence/openevolve).  Please skim this OpenEvolve [blog post](https://huggingface.co/blog/codelion/openevolve) to get a high-level overview of the system, and then read [this post](https://huggingface.co/blog/codelion/openevolve-gpu-kernel-discovery) to understand an example of applying OpenEvolve to the task of writting efficient ML kernels. 
+
+Please address the following questions:
+  * Both the Halide autoscheduler and using LLM-based generation with evolutionary search are ways to iterate over a space of programs to find the best one.  In the autoscheduler, how did the search propose new programs?  How does this compare to the evolutionary programs?
+  * All these code-generation systems need to ensure that the generated code is ''correct".  How is this done in Halide? What about in the Alpha/OpenEvolve systems?
+  * Consider the compute cost and time-scales that the Halide Autoscheduler and OpenEvolve run at.  How many programs are tested? How long does getting to a good solution take?  What are your thoughts about the pro's and cons of each.  
+  * One of benefits of the Halide approach is to search over a space of schedules that is not just aribrary low-level C or CUDA code, but the space of schedules defined by the Halide language.  By moving to higher level scheduling primitives that are specifically chosen as primitives relevant to code optimization, there's less to search.  In the last year, this is what's happened in ML kernel generation as well. Tile-based programming abstractions like those in [TileLang](https://github.com/tile-ai/tilelang), [CuTile](https://docs.nvidia.com/cuda/cutile-python/), [Triton](https://github.com/triton-lang/triton), and [ThunderKittens](https://github.com/HazyResearch/ThunderKittens) have popped up presenting higher-level abstractions from writting ML kernels that need to use AI accelerator hardware with NVIDIA'sTensorCores. Do you think these abstractions make it easier for both humans and LLMs to generate more performant code?
+  * [Optional question]: take a look at the DSL Monkeys paper in the recommended readings below.  This project initiated as a CS348K project last year.  The paper proposes an alternative way to convert PyTorch kernels into these higher-level ML kernel programming languages.
+  
+__Other Recommended Readings:__
+* [DSL-Monkeys: Self-Generated In-Context Examples for Low-Resource GPU DSL Kernels](https://openreview.net/forum?id=2yS4j1C3zi) Paek et al. 2026.  (Note this workshop paper started as a CS348K project in Spring 2025!)
 * [TVM: An Automated End-to-End Optimizing Compiler for Deep Learning](https://www.usenix.org/system/files/osdi18-chen.pdf) Chen et al. OSDI 2018
    * [TVM](https://tvm.apache.org/) is another system that provides Halide-like scheduling functionality, but targets ML applications. (See Section 4.1 in the paper for a description of the schedule space) 
 * [Learning to Optimize Tensor Programs](https://arxiv.org/abs/1805.08166). Chen et al. NIPS 2018
+* Also see the references to TileLang, CuTile, Thunderkittens, etc in the reading response questions above.
+
+## Lecture 6: The Design of Automatic Differentiation Primitives in Slang ##  
+
+__Pre-Lecture Required Reading:__
+ * [SLANG.D: Fast, Modular and Differentiable Shader Programming](https://research.nvidia.com/labs/rtr/publication/bangaru2023slangd/). Bangaru et al. SIGGRAPH Asia 2023
+    * You may wish to skim the [original Slang language design paper](https://dl.acm.org/doi/pdf/10.1145/3197517.3201380) or read through [some examples on github](https://github.com/shader-slang/slang) to understand the concept interfaces and associated types.
+    * This paper is a very detailed compiler paper (and we don't expect most students to have the compilers background) -- so let's start simple. Start by reading through the case study examples in Section 6 and try to get a feel for the types of use cases the Slang creators wanted to support.  As you can imagine, writing a full-on ray tracer in a system like JAX or PyTorch would be a real pain.
+    * First, read over the definition of interfaces and generics in Section 2.2. In your words what is an `interface` and what is an associated type? You may find the more elaborate descriptions in the [Slang docs here](https://shader-slang.org/slang/user-guide/interfaces-generics.html) even more helpful.
+    * Second, read through the [Slang docs explaining some auto-diff basics](https://shader-slang.org/slang/user-guide/autodiff.html).  I definitely recommend reading this even before picking up the paper.
+    * Now let's focus on Section 4.1 How does Slang represent a differentiable data-type?  What does a differentiable data-type even mean, given the example from the paper from Listing 4 where a struct has two fields, one a non-differentiable `int`, and the other a `float`?  How does building a differentiable datatype using interfaces allow the programmer to resolve this ambiguity?
+    * If Slang what happens by default if a differentiable function calls a non-differentiable function?  Do you agree with this design decision?
+    * The major value of a system liek Slang is that if you write a function `f(x)` in the language, then Slang can general `f'(x)` for you automatically.  But Slang also supports programmer-supplied derivative functions (Section 4.3).  What is the motivation for this support?
+    * Overall, I'd like to come back to Slang's ability to support structs with differentiability and non-differentiabile components, differentiable and non-differentiable functions interoperating, and also user-defined derivative functions. Together, these decisions encapsulate a lot of the philosophy of Slang's design.  If you had to a take a stab at describing how Slang's designers think about the responsibility of a programming language/compiler, and the responsibilities of the programmer when developing complex applications that involve auto-diff, what would you say that philosophy is? Do you agree with it?
+   
+
+
+
+
 
