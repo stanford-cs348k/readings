@@ -135,7 +135,19 @@ __Pre-Lecture Required Reading:__
     * The major value of a system like Slang is that if you write a function `f(x)` in the language, then the Slang concompiler can generate `f'(x)` for you automatically.  But Slang also supports programmer-supplied derivative functions (Section 4.3).  What is the motivation for this support?
     * Overall, I'd like to come back to Slang's ability to support structs with differentiability and non-differentiabile components, differentiable and non-differentiable functions inter-operating, and also user-defined derivative functions. Together, these decisions encapsulate a lot of the philosophy of Slang's design.  If you had to a take a stab at describing how Slang's designers think about the responsibility of a programming language/compiler, and the responsibilities of the programmer when developing complex applications that involve auto-differentiation is, what would you say that philosophy is? Do you agree with it?
    
+## Lecture 7: Designing for Differentiation ##
 
+__Pre-Lecture Required Reading:__
+ * [Design for Descent: What Makes a Shape Grammar Easy to Optimize?](https://www.computationaldesign.group/assets/papers/SIGA-2025-D4Descent.pdf). Kodnongbua et al. 2025
+   * In many cases in computer graphics (and in my other fields today), we generate things by executing *sequences of operations*. In other words, the task at hand is to make a sequence of choices (a set of "moves") such that the end result created by those moves meets some objective.  The space of things we want to create informs the rules how the rules are designed.  For example, a rule-set for creating a tree might be grow a limb N meters, split a limb into M branches, and grow a leaf.  The rule-set for creating a Halide schedule was place a loop, place a loop, etc. Typically, we think about the space of things we want to create, and we create a system design (operations and state) that allows us to efficiently express everything we might want, and we teach humans to apply the rules to form the output desired.  In this paper, they argue that the design of these sets of rules ("the game") should also be designed with machine optimizers in mind.  
+   * First off, you might want to familiarize yourself with a simple example of a procedural system, for example an L-system for plants.  I thought this was a [nice youtube video](https://www.youtube.com/watch?v=feNVBEPXAcE).  But there are different grammars for many classes of objects, for example for creating buildings, or even entire cities, like [here](https://phiresky.github.io/procedural-cities/), or [here](https://www.youtube.com/watch?v=khrWonALQiE) 
+   * Now consider these questions:
+       * Please describe how the grammar introduced in the paper represents a tree shape.  
+       * What is a "rewrite"?
+       * Why is the problem of producing a *structure* that matches a desired target objective a problem of optimizing over both contiguous parameters and discrete parameters?  In this paper what is the "objective" and how is it defined?
+       * For each of the design guidelines (reversability, jump continuity, local control, repairability), please give a motivation for the guideline in terms of how it aids optimizers in their search for structures that maximize the give objective.
+       * Why can't the authors just use stocastic gradient descent (SGD) to optimize the objective in Section 3.3? How would you contrast the proposed algorithm to SGD? What about to the beam search discussed in the Halide Autoscheduler paper?
+       * Finally, I'd like you to summarize how the authors *validate/evaluate* their work?  An evaluation establishes __one or more questions__ and then runs an experiment to answer that question.  What are the central questions asked by the authors in Section 6?
 
 
 
