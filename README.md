@@ -177,9 +177,26 @@ __Post-Lecture Required Reading:__
 __Other Recommended Readings:__
  * [Learning to Generate Programs for 3D Shape Structure Synthesis](https://rkjones4.github.io/shapeAssembly.html) Jones et al. SIGGRAPH 2020
  * [Editing Motion Graphics Video via Motion Vectorization and Transformation](https://sxzhang25.github.io/publications/motion-vectorization.html) Zhang et al. SIGGRAPH Asia 2023 
+
+## Lecture 9: Controlling Generative AI (Part II) ##
+
+__Recommended Readings:__
  * [ProgPrompt: Generating Situated Robot Task Plans using Large Language Models](https://progprompt.github.io/) Sing et al. ICRA 2023
  * [The Scene Language: Representing Scenes with Programs, Words, and Embeddings](https://ai.stanford.edu/~yzzhang/projects/scene-language/) Zhang et al. CVPR 2025
  * [Iterative Motion Editing with Natural Language](https://purvigoel.github.io/iterative-motion-editing/) Goel et al. SIGGRAPH 2023
 
+## Lecture 10: Neural Postprocessing: Making Renderer's Output Look Photoreal using AI ##
+
+__Recommended Readings:__
+ * [RGB-X: Image Decomposition and Synthesis Using Material- and Lighting-aware Diffusion Models](https://zheng95z.github.io/publications/rgbx24) Zheng et al. 2024
+ * [Enhancing Photorealism Enhancement](https://arxiv.org/abs/2105.04619) Richter et al. 2021
+ * [CG2Real: Improving the Realism of Computer Generated Images using a Collection of Photographs](https://cdfg.mit.edu/publications/cg2real-improving-the-realism-of-computer-generated-images-using-a-collection-of-photographs)
+
+## Lecture 11: Generating 3D Objects and 3D Scenes ##
+
+__Post Lecture Required Reading:__
+
+* [SAM 3D: 3Dfy Anything in Images](https://ai.meta.com/research/publications/sam-3d-3dfy-anything-in-images/) SAM 3D Team 2025.
+* This paper describes the process of training a model that can extract 3D content from "real world" photographs of full scenes. The model has been quite impactful since it's release in late 2025, since it provides a way to control 3D scene layout from an image.  You can take a look at the project's [Github page here](https://ai.meta.com/research/sam3d/) or even use it yourself on [Meta's site](https://www.aidemos.meta.com/segment-anything/editor/convert-image-to-3d)
 
 
