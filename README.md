@@ -194,9 +194,15 @@ __Recommended Readings:__
 
 ## Lecture 11: Generating 3D Objects and 3D Scenes ##
 
-__Post Lecture Required Reading:__
+__Post-Lecture Required Reading:__
 
 * [SAM 3D: 3Dfy Anything in Images](https://ai.meta.com/research/publications/sam-3d-3dfy-anything-in-images/) SAM 3D Team 2025.
-* This paper describes the process of training a model that can extract 3D content from "real world" photographs of full scenes. The model has been quite impactful since it's release in late 2025, since it provides a way to control 3D scene layout from an image.  You can take a look at the project's [Github page here](https://ai.meta.com/research/sam3d/) or even use it yourself on [Meta's site](https://www.aidemos.meta.com/segment-anything/editor/convert-image-to-3d)
-
+  * This paper describes the process of training a model that can extract 3D content from "real world" photographs of full scenes.  By real world we meant that thers might be significant visual clutter, or even partial occlusion of the 3D object to be extracted. The model works surprisingly well, and as a result, it's been quite impactful since it's release in late 2025. You can take a look at the project's [Github page here](https://ai.meta.com/research/sam3d/) or even use it yourself on [Meta's site](https://www.aidemos.meta.com/segment-anything/editor/convert-image-to-3d). In your reading response, please consider the following questions.  
+  * First let's think about the task at hand.  Please write down your description of the ultimate task that's being solved in terms of inputs and outputs.  The input to the system is an image (what properties do the contents of permissible input images have?), and what's the output?
+  * Given your description of the task, what would be "ground truth" paired training data for this task?  What is hard about obtaining that training data?
+  * SAM 3D approach is to break down the challenge of creating the ultimate final model into a series of steps, where in each step the model becomes a little more capable and begins to approach the capability of performing the final task.  Section 3.1.1 talks about the first step of training (pre-training).  What is the task trained in this step? How is the training data set obtained? Why do you think the authors felt confident that this was a good starting step?
+  * In the second step (mid-training, Section 3.1.2), how is the complexity of the task increased? How was training data generated in this step?  And why do you think it is easier to succeed at the mid-training tasks _starting with_ a model that results from the pre-training task?  Why not just jump to the mid-training task first?
+  * Section 3.2.1 documents the "Collection Step" of what's called the post-training stage. What is the role of human data labelers in this step?  Note that there are two groups of data-labelers, one performing an "easier" labeling task, and another performing a much harder (more skilled) one.  What are these two labeling tasks and what's the rationale for one being easier than the other?
+  * Last... before taking a look at the evaluation section, write down __at least two evaluation questions__ you'd like to see answered with data/experiments in the results.  Did the authors answer your questions in the evaluation?
+   
 
