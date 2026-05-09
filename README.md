@@ -207,6 +207,8 @@ __Post-Lecture Required Reading:__
 
 ## Lecture 12: Introduction to World Models ##
 
+__Post-Lecture Required Reading:__
+
 * [Genie: Generative Interactive Environments](https://sites.google.com/view/genie-2024/home). Bruce et al. 2024
    * So far in this course we've talked about foundation models for generating images (or videos, meshes, etc.).  We've also talked about implementing virtual world simulators that can be used as training grounds for AI agents.  There are two problems with the simulators we've discussed so far: First, despite the optimization efforts we talked about last class, it can be expensive to simulate detailed worlds. Second, if the goal is to train a general problem solving agent, it's hard to find a diverse set of worlds to train that agent on. There certainly aren't games spanning the range of task we'd like AI agents to perform! And it would be prohibitive to implement a new game for each new task. In this paper, the authors attempt to skip the challenges of designing and executing world simulators, and instead seek to learn an ___interactive world model___ from just video data that can respond to user input.  After reading the paper, I'd like you to also skim the [Genie 3](https://deepmind.google/models/genie/) website, which is a good characterization of the capabilities of the technology in late 2025. Let's first address these technical questions from the original Genie paper... 
    * Let's start simple: The Genie world model, when run at test time, is a model that takes what inputs and emits what outputs?  
