@@ -246,3 +246,36 @@ __Pre-Lecture Required Reading:__
          * Philosophical question. Do you think the system described is being creative?
       * Finally, I'd like you to comment on the scalability of the approach discussed in this paper. Do you think it will work for more complex games? Why or why not? (Consider the challenges associated with a designing a human-like agent for more complex games.) 
 
+## Lecture 15: Building Blocks for 3D World Generation #
+
+__Guest lecture, so no required reading.__
+
+## Lecture 16: How Generative AI is Being Used to Create Interactive Worlds at Roblox ##
+
+__Guest lecture, so no required reading.__
+
+## Lecture 17: High-Performance Simulators for Training AI Agents ##
+
+__Suggested Readings:__
+
+* [An Extensible, Data-Oriented Architecture for High-Performance, Many-World Simulation](https://madrona-engine.github.io/shacklett_siggraph23.pdf). Shacklett et al. SIGGRAPH 2023
+* [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470). Makoviychuk et al. 2021
+* [Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks](https://kinetix-env.github.io/). Matthews et al. 2024
+* [Waymax: An Accelerated, Data-Driven Simulator for Large-Scale Autonomous Driving Research](https://arxiv.org/abs/2310.08710). Gulino et al. 2023
+* [GPUDrive: Data-driven, multi-agent driving simulation at 1 million FPS](https://arxiv.org/abs/2408.01584). Kazemkhani et al. 2025
+
+## Lecture 18: Performance Optimizations for Autoregressive Video Models ##
+
+__Pre-lecture Required Reading:__
+* [Beyond Being There](http://worrydream.com/refs/Hollan%20-%20Beyond%20Being%20There.pdf). Hollan and Stornetta. CHI 1992
+
+This paper is only tengentially related to the final lecture topic of video models, but it is highly relevant. It's a classic paper from the early human-computer interaction community that challenges the notion that recreating reality in digital form should be the "north star" goal of the design of virtual environments.  We're now 30 years past the paper, and technology and our ways of communicating using technology has progressed significantly, but one might argue given all the talk about "The Metaverse" during the early 2020's, and more recently the interest in using AI to pursue photoreal interative experiences, that technologists may still be making the same mistakes. Please address the following in your summary:
+
+* In the section titled "Being There", the authors provide a "crutch vs. shoes" analogy.  What is the point of this analogy?
+* I'd like you to reflect on your usage of Zoom/Teams/Meet/Slack/Discord/etc. and consider what are the features of these systems that cause you to choose to use them.  Consider the modalities of text, audio, and video. When and why do you choose to use each?  Are there situations where too much resolution or too much capture fidelity hurts the experience of communicating?
+* The authors hypothesize: "What if we were able to create communication tools that were richer than face-to-face?"  But of course, this was back in 1992. Today we have technologies and systems that arguably answer this question in the positive.  What tools, platforms, systems come to mind to you?
+* The idea of __intersubjectivity__ discussed in the document is interesting.  What are ways that current tools fail in this regard and how might they be improved?  Note: one good example of a success in the intersubjectivity department is the simple animated "dot dot dot" indicating someone on the other side of a DM conversation is typing.  Perhaps one failure example is how little information we get out of the online/offline indicator on Slack.
+* The following is a question I asked CS348K students back in 2021 at the height of the VR/Metaverse boom -- Facebook had just renamed the company Meta. Is a high-fidelity VR social experience going to change the way we work with others? Or will the next big innovation in how with communicate be something more like Instastram, TikTok, or WhatsApp? What are your thoughts now that we sit at the other side of that wave in 2026?
+* Finally, how might the lessons of this paper apply to the current wave of interest in pursuing photoreal graphics through AI?
+
+
